@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact - Bukhari Nexus</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="logo">Bukhari Nexus</div>
+</header>
+
+<section class="page">
+  <h1>Contact Us</h1>
+
+  <p><b>Australia:</b> +61 474 024 174</p>
+  <p><b>Pakistan:</b> +92 347 605 1900</p>
+
+  <p>Email: info@bukharinexus.com</p>
+</section>
+
+</body>
+</html>
