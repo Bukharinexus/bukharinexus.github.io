@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Businesses - Bukhari Nexus</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="logo">Bukhari Nexus</div>
+</header>
+
+<section class="page">
+
+  <h1>Our Businesses</h1>
+
+  <h2>Bukhari Traders (Pakistan)</h2>
+  <p>Dinga Road, Kotla Mehmood Shah, Phalia</p>
+  <p>Trading of Paddy, Wheat, and Rice</p>
+
+  <h2>Al Makkah General Store</h2>
+  <p>Gujrat Sargodha Road, Pahranwali</p>
+  <p>Retail & General Goods Business</p>
+
+  <h2>Bukhari Nexus Australia</h2>
+  <p>83 Spring Farm Road, Kingston, Tasmania</p>
+  <p>Car Rental + Logistics + Import/Export Assistance</p>
+
+</section>
+
+</body>
+</html>
