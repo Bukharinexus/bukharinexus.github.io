@@ -3,8 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukharinexus Group | Global Enterprise Holdings</title>
+    <title>Global Asset Infrastructure | Bukharinexus Group</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Homepage specific premium structural adjustments */
+        .hero-section {
+            padding: 120px 0 80px 0;
+            text-align: center;
+            background: linear-gradient(180deg, #070a12 0%, #0b0f19 100%);
+            border-bottom: 1px solid #1e293b;
+        }
+        .hero-section h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            color: #94a3b8;
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+        .cta-btn {
+            background: #d4af37;
+            color: #070a12;
+            padding: 15px 35px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid #d4af37;
+        }
+        .cta-btn:hover {
+            background: transparent;
+            color: #d4af37;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .preview-card {
+            background: #0b0f19;
+            border: 1px solid #1e293b;
+            padding: 30px;
+            text-align: left;
+        }
+        .preview-card h3 {
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .preview-card p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        @media (max-width: 900px) {
+            .preview-grid { grid-template-columns: 1fr; }
+            .hero-section h1 { font-size: 32px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -20,17 +87,39 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay">
-            <h1>Driving Capital. Managing Excellence.</h1>
-            <p>A multi-sector commercial investment conglomerate and private holding firm steering market-leading subsidiaries globally.</p>
-            <a href="services.html" class="btn-primary">Explore Corporate Holdings</a>
+    <!-- Main Hero Matrix Area -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Cross-Border Asset Orchestration</h1>
+            <p>Bukharinexus Group anchors a diversified, multi-sector corporate framework—directing robust commercial trade origination, regional consumer commerce networks, and international enterprise logistics systems.</p>
+            
+            <!-- FIXED CTA LINK: Directly targets the interactive portfolio -->
+            <a href="services.html" class="cta-btn">Explore Corporate Holdings</a>
+
+            <!-- Explicit Homepage Previews for your 3 True Entities -->
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <h3>Bukhari Traders</h3>
+                    <p>High-capacity grain origination, strategic storage, and multi-channel wholesale commodity distributions.</p>
+                </div>
+                <div class="preview-card">
+                    <h3>Al Makkah Store</h3>
+                    <p>FMCG distribution management powering direct B2B merchant logistics and retail store services.</p>
+                </div>
+                <div class="preview-card">
+                    <h3>Bukhari PTY LTD</h3>
+                    <p>Australian fleet engineering operations, customs import-export desks, and global freight routing.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="narrative">
-        <h2>Institutional Corporate Governance</h2>
-        <p>Bukharinexus Group acts as a centralized operational hub overseeing cross-industry commercial investments. We turn vision into enterprise value, executing rigorous financial disciplines, operations strategies, and global corporate development across our high-performing business divisions.</p>
+    <!-- Brief Executive Synopsis -->
+    <section class="container" style="padding: 60px 0; text-align: center;">
+        <h2 style="font-family: 'Cinzel', serif; color: #ffffff; margin-bottom: 20px;">Institutional Execution</h2>
+        <p style="color: #94a3b8; max-width: 800px; margin: 0 auto; line-height: 1.7; font-size: 15px;">
+            Operating across diverse economic landscapes from South Asia to Oceania, our businesses deploy centralized risk mitigation structures, premium quality protocols, and stable corporate networks to build permanent value.
+        </p>
     </section>
 
     <footer>
@@ -39,9 +128,8 @@
                 <p>&copy; 2026 Bukharinexus Group. All Rights Reserved. Private & Confidential.</p>
             </div>
             <div class="footer-address">
-                <strong>Global HQ Communications Desk</strong><br>
-                Level 45, International Financial Centre<br>
-                Corporate Operations District
+                <strong>Bukhari PTY LTD | Global HQ</strong><br>
+                83 Spring Farm Road, Kingston, TAS 7050
             </div>
         </div>
     </footer>
