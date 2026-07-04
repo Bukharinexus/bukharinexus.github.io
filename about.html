@@ -6,7 +6,6 @@
     <title>Corporate Structure & Board | Bukharinexus Group</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Corporate Board UI Styles */
         .directors-section {
             margin-top: 100px;
             border-top: 1px solid #1e293b;
@@ -25,32 +24,13 @@
         .directors-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 60px;
         }
         .director-card {
             background: #0b0f19;
             border: 1px solid #1e293b;
             padding: 30px;
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-        .director-image-box {
-            width: 120px;
-            height: 150px;
-            background: #111726;
-            border: 1px solid #d4af37;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .director-image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
         .director-info h3 {
             font-family: 'Cinzel', serif;
@@ -63,23 +43,13 @@
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
-        }
-        .director-info .equity {
-            background: rgba(212, 175, 55, 0.1);
-            color: #d4af37;
-            padding: 2px 8px;
-            font-size: 11px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 12px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         .director-info p {
             color: #94a3b8;
-            font-size: 13px;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.6;
         }
         .timeline-section { margin-top: 100px; border-top: 1px solid #1e293b; padding-top: 80px; }
         .timeline-item { margin-bottom: 40px; border-left: 2px solid #d4af37; padding-left: 25px; position: relative; }
@@ -89,8 +59,6 @@
         .footer-email a:hover { text-decoration: underline; }
         @media (max-width: 900px) {
             .directors-grid { grid-template-columns: 1fr; }
-            .director-card { flex-direction: column; text-align: center; padding: 25px; }
-            .director-image-box { width: 130px; height: 160px; }
         }
     </style>
 </head>
@@ -114,81 +82,58 @@
     </section>
 
     <section class="container">
-        <!-- Main Executive Narrative -->
         <div class="grid-2" style="margin-bottom: 80px;">
             <div>
-                <h2>Institutional Architecture</h2>
-                <p>Bukharinexus Group operates under a unified global board of directors to manage a multi-layered ecosystem of agricultural, retail, and international logistics operations. By consolidating oversight at the holding level, we deploy joint corporate resources, centralized tax structures, and active risk mitigation across all regional subsidiaries.</p>
+                <h2>Dual-Jurisdiction Architecture</h2>
+                <p>Bukharinexus Group operates under a unified global governance model to manage a robust network of agricultural, retail, and transportation operations. Our structural framework features fully incorporated and registered corporate bodies across multiple national borders—operating through <strong>Bukhari PTY LTD</strong> inside Australia and <strong>Bukhari Nexus</strong> registered within Pakistan.</p>
             </div>
             <div>
                 <h2>Strategic Blueprint</h2>
-                <p>Our governance framework empowers managing directors to directly execute high-volume initiatives within their respective regional markets. This dual structure protects asset liquidity while optimizing day-to-day distribution networks from South Asia to Oceania.</p>
+                <p>By consolidating executive oversight across our dual-registered entities, our board deploys unified corporate capital structures, synchronized international risk management, and stable cross-border transport channels to optimize distribution pathways connecting South Asia to Oceania.</p>
             </div>
         </div>
 
-        <!-- BOARD OF DIRECTORS SECTION -->
         <div class="directors-section">
             <h2>Board of Directors — Bukharinexus Group</h2>
             <p style="color: #94a3b8; font-size: 16px; margin-top: 10px; margin-bottom: 50px;">
-                The central governing board controlling equity portfolios, cross-border commercial trade, and global subsidiary networks.
+                The central governing board controlling global operational compliance, multi-sector assets, and regional subsidiary networks.
             </p>
 
             <div class="directors-grid">
-                <!-- Director 1: Haseeb Sajjad -->
                 <div class="director-card">
-                    <div class="director-image-box">
-                        <img src="director-haseeb.jpg" alt="Haseeb Sajjad Headshot">
-                    </div>
                     <div class="director-info">
                         <h3>Haseeb Sajjad</h3>
                         <div class="title">Group Managing Director & Founder</div>
-                        <div class="equity">Bukhari PTY LTD Co-Owner (50%) & Group Partner</div>
-                        <p>Directs central holding strategies, international transport networks, and corporate development for Bukhari PTY LTD (Australia). Manages high-level asset allocations and sovereign joint-partnership frameworks across the group matrix.</p>
+                        <p>Directs central holding strategies, international transport networks, and corporate development for our dual-registered structures. Coordinates high-level asset allocations and sovereign joint-partnership frameworks across the group matrix.</p>
                     </div>
                 </div>
 
-                <!-- Director 2: Sajjad Hussain -->
                 <div class="director-card">
-                    <div class="director-image-box">
-                        <img src="director-sajjad.jpg" alt="Sajjad Hussain Headshot">
-                    </div>
                     <div class="director-info">
                         <h3>Sajjad Hussain</h3>
                         <div class="title">Director of Commodities & Origination</div>
-                        <div class="equity">Group Board Director & Partner</div>
                         <p>Directs the complete asset infrastructure and operational framework of Bukhari Traders. Coordinates farm-gate sourcing mechanisms, bulk commodity storage systems, and regional wholesale grain markets.</p>
                     </div>
                 </div>
 
-                <!-- Director 3: Zulqur Nain Haider -->
                 <div class="director-card">
-                    <div class="director-image-box">
-                        <img src="director-zulqurnain.jpg" alt="Zulqur Nain Haider Headshot">
-                    </div>
                     <div class="director-info">
                         <h3>Zulqur Nain Haider</h3>
                         <div class="title">Director of FMCG & Retail Logistics</div>
-                        <div class="equity">Group Board Director & Partner</div>
                         <p>Directs the absolute day-to-day supply networks, commercial purchasing portfolios, and inventory flow structures for Al Makkah General Store. Manages key manufacturer agreements and B2B wholesale distribution.</p>
                     </div>
                 </div>
 
-                <!-- Director 4: Sohaib Sajjad -->
                 <div class="director-card">
-                    <div class="director-image-box">
-                        <img src="director-sohaib.jpg" alt="Sohaib Sajjad Headshot">
-                    </div>
                     <div class="director-info">
                         <h3>Sohaib Sajjad</h3>
                         <div class="title">Executive Director of Operations</div>
-                        <div class="equity">Bukhari PTY LTD Co-Owner (50%)</div>
                         <p>Oversees Australian fleet logistics, regulatory compliance matrices, and commercial transport asset optimizations for Bukhari PTY LTD. Coordinates national risk structures and regional transit protocols.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Historical Evolution Timeline Section -->
         <div class="timeline-section">
             <div class="narrative" style="margin: 0 0 50px 0; text-align: left;">
                 <h2>Core Operating Subdivisions</h2>
@@ -208,9 +153,9 @@
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-year">Bukhari PTY LTD</div>
-                <div class="timeline-title">Australian Transport Fleets & Import-Export Desk</div>
-                <p style="color: #94a3b8; font-weight: 300;">Our international anchor entity controls premium vehicle fleets serving corporate and executive tourism markets across Australia, matched alongside cross-border logistics lanes and container freight forwarding structures.</p>
+                <div class="timeline-year">Bukhari PTY LTD & Bukhari Nexus</div>
+                <div class="timeline-title">International Transport Fleets & Corporate Desks</div>
+                <p style="color: #94a3b8; font-weight: 300;">Our international anchor entities control premium vehicle fleets serving corporate and executive transit markets across Australia, matched alongside cross-border logistics lanes and container freight forwarding structures.</p>
             </div>
         </div>
     </section>
@@ -222,8 +167,8 @@
                 <p class="footer-email">Corporate Communications: <a href="mailto:Bukharinexus@gmail.com">Bukharinexus@gmail.com</a></p>
             </div>
             <div class="footer-address">
-                <strong>Bukhari PTY LTD | Global HQ</strong><br>
-                83 Spring Farm Road, Kingston, TAS 7050
+                <strong>Bukhari Traders | Global HQ</strong><br>
+                Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Tehsil Phalia, Pakistan
             </div>
         </div>
     </footer>
