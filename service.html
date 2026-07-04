@@ -5,6 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise Portfolio | Bukharinexus Group</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Interactive Component Overrides */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            background: #0b0f19;
+            color: #94a3b8;
+            border: 1px solid #1e293b;
+            padding: 15px 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .tab-btn:hover {
+            border-color: #d4af37;
+            color: #ffffff;
+        }
+
+        /* Pure CSS Interactive Mechanics */
+        .tab-content {
+            display: none;
+            background-color: #0b0f19;
+            border: 1px solid #1e293b;
+            padding: 50px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Show content based on URL target anchor clicks */
+        #bukhari-traders:target,
+        #al-makkah:target,
+        #australia-logistics:target {
+            display: block;
+        }
+
+        /* Default visible state when page loads */
+        .tab-content:nth-of-type(1) {
+            display: block;
+        }
+        
+        /* Hides the default tab when another tab is clicked/targeted */
+        #al-makkah:target ~ #default-tab,
+        #australia-logistics:target ~ #default-tab,
+        #bukhari-traders:target ~ #default-tab {
+            display: none !important;
+        }
+
+        .inner-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .details-column h2 {
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .details-column h4 {
+            color: #d4af37;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .meta-column {
+            border-left: 1px solid #1e293b;
+            padding-left: 40px;
+        }
+
+        .meta-box {
+            margin-bottom: 30px;
+        }
+
+        .meta-box h5 {
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .meta-box p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .tabs-nav { flex-direction: column; }
+            .inner-grid { grid-template-columns: 1fr; gap: 30px; }
+            .meta-column { border-left: none; padding-left: 0; border-top: 1px solid #1e293b; padding-top: 30px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -21,33 +132,99 @@
     </header>
 
     <section class="page-title">
-        <h1>Strategic Holdings</h1>
-        <p>A highly focused portfolio constructed for scalable cross-border integration.</p>
+        <h1>Subsidiary Architecture</h1>
+        <p>Select a corporate entity to view its global operational footprint, core services, and central base address.</p>
     </section>
 
     <section class="container">
-        <div class="portfolio-grid">
-            <!-- Pillar 1 -->
-            <div class="portfolio-card">
-                <h3>Nexus Capital & Asset Management</h3>
-                <p style="margin-bottom: 15px; color: #d4af37; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Real Estate & Equity Holdings</p>
-                <p>Our flagship financial division handles multi-million dollar corporate acquisitions, commercial real estate holdings, and structured equity allocations. We acquire premium corporate properties and distressed real estate assets, managing high-yielding transformations that secure long-term capital compounding for the Group's main balance sheet.</p>
-            </div>
-            
-            <!-- Pillar 2 -->
-            <div class="portfolio-card">
-                <h3>Bukharinexus Global Logistics</h3>
-                <p style="margin-bottom: 15px; color: #d4af37; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Supply Chain & Freight Systems</p>
-                <p>Operating a highly secure international supply network, this branch executes cross-border logistics, import-export operations, and heavy cargo transit management. We connect manufacturing hubs directly with primary wholesale commercial distribution lines across Europe, Asia, and the Middle East, handling vital commodity distribution with flawless efficiency.</p>
-            </div>
-            
-            <!-- Pillar 3 -->
-            <div class="portfolio-card">
-                <h3>Nexus Integrated Digital Systems</h3>
-                <p style="margin-bottom: 15px; color: #d4af37; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Software Architecture & Enterprise Infrastructure</p>
-                <p>Our technological engineering division builds proprietary cloud architectures, enterprise software systems, and data infrastructure solutions. This pillar powers the digital logistics networks of our sister companies while independently engineering secure financial tech software tools for external corporate institutions globally.</p>
+        
+        <!-- Navigation Buttons for the 3 Businesses -->
+        <div class="tabs-nav">
+            <a href="#bukhari-traders" style="text-decoration: none;"><button class="tab-btn">Bukhari Traders</button></a>
+            <a href="#al-makkah" style="text-decoration: none;"><button class="tab-btn">Al Makkah General Store</button></a>
+            <a href="#australia-logistics" style="text-decoration: none;"><button class="tab-btn">Australia Logistics & Rental</button></a>
+        </div>
+
+        <!-- 1. BUKHARI TRADERS PANEL -->
+        <div id="bukhari-traders" class="tab-content">
+            <div class="inner-grid">
+                <div class="details-column">
+                    <h4>Subsidiary Operation — 01</h4>
+                    <h2>Bukhari Traders</h2>
+                    <p>Bukhari Traders acts as our primary asset-heavy commercial trading house. The business specializes in processing high-volume corporate accounts, structured market commodity allocations, and B2B wholesale infrastructure distribution. By managing complex buyer portfolios, Bukhari Traders provides fluid supply integration metrics across active retail networks.</p>
+                </div>
+                <div class="meta-column">
+                    <div class="meta-box">
+                        <h5>Core Services</h5>
+                        <p>• Commercial Bulk Supply<br>• Commodity Asset Trading<br>• B2B Distribution Systems</p>
+                    </div>
+                    <div class="meta-box">
+                        <h5>Operational Base</h5>
+                        <p>Bukhari Traders Trading Desk<br>Corporate Trade Hub Division</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- 2. AL MAKKAH GENERAL STORE PANEL -->
+        <div id="al-makkah" class="tab-content">
+            <div class="inner-grid">
+                <div class="details-column">
+                    <h4>Subsidiary Operation — 02</h4>
+                    <h2>Al Makkah General Store</h2>
+                    <p>Al Makkah General Store represents our vital consumer commerce division. Operating through an advanced stock replenishment framework, this operation manages critical consumer merchandise, high-turnover grocery assets, and localized supply lines. The focus remains on customer experience, absolute supply stability, and low-margin, high-volume retail fulfillment.</p>
+                </div>
+                <div class="meta-column">
+                    <div class="meta-box">
+                        <h5>Core Services</h5>
+                        <p>• Consumer Retail & Goods<br>• Inventory Asset Management<br>• Local Supply Logistics</p>
+                    </div>
+                    <div class="meta-box">
+                        <h5>Operational Base</h5>
+                        <p>Al Makkah Central Facility<br>Retail & Consumer Division</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. AUSTRALIAN LOGISTICS & CAR RENTAL PANEL -->
+        <div id="australia-logistics" class="tab-content">
+            <div class="inner-grid">
+                <div class="details-column">
+                    <h4>Subsidiary Operation — 03</h4>
+                    <h2>Australian Transport & Logistics Division</h2>
+                    <p>Our premier cross-border asset engine, based in Australia. This multifaceted business operates an agile commercial passenger fleet catering to high-tier executive and tourism vehicle rental markets. Concurrently, the division oversees global import-export clearances, heavy freight shipping arrangements, and air-cargo distribution pathways, linking our domestic assets securely into global supply webs.</p>
+                </div>
+                <div class="meta-column">
+                    <div class="meta-box">
+                        <h5>Core Services</h5>
+                        <p>• Fleet Vehicle Rental Systems<br>• Cross-Border Import & Export<br>• International Freight Forwarding</p>
+                    </div>
+                    <div class="meta-box">
+                        <h5>Operational Base</h5>
+                        <p>Logistics & Fleet Operations Hub<br>New South Wales / Victoria / Queensland Districts<br>Australia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HIDDEN BACKUP / INITIAL STATE TRICK -->
+        <div id="default-tab" class="tab-content">
+            <div class="inner-grid">
+                <div class="details-column">
+                    <h4>Corporate Portfolio Overview</h4>
+                    <h2>Bukharinexus Group Entities</h2>
+                    <p>Select any of our corporate sectors using the strategic management menu above to review specialized asset services, independent corporate infrastructure models, and physical address placements.</p>
+                </div>
+                <div class="meta-column">
+                    <div class="meta-box">
+                        <h5>Global Footprint</h5>
+                        <p>Connecting regional consumer hubs directly into advanced international transportation systems across Australia and beyond.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <footer>
@@ -56,9 +233,9 @@
                 <p>&copy; 2026 Bukharinexus Group. All Rights Reserved. Private & Confidential.</p>
             </div>
             <div class="footer-address">
-                <strong>Global HQ Communications Desk</strong><br>
-                Level 45, International Financial Centre<br>
-                Corporate Operations District
+                <strong>Global HQ Operations</strong><br>
+                Bukharinexus Corporate Desk<br>
+                Australia
             </div>
         </div>
     </footer>
