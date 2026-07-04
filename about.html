@@ -3,60 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corporate Profile | Bukharinexus Group</title>
+    <title>Corporate Structure & Board | Bukharinexus Group</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Custom layout enhancements for detailed narrative */
-        .corporate-pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .pillar-item {
-            background: #0b0f19;
-            border: 1px solid #1e293b;
-            padding: 35px;
-            border-top: 3px solid #d4af37;
-        }
-        .pillar-item h3 {
-            font-family: 'Cinzel', serif;
-            color: #ffffff;
-            font-size: 18px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        .pillar-item p {
-            color: #94a3b8;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .timeline-section {
+        /* Corporate Board UI Styles */
+        .directors-section {
             margin-top: 100px;
             border-top: 1px solid #1e293b;
             padding-top: 80px;
         }
-        .timeline-item {
-            margin-bottom: 40px;
-            border-left: 2px solid #d4af37;
-            padding-left: 25px;
-            position: relative;
-        }
-        .timeline-year {
+        .directors-category-title {
             font-family: 'Cinzel', serif;
             color: #d4af37;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed #1e293b;
+            padding-bottom: 10px;
+        }
+        .directors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .director-card {
+            background: #0b0f19;
+            border: 1px solid #1e293b;
+            padding: 30px;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .director-image-box {
+            width: 120px;
+            height: 150px;
+            background: #111726;
+            border: 1px solid #d4af37;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .director-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .director-info h3 {
+            font-family: 'Cinzel', serif;
+            color: #ffffff;
             font-size: 20px;
-            font-weight: 700;
             margin-bottom: 5px;
         }
-        .timeline-title {
-            font-size: 16px;
-            color: #ffffff;
-            font-weight: 600;
+        .director-info .title {
+            color: #d4af37;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 10px;
+            font-weight: 600;
         }
+        .director-info .equity {
+            background: rgba(212, 175, 55, 0.1);
+            color: #d4af37;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .director-info p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .timeline-section { margin-top: 100px; border-top: 1px solid #1e293b; padding-top: 80px; }
+        .timeline-item { margin-bottom: 40px; border-left: 2px solid #d4af37; padding-left: 25px; position: relative; }
+        .timeline-year { font-family: 'Cinzel', serif; color: #d4af37; font-size: 20px; font-weight: 700; margin-bottom: 5px; }
+        .timeline-title { font-size: 16px; color: #ffffff; font-weight: 600; margin-bottom: 10px; }
+        .footer-email a { color: #d4af37; text-decoration: none; font-weight: 500; }
+        .footer-email a:hover { text-decoration: underline; }
         @media (max-width: 900px) {
-            .corporate-pillars-grid { grid-template-columns: 1fr; }
+            .directors-grid { grid-template-columns: 1fr; }
+            .director-card { flex-direction: column; text-align: center; padding: 25px; }
+            .director-image-box { width: 130px; height: 160px; }
         }
     </style>
 </head>
@@ -75,76 +109,108 @@
     </header>
 
     <section class="page-title">
-        <h1>Corporate Profile</h1>
-        <p>Aligning capital discipline, supply operational infrastructure, and global trading execution.</p>
+        <h1>Corporate Governance</h1>
+        <p>The central leadership directing Bukharinexus Group holdings and international subsidiaries.</p>
     </section>
 
     <section class="container">
         <!-- Main Executive Narrative -->
         <div class="grid-2" style="margin-bottom: 80px;">
             <div>
-                <h2>Institutional Governance</h2>
-                <p>Bukharinexus Group operates as a distinguished central holding firm directing a multi-layered ecosystem of regional and international business entities. Our operational architecture bridges key commercial sectors: robust business-to-business bulk commodity trading, community-vital consumer retail markets, and an advanced cross-border transport infrastructure spanning vehicle rental fleets and international import-export operations.</p>
-                <br>
-                <p>Through active asset management, rigorous compliance, and executive structural design, the Group optimizes supply logistics chains and accelerates market positioning for its entire subsidiary layout. Our approach ensures sustained liquidity, asset protection, and institutional stability in volatile global environments.</p>
+                <h2>Institutional Architecture</h2>
+                <p>Bukharinexus Group operates under a unified global board of directors to manage a multi-layered ecosystem of agricultural, retail, and international logistics operations. By consolidating oversight at the holding level, we deploy joint corporate resources, centralized tax structures, and active risk mitigation across all regional subsidiaries.</p>
             </div>
             <div>
-                <h2>Strategic Philosophy</h2>
-                <p>We do not capture short-term, high-risk trends. Instead, Bukharinexus Group deploys strategic venture capital exclusively into business sectors featuring proven, real-world utility. By providing centralized corporate services—including international tax compliance structures, advanced technology stacks, and enterprise risk consulting—we protect each operating arm.</p>
-                <br>
-                <p>This deep integration empowers our regional assets to compete at an institutional tier, scaling from localized storefronts and trading desks into highly resilient commercial channels linked directly into advanced global networks.</p>
+                <h2>Strategic Blueprint</h2>
+                <p>Our governance framework empowers managing directors to directly execute high-volume initiatives within their respective regional markets. This dual structure protects asset liquidity while optimizing day-to-day distribution networks from South Asia to Oceania.</p>
             </div>
         </div>
 
-        <!-- Expanded Subsection: The Sub-Businesses Background -->
+        <!-- BOARD OF DIRECTORS SECTION -->
+        <div class="directors-section">
+            <h2>Board of Directors — Bukharinexus Group</h2>
+            <p style="color: #94a3b8; font-size: 16px; margin-top: 10px; margin-bottom: 50px;">
+                The central governing board controlling equity portfolios, cross-border commercial trade, and global subsidiary networks.
+            </p>
+
+            <div class="directors-grid">
+                <!-- Director 1: Haseeb Sajjad -->
+                <div class="director-card">
+                    <div class="director-image-box">
+                        <img src="director-haseeb.jpg" alt="Haseeb Sajjad Headshot">
+                    </div>
+                    <div class="director-info">
+                        <h3>Haseeb Sajjad</h3>
+                        <div class="title">Group Managing Director & Founder</div>
+                        <div class="equity">Bukhari PTY LTD Co-Owner (50%) & Group Partner</div>
+                        <p>Directs central holding strategies, international transport networks, and corporate development for Bukhari PTY LTD (Australia). Manages high-level asset allocations and sovereign joint-partnership frameworks across the group matrix.</p>
+                    </div>
+                </div>
+
+                <!-- Director 2: Sajjad Hussain -->
+                <div class="director-card">
+                    <div class="director-image-box">
+                        <img src="director-sajjad.jpg" alt="Sajjad Hussain Headshot">
+                    </div>
+                    <div class="director-info">
+                        <h3>Sajjad Hussain</h3>
+                        <div class="title">Director of Commodities & Origination</div>
+                        <div class="equity">Group Board Director & Partner</div>
+                        <p>Directs the complete asset infrastructure and operational framework of Bukhari Traders. Coordinates farm-gate sourcing mechanisms, bulk commodity storage systems, and regional wholesale grain markets.</p>
+                    </div>
+                </div>
+
+                <!-- Director 3: Zulqur Nain Haider -->
+                <div class="director-card">
+                    <div class="director-image-box">
+                        <img src="director-zulqurnain.jpg" alt="Zulqur Nain Haider Headshot">
+                    </div>
+                    <div class="director-info">
+                        <h3>Zulqur Nain Haider</h3>
+                        <div class="title">Director of FMCG & Retail Logistics</div>
+                        <div class="equity">Group Board Director & Partner</div>
+                        <p>Directs the absolute day-to-day supply networks, commercial purchasing portfolios, and inventory flow structures for Al Makkah General Store. Manages key manufacturer agreements and B2B wholesale distribution.</p>
+                    </div>
+                </div>
+
+                <!-- Director 4: Sohaib Sajjad -->
+                <div class="director-card">
+                    <div class="director-image-box">
+                        <img src="director-sohaib.jpg" alt="Sohaib Sajjad Headshot">
+                    </div>
+                    <div class="director-info">
+                        <h3>Sohaib Sajjad</h3>
+                        <div class="title">Executive Director of Operations</div>
+                        <div class="equity">Bukhari PTY LTD Co-Owner (50%)</div>
+                        <p>Oversees Australian fleet logistics, regulatory compliance matrices, and commercial transport asset optimizations for Bukhari PTY LTD. Coordinates national risk structures and regional transit protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Historical Evolution Timeline Section -->
         <div class="timeline-section">
             <div class="narrative" style="margin: 0 0 50px 0; text-align: left;">
-                <h2>Our Business Evolution</h2>
-                <p style="color: #94a3b8; font-size: 16px; margin-top: 10px;">How our diverse operations grew under a unified corporate framework.</p>
+                <h2>Core Operating Subdivisions</h2>
+                <p style="color: #94a3b8; font-size: 16px; margin-top: 10px;">The functional entities managed under our board's corporate umbrella.</p>
             </div>
 
-            <!-- Historical Asset 1 -->
             <div class="timeline-item">
                 <div class="timeline-year">Bukhari Traders</div>
-                <div class="timeline-title">B2B Trade Architecture & Wholesale Allocation</div>
-                <p style="color: #94a3b8; font-weight: 300;">Established to streamline regional supply and demand metrics, Bukhari Traders serves as our high-volume business-to-business engine. The operation specializes in handling massive commercial allocations, contract distribution frameworks, and industrial-grade commodity logistics. It serves as an essential link providing predictable bulk procurement streams across massive corporate buyers networks.</p>
+                <div class="timeline-title">Bulk Agricultural Sourcing & Trade Infrastructure</div>
+                <p style="color: #94a3b8; font-weight: 300;">Operating as a massive high-volume trade network, Bukhari Traders manages farm-gate collection, commercial processing, and industrial supply loops. It connects raw agricultural outputs directly with large-scale corporate processors and domestic milling systems.</p>
             </div>
 
-            <!-- Historical Asset 2 -->
             <div class="timeline-item">
                 <div class="timeline-year">Al Makkah General Store</div>
-                <div class="timeline-title">Consumer Market Retail Pillars</div>
-                <p style="color: #94a3b8; font-weight: 300;">Al Makkah General Store handles the consumer marketplace arm of our holding framework. Engineered to manage high-turnover essential merchandise and grocery assets, this operation relies on sophisticated local supply chain integration and price stability. It stands as a vital community pillar built on low-margin, high-volume retail metrics and premium inventory management systems.</p>
+                <div class="timeline-title">FMCG Distribution Channels & Consumer Retail</div>
+                <p style="color: #94a3b8; font-weight: 300;">Al Makkah General Store balances the group portfolio with high-turnover consumer retail and local B2B merchant supply routes. Leveraging direct manufacturing accounts, it preserves strong local market insulation and consistent community volume.</p>
             </div>
 
-            <!-- Historical Asset 3 -->
             <div class="timeline-item">
-                <div class="timeline-year">International Operations</div>
-                <div class="timeline-title">Australian Fleet Management, Logistics & Import-Export Desk</div>
-                <p style="color: #94a3b8; font-weight: 300;">Expanding into high-yield international sectors, our Australian Transport & Logistics Division coordinates an agile, premium vehicle rental fleet catering to corporate, commercial, and executive transit demands. This mobile infrastructure operates in absolute synergy with a global import-export desk that manages customs clearance protocols, international freight forwarding pathways, and secure cross-border supply lines linking Oceania into broader worldwide trading hubs.</p>
-            </div>
-        </div>
-
-        <!-- Corporate Responsibility / Core Principles -->
-        <div class="timeline-section" style="margin-top: 80px;">
-            <div class="narrative" style="margin: 0 0 30px 0; text-align: left;">
-                <h2>Institutional Principles</h2>
-                <p style="color: #94a3b8; font-size: 16px; margin-top: 10px;">The non-negotiable operational values guiding Bukharinexus Group operations worldwide.</p>
-            </div>
-            
-            <div class="corporate-pillars-grid">
-                <div class="pillar-item">
-                    <h3>Capital Preservation</h3>
-                    <p>We deploy rigorous auditing procedures and cross-market hedges to ensure long-term balance sheet stability across all underlying businesses.</p>
-                </div>
-                <div class="pillar-item">
-                    <h3>Operational Integrity</h3>
-                    <p>Maintaining pristine compliance records with global maritime regulations, local consumer protections, and international trade laws.</p>
-                </div>
-                <div class="pillar-item">
-                    <h3>Syndicated Efficiency</h3>
-                    <p>Using centralized data structures to optimize logistics route management, vehicle depreciation curves, and procurement costs across every sector.</p>
-                </div>
+                <div class="timeline-year">Bukhari PTY LTD</div>
+                <div class="timeline-title">Australian Transport Fleets & Import-Export Desk</div>
+                <p style="color: #94a3b8; font-weight: 300;">Our international anchor entity controls premium vehicle fleets serving corporate and executive tourism markets across Australia, matched alongside cross-border logistics lanes and container freight forwarding structures.</p>
             </div>
         </div>
     </section>
@@ -153,11 +219,11 @@
         <div class="footer-container">
             <div>
                 <p>&copy; 2026 Bukharinexus Group. All Rights Reserved. Private & Confidential.</p>
+                <p class="footer-email">Corporate Communications: <a href="mailto:Bukharinexus@gmail.com">Bukharinexus@gmail.com</a></p>
             </div>
             <div class="footer-address">
-                <strong>Global HQ Operations</strong><br>
-                Bukharinexus Corporate Desk<br>
-                Australia
+                <strong>Bukhari PTY LTD | Global HQ</strong><br>
+                83 Spring Farm Road, Kingston, TAS 7050
             </div>
         </div>
     </footer>
