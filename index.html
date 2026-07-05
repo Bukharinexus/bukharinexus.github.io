@@ -3,132 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus Pvt Ltd | Global Asset Operations</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Bukhari Nexus Pvt Ltd</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Cinzel:wght@600;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #060913;
+            --bg-card: #0b1120;
+            --border-color: #1e293b;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-gold: #fbbf24;
+            --accent-gold-dark: #d97706;
+            --accent-traders: #10b981;
+            --accent-makkah: #3b82f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Global Header Header */
+        header {
+            background: #0b1120;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 19px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span { color: var(--accent-gold); font-weight: 600; }
+
+        .nav-right { display: flex; align-items: center; gap: 16px; }
+
+        nav { display: flex; gap: 4px; align-items: center; }
+
+        nav button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        nav button:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+        nav button.active-nav {
+            color: #060913;
+            background: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* Specific Sub-Sector Nav Active Styling Variations */
+        nav button.active-traders { background: var(--accent-traders); color: #060913; font-weight: 700; }
+        nav button.active-makkah { background: var(--accent-makkah); color: #fff; font-weight: 700; }
+
+        /* Flags System */
+        .flag-ensemble { display: flex; gap: 8px; border-left: 1px solid var(--border-color); padding-left: 16px; }
+        .flag { width: 32px; height: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.4); position: relative; border-radius: 2px; overflow: hidden; }
+        
+        .flag-pk { background: #006633; display: flex; }
+        .flag-pk::before { content: ''; width: 25%; background: #ffffff; height: 100%; }
+        .flag-pk::after { 
+            content: '🌙'; font-size: 10px; color: white; position: absolute; 
+            top: 50%; left: 60%; transform: translate(-50%, -50%) rotate(-45deg); 
+        }
+
+        .flag-au { background: #000066; }
+        .flag-au::before { content: '★'; font-size: 8px; color: white; position: absolute; top: 2px; left: 4px; }
+        .flag-au::after { content: '✨'; font-size: 7px; color: white; position: absolute; right: 4px; top: 6px; }
+
+        /* Universal Tab Display Rules */
+        .page-view { display: none; padding: 60px 0; }
+        .page-view.active-view { display: block; }
+
+        /* Universal Hero Typography */
+        .hero { text-align: center; padding: 40px 0 50px; }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 40px; margin-bottom: 16px; }
+        .hero p { color: var(--text-muted); font-size: 17px; max-width: 750px; margin: 0 auto; }
+
+        /* Home Business Selector Cards */
+        .home-biz-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+        .home-card {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px;
+            padding: 32px; cursor: pointer; transition: transform 0.3s elements, border-color 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between; min-height: 250px;
+        }
+        .home-card:hover { transform: translateY(-4px); }
+        .home-card.h-traders:hover { border-color: var(--accent-traders); }
+        .home-card.h-makkah:hover { border-color: var(--accent-makkah); }
+        .home-card.h-pty:hover { border-color: var(--accent-gold); }
+        
+        .home-card h3 { font-family: 'Cinzel', serif; font-size: 22px; margin-bottom: 8px; color: #fff; }
+        .home-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+        .action-link { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .h-traders .action-link { color: var(--accent-traders); }
+        .h-makkah .action-link { color: var(--accent-makkah); }
+        .h-pty .action-link { color: var(--accent-gold); }
+
+        /* ==========================================================================
+           DISTINCT SECTOR PAGE THEMING
+           ========================================================================== */
+        
+        /* Sub-Page Layout */
+        .sector-wrapper { border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden; }
+        .sector-banner { padding: 64px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+        .sector-banner::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(6, 9, 19, 0.85); z-index: 1; }
+        .sector-banner-content { position: relative; z-index: 2; max-width: 700px; }
+        .sector-banner h2 { font-family: 'Cinzel', serif; font-size: 42px; margin-bottom: 12px; text-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        .sector-tagline { font-size: 13px; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; display: block; margin-bottom: 16px; }
+        .sector-body { padding: 48px; background: var(--bg-card); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; }
+        .sector-details p { color: #cbd5e1; font-size: 16px; margin-bottom: 24px; }
+        .sector-details ul { padding-left: 20px; color: var(--text-muted); }
+        .sector-details li { margin-bottom: 12px; font-size: 15px; }
+        .sector-side-img img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; border-radius: 6px; border: 1px solid var(--border-color); }
+
+        /* 1. Bukhari Traders Theme (Emerald Paddy & Wheat) */
+        .bg-traders-banner { background: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; }
+        .text-traders { color: var(--accent-traders); }
+        .sector-details-traders li::marker { color: var(--accent-traders); }
+
+        /* 2. Al Makkah Theme (Corporate Supply Matrix) */
+        .bg-makkah-banner { background: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; }
+        .text-makkah { color: var(--accent-makkah); }
+        .sector-details-makkah li::marker { color: var(--accent-makkah); }
+
+        /* 3. Bukhari PTY LTD Theme (Automotive Premium Grid) */
+        .bg-pty-banner { background: url('https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; }
+        .text-pty { color: var(--accent-gold); }
+        .sector-details-pty li::marker { color: var(--accent-gold); }
+
+
+        /* About Governance & Board Grid */
+        .gov-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
+        .gov-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 28px; border-radius: 6px; }
+        .gov-card h3 { font-family: 'Cinzel', serif; font-size: 18px; color: var(--accent-gold); margin-bottom: 12px; }
+        .directors-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .dir-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; }
+        .dir-card h4 { font-family: 'Cinzel', serif; font-size: 18px; margin-bottom: 4px; }
+        .dir-card .role { color: var(--accent-gold); font-size: 12px; font-weight: 700; display: block; margin-bottom: 12px; }
+        .dir-card p { color: var(--text-muted); font-size: 14px; }
+
+        /* Portfolio Matrix Styles */
+        .portfolio-row { display: flex; flex-direction: column; gap: 32px; }
+        .portfolio-card { display: flex; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+        .portfolio-card.rev { flex-direction: row-reverse; }
+        .port-img { flex: 1; min-height: 280px; }
+        .port-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .port-text { flex: 1.2; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+        .port-text h3 { font-family: 'Cinzel', serif; font-size: 24px; margin-bottom: 6px; }
+
+        /* Rebuilt Clean Contact Layout */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+        .contact-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; margin-bottom: 16px; }
+        .contact-card h4 { font-size: 16px; margin-bottom: 4px; color: #fff; }
+        .contact-card p { font-size: 13px; color: var(--text-muted); }
+        .contact-card .phone { font-weight: 700; margin-top: 8px; display: block; color: var(--accent-gold); }
+        
+        .form-panel { background: var(--bg-card); border: 1px solid var(--border-color); padding: 32px; border-radius: 8px; }
+        .form-group { display: flex; flex-direction: column; margin-bottom: 16px; }
+        .form-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+        .form-group input, .form-group select, .form-group textarea {
+            background: #060913; border: 1px solid var(--border-color); padding: 12px; border-radius: 4px; color: #fff; font-family: inherit;
+        }
+        .form-submit-btn {
+            background: var(--accent-gold); border: none; color: #060913; padding: 14px; width: 100%;
+            font-size: 13px; font-weight: 700; text-transform: uppercase; border-radius: 4px; cursor: pointer;
+        }
+
+        /* Footer Architecture */
+        footer { background: #03050a; padding: 32px 0; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--text-muted); margin-top: 80px; }
+        .footer-layout { display: flex; justify-content: space-between; align-items: center; }
+
+        @media (max-width: 992px) {
+            .nav-container { flex-direction: column; height: auto; padding: 16px 0; gap: 12px; }
+            .home-biz-grid, .contact-grid, .portfolio-card, .portfolio-card.rev, .sector-body { grid-template-columns: 1fr; flex-direction: column; }
+            .gov-grid, .directors-list { grid-template-columns: 1fr; }
+            .footer-layout { flex-direction: column; text-align: center; gap: 16px; }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Shared Top Nav Global Header -->
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">BUKHARI NEXUS <span>PVT LTD</span></a>
-            <div class="nav-links-wrapper">
+        <div class="container nav-container">
+            <a href="#" class="logo" onclick="showTab('home')">BUKHARI NEXUS <span>PVT LTD</span></a>
+            <div class="nav-right">
                 <nav>
-                    <a href="index.html" class="active">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="portfolio.html">Our Portfolio</a>
-                    <a href="contact.html">Contact</a>
+                    <button id="nav-home" class="active-nav" onclick="showTab('home')">Home</button>
+                    <button id="nav-traders" onclick="showTab('traders')">Bukhari Traders</button>
+                    <button id="nav-makkah" onclick="showTab('makkah')">Al Makkah</button>
+                    <button id="nav-pty" onclick="showTab('pty')">Bukhari PTY</button>
+                    <button id="nav-about" onclick="showTab('about')">About Us</button>
+                    <button id="nav-portfolio" onclick="showTab('portfolio')">Our Portfolio</button>
+                    <button id="nav-contact" onclick="showTab('contact')">Contact</button>
                 </nav>
                 <div class="flag-ensemble">
-                    <div class="flag-wrapper" title="Pakistan Operations Node">
-                        <video src="1000206053.mp4" autoplay loop muted playsinline class="waving-flag-video"></video>
-                    </div>
-                    <div class="flag-wrapper" title="Australia Corporate Seat">
-                        <video src="1000206050.mp4" autoplay loop muted playsinline class="waving-flag-video"></video>
-                    </div>
+                    <div class="flag flag-pk" title="Pakistan Core Operations"></div>
+                    <div class="flag flag-au" title="Australia Corporate Seat"></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
-        <div class="container">
-            <span class="hero-pretitle">Enterprise Holdings & Sub-Sector Control</span>
+    <!-- PAGE 1: CORE HOLDINGS HOLDINGS (HOME) -->
+    <main id="view-home" class="container page-view active-view">
+        <section class="hero">
             <h1>Cross-Border Asset Orchestration</h1>
             <p>Bukhari Nexus Pvt Ltd anchors a diversified, multi-jurisdictional corporate framework—directing robust commercial trade origination, regional consumer commerce networks, and international enterprise logistics systems.</p>
-        </div>
-    </section>
+        </section>
 
-    <section class="portfolio-showcase-section">
-        <div class="container">
-            <div class="business-tabs">
-                <button class="tab-trigger active" onclick="switchBusiness(event, 'agri-panel')">Bukhari Traders</button>
-                <button class="tab-trigger" onclick="switchBusiness(event, 'fmcg-panel')">Al Makkah General Store</button>
-                <button class="tab-trigger" onclick="switchBusiness(event, 'chauffeur-panel')">Bukhari PTY LTD</button>
+        <!-- Dynamic Page Route Cards Grid -->
+        <div class="home-biz-grid">
+            <div class="home-card h-traders" onclick="showTab('traders')">
+                <div>
+                    <h3>Bukhari Traders</h3>
+                    <p>Wholesale bulk crop origination, paddy storage engineering, and regional commodity processing pipelines.</p>
+                </div>
+                <span class="action-link">Open Dedicated Page &rarr;</span>
             </div>
 
-            <div class="business-display-box">
-                <!-- Unit 1 -->
-                <div id="agri-panel" class="business-panel active">
-                    <div class="panel-layout">
-                        <div class="panel-text">
-                            <h3>Global Agricultural Sourcing</h3>
-                            <p class="tagline">Wholesale Commodity Pipelines & Sourcing Strategy</p>
-                            <p>Operating under direct control of Bukhari Nexus Pvt Ltd, this division manages high-capacity grain collection, strategic conditioning, and extensive wholesale distributions across critical national hubs.</p>
-                            <ul>
-                                <li>Bulk crop origination and secure storage management networks.</li>
-                                <li>Integrated connections with regional agricultural commission houses.</li>
-                                <li>High-grade processing streams for premium rice and wheat varieties.</li>
-                            </ul>
-                            <a href="portfolio.html" class="panel-action-btn">View Inventory Framework</a>
-                        </div>
-                        <div class="panel-media">
-                            <img src="https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=600&auto=format&fit=crop" alt="Bukhari Traders Trade Grid">
-                        </div>
-                    </div>
+            <div class="home-card h-makkah" onclick="showTab('makkah')">
+                <div>
+                    <h3>Al Makkah General Store</h3>
+                    <p>High-frequency FMCG distribution models and localized consumer supply network tracking channels.</p>
                 </div>
+                <span class="action-link">Open Dedicated Page &rarr;</span>
+            </div>
 
-                <!-- Unit 2 -->
-                <div id="fmcg-panel" class="business-panel">
-                    <div class="panel-layout">
-                        <div class="panel-text">
-                            <h3>FMCG Wholesale & Retail Logistics</h3>
-                            <p class="tagline">Consumer Goods Supply Network</p>
-                            <p>Al Makkah General Store balances the group portfolio with high-turnover consumer retail and local B2B merchant supply routes. Leveraging direct manufacturing accounts, it preserves strong market insulation.</p>
-                            <ul>
-                                <li>Efficient processing for fast-moving product lines.</li>
-                                <li>Direct merchant wholesale delivery models.</li>
-                                <li>Optimized storage configurations to maintain peak freshness.</li>
-                            </ul>
-                            <a href="portfolio.html" class="panel-action-btn">Examine Supply Lines</a>
-                        </div>
-                        <div class="panel-media">
-                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" alt="Al Makkah Logistics Hub">
-                        </div>
-                    </div>
+            <div class="home-card h-pty" onclick="showTab('pty')">
+                <div>
+                    <h3>Bukhari PTY LTD</h3>
+                    <p>Premium fuel-efficient hybrid vehicle assets optimized for urban rideshare operations and driver platform leasing.</p>
                 </div>
+                <span class="action-link">Open Dedicated Page &rarr;</span>
+            </div>
+        </div>
+    </main>
 
-                <!-- Unit 3 -->
-                <div id="chauffeur-panel" class="business-panel">
-                    <div class="panel-layout">
-                        <div class="panel-text">
-                            <h3>Chauffeur & Fleet Management</h3>
-                            <p class="tagline">Bukhari PTY LTD • Executive Corporate Transit</p>
-                            <p>Our international anchor entities control premium vehicle fleets serving corporate and executive transit markets across Australia, matched alongside cross-border logistics lanes and container freight structures.</p>
-                            <ul>
-                                <li>Premium fleet setups designed for executive transportation.</li>
-                                <li>Round-the-clock dispatch coordination across metropolitan hubs.</li>
-                                <li>Vetted, professional drivers focused on safety, security, and absolute privacy.</li>
-                            </ul>
-                            <a href="portfolio.html" class="panel-action-btn">Review Transport Fleet</a>
-                        </div>
-                        <div class="panel-media">
-                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" alt="Bukhari PTY LTD Fleet">
-                        </div>
-                    </div>
+    <!-- PAGE 2: BUKHARI TRADERS (DEDICATED INDEPENDENT SCREEN) -->
+    <main id="view-traders" class="container page-view">
+        <div class="sector-wrapper">
+            <div class="sector-banner bg-traders-banner">
+                <div class="sector-banner-content">
+                    <span class="sector-tagline text-traders">Agricultural Commodity Matrix</span>
+                    <h2>Bukhari Traders</h2>
+                </div>
+            </div>
+            <div class="sector-body">
+                <div class="sector-details">
+                    <p>Operating under direct corporate alignment of Bukhari Nexus Pvt Ltd, this branch coordinates high-capacity grain harvesting, strategic storage conditioning, and widespread commercial distribution across national agricultural pathways.</p>
+                    <ul class="sector-details-traders">
+                        <li>Bulk crop collection and storage networks linked to primary collection points.</li>
+                        <li>Direct coordination with regional agricultural trade exchanges.</li>
+                        <li>Advanced sorting arrays setup for premium long-grain rice and wheat milling varieties.</li>
+                    </ul>
+                </div>
+                <div class="sector-side-img">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=600&auto=format&fit=crop" alt="Bukhari Traders Processing Hub">
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
+    <!-- PAGE 3: AL MAKKAH GENERAL STORE (DEDICATED INDEPENDENT SCREEN) -->
+    <main id="view-makkah" class="container page-view">
+        <div class="sector-wrapper">
+            <div class="sector-banner bg-makkah-banner">
+                <div class="sector-banner-content">
+                    <span class="sector-tagline text-makkah">FMCG & Logistics Operation</span>
+                    <h2>Al Makkah General Store</h2>
+                </div>
+            </div>
+            <div class="sector-body">
+                <div class="sector-details">
+                    <p>Al Makkah General Store balances the group portfolio with high-turnover consumer retail and local B2B merchant supply routes. Leveraging direct manufacturing accounts, it preserves strong market insulation.</p>
+                    <ul class="sector-details-makkah">
+                        <li>High-capacity procurement structures tailored for fast-moving goods lines.</li>
+                        <li>Direct business-to-business inventory balancing paths.</li>
+                        <li>Optimized inventory storage to preserve peak freshness levels across variables.</li>
+                    </ul>
+                </div>
+                <div class="sector-side-img">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" alt="Al Makkah General Store Framework">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 4: BUKHARI PTY LTD (DEDICATED INDEPENDENT SCREEN) -->
+    <main id="view-pty" class="container page-view">
+        <div class="sector-wrapper">
+            <div class="sector-banner bg-pty-banner">
+                <div class="sector-banner-content">
+                    <span class="sector-tagline text-pty">Rideshare Asset Systems</span>
+                    <h2>Bukhari PTY LTD</h2>
+                </div>
+            </div>
+            <div class="sector-body">
+                <div class="sector-details">
+                    <p>Bukhari PTY LTD provides clean, reliable, and fuel-efficient vehicles tailored explicitly for rideshare professionals across major urban centers. We offer flexible rental structures to maximize driver earnings and fleet runtime.</p>
+                    <ul class="sector-details-pty">
+                        <li>Premium fleet of pristine Toyota Camry hybrid models optimized for high-volume urban driving.</li>
+                        <li>Comprehensive rideshare insurance matrices and continuous mechanical fleet oversight.</li>
+                        <li>Flexible leasing agreements with minimal deposit setups to ensure smooth on-road deployment.</li>
+                    </ul>
+                </div>
+                <div class="sector-side-img">
+                    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=600&auto=format&fit=crop" alt="Bukhari PTY LTD Rideshare Selection">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 5: EXECUTIVE GOVERNANCE (ABOUT) -->
+    <main id="view-about" class="container page-view">
+        <section class="hero">
+            <h1>Corporate Governance</h1>
+            <p>The central leadership structure directing Bukhari Nexus Pvt Ltd holdings and multi-jurisdictional assets.</p>
+        </section>
+
+        <div class="gov-grid">
+            <div class="gov-card">
+                <h3>Dual-Jurisdiction Architecture</h3>
+                <p>Bukhari Nexus Pvt Ltd operates under a unified global governance model to manage a robust network of agricultural, retail, and transportation operations. Our framework features fully registered corporate bodies across multiple borders—operating through <strong>Bukhari PTY LTD</strong> inside Australia and <strong>Bukhari Nexus Pvt Ltd</strong> inside Pakistan.</p>
+            </div>
+            <div class="gov-card">
+                <h3>Strategic Blueprint</h3>
+                <p>By consolidating oversight across our dual-registered entities, our board deploys unified corporate capital structures, synchronized international risk management, and stable transit channels to optimize distribution pathways connecting South Asia to Oceania.</p>
+            </div>
+        </div>
+
+        <h2 style="font-family:'Cinzel',serif; font-size:26px; text-align:center; margin-bottom:24px;">Board of Directors</h2>
+        <div class="directors-list">
+            <div class="dir-card">
+                <h4>Haseeb Sajjad</h4>
+                <span class="role">Group Managing Director & Founder</span>
+                <p>Directs central holding strategies, international transport networks, and corporate development for our dual-registered structures.</p>
+            </div>
+            <div class="dir-card">
+                <h4>Sajjad Hussain</h4>
+                <span class="role">Director of Commodities & Origination</span>
+                <p>Directs the complete asset infrastructure and operational framework of Bukhari Traders.</p>
+            </div>
+            <div class="dir-card">
+                <h4>Zulqur Nain Haider</h4>
+                <span class="role">Director of FMCG & Retail Logistics</span>
+                <p>Directs the absolute day-to-day supply networks and commercial purchasing portfolios for Al Makkah General Store.</p>
+            </div>
+            <div class="dir-card">
+                <h4>Sohaib Sajjad</h4>
+                <span class="role">Executive Director of Operations</span>
+                <p>Oversees Australian fleet logistics, regulatory compliance matrices, and vehicle management for Bukhari PTY LTD.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 6: GLOBAL PORTFOLIO -->
+    <main id="view-portfolio" class="container page-view">
+        <section class="hero">
+            <h1>Our Global Portfolio</h1>
+            <p>Strategic asset investments and corporate structural layouts overseen by the core holdco matrix.</p>
+        </section>
+
+        <div class="portfolio-row">
+            <div class="portfolio-card" onclick="showTab('traders')" style="cursor:pointer;">
+                <div class="port-img"><img src="https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=500&auto=format&fit=crop" alt="Bukhari Traders Portfolio Asset"></div>
+                <div class="port-text">
+                    <h3 class="text-traders">Bukhari Traders</h3>
+                    <p style="font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">Agricultural Logistics</p>
+                    <p>Bulk farm sourcing networks, automated seed/grain conditioning plants, and wholesale distribution infrastructure loops.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card rev" onclick="showTab('makkah')" style="cursor:pointer;">
+                <div class="port-img"><img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=500&auto=format&fit=crop" alt="Al Makkah Portfolio Asset"></div>
+                <div class="port-text">
+                    <h3 class="text-makkah">Al Makkah General Store</h3>
+                    <p style="font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">FMCG Wholesale & Retail</p>
+                    <p>Direct consumer access, essential provisions supply management networks, and local commercial enterprise routing assets.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="showTab('pty')" style="cursor:pointer;">
+                <div class="port-img"><img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=500&auto=format&fit=crop" alt="Bukhari PTY LTD Portfolio Asset"></div>
+                <div class="port-text">
+                    <h3 class="text-pty">Bukhari PTY LTD</h3>
+                    <p style="font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:8px;">Rideshare Car Rentals</p>
+                    <p>Providing high-efficiency hybrid vehicles customized specifically to empower commercial drivers across major metropolitan networks.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PAGE 7: CONTACT INTEGRATION DESK -->
+    <main id="view-contact" class="container page-view">
+        <section class="hero">
+            <h1>Global Communications Desk</h1>
+            <p>Direct communication routes into our executive registry networks and asset coordinators.</p>
+        </section>
+
+        <div class="contact-grid">
+            <div>
+                <div class="contact-card">
+                    <h4 style="color:var(--accent-gold);">Primary Corporate Hub</h4>
+                    <p>Secure Electronic Inquiries: <strong>bukharinexus@gmail.com</strong></p>
+                </div>
+                <div class="contact-card">
+                    <h4>Bukhari Traders (Global HQ)</h4>
+                    <p>Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Tehsil Phalia, District Mandi Bahauddin, Punjab, Pakistan</p>
+                    <span class="phone">P: +92 347 6051990</span>
+                </div>
+                <div class="contact-card">
+                    <h4>Bukhari PTY LTD (Australia)</h4>
+                    <p>83 Spring Farm Road, Kingston, TAS 7050, Australia</p>
+                    <span class="phone">P: +61 474 024 174</span>
+                </div>
+                <div class="contact-card">
+                    <h4>Al Makkah General Store</h4>
+                    <p>Gujrat Sargodha Road, Pahrianwali, Tehsil Phalia, District Mandi Bahauddin, Punjab, Pakistan</p>
+                </div>
+            </div>
+
+            <div class="form-panel">
+                <form onsubmit="event.preventDefault(); alert('Transmission verified successfully.');">
+                    <div class="form-group">
+                        <label>Legal Identity Name</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Secure Email Endpoint</label>
+                        <input type="email" placeholder="j.doe@enterprise.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Target Sub-Division Sector</label>
+                        <select required>
+                            <option value="holdings">Bukhari Nexus Pvt Ltd (Holdings)</option>
+                            <option value="traders">Bukhari Traders (Agri Core)</option>
+                            <option value="makkah">Al Makkah General Store (FMCG)</option>
+                            <option value="pty">Bukhari PTY LTD (Rideshare Rental Drive)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Communication Parameters</label>
+                        <textarea rows="5" placeholder="Outline specific fleet deployment or sourcing metrics..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn">Authorize Transmission</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Unified Corporate Footer Layout -->
     <footer>
-        <div class="footer-container">
+        <div class="container footer-layout">
             <p>&copy; 2026 Bukhari Nexus Pvt Ltd. All Rights Reserved. Private & Confidential.</p>
-            <div class="footer-address">
-                <strong>Bukhari Nexus Pvt Ltd | Global HQ</strong><br>
-                Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Tehsil Phalia, Pakistan
+            <div style="text-align: right;">
+                <strong>Bukhari Nexus Pvt Ltd | Corporate Hub</strong><br>
+                <span style="font-size:11px; color:var(--text-muted);">Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Pakistan</span>
             </div>
         </div>
     </footer>
 
+    <!-- Tab View Execution Management Script -->
     <script>
-        function switchBusiness(e, id) {
-            document.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.business-panel').forEach(p => p.classList.remove('active'));
-            e.currentTarget.classList.add('active');
-            document.getElementById(id).classList.add('active');
+        function showTab(tabId) {
+            // Hide all sub-views 
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active-view');
+            });
+            // Reveal chosen independent section
+            document.getElementById('view-' + tabId).classList.add('active-view');
+
+            // Reset dynamic link states inside nav menu
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.className = '';
+            });
+
+            // Set precise thematic highlighting tracking tag color elements
+            const activeBtn = document.getElementById('nav-' + tabId);
+            if (activeBtn) {
+                if (tabId === 'traders') activeBtn.classList.add('active-traders');
+                else if (tabId === 'makkah') activeBtn.classList.add('active-makkah');
+                else activeBtn.classList.add('active-nav');
+            }
+            
+            window.scrollTo(0, 0);
         }
     </script>
 </body>
