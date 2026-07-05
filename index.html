@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
-           GLOBAL REINFORCED CORE ARCHITECTURE (PREVENTS OVERLAPS)
+           GLOBAL REINFORCED CORE ARCHITECTURE
            ========================================================================== */
         :root {
             --bg-deep: #060913;
@@ -92,7 +92,7 @@
         .page-view { display: none; }
         .page-view.active-view { display: block; }
 
-        /* Global Structural Row System to Ensure Dynamic Height Scaling */
+        /* Global Structural Row System */
         .scroller-layout {
             position: relative;
             height: auto !important;
@@ -150,7 +150,6 @@
         }
         .hub-card:hover { transform: translateY(-5px); }
 
-        /* Specific Visual Indicator Hover Handlers */
         .hc-traders:hover { border-color: var(--traders-green); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12); }
         .hc-makkah:hover { border-color: var(--makkah-blue); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.12); }
         .hc-pty:hover { border-color: var(--pty-gold); box-shadow: 0 10px 30px rgba(251, 191, 36, 0.12); }
@@ -167,10 +166,11 @@
         .hc-pty .hub-btn { background: rgba(251, 191, 36, 0.1); color: var(--pty-gold); border-color: rgba(251, 191, 36, 0.2); }
 
         /* ==========================================================================
-           COMPLEX REUSABLE UI ELEMENTS (STATS, BADGES, CARDS)
+           COMPLEX REUSABLE UI ELEMENTS
            ========================================================================== */
         .badge-pill { display: inline-flex; background: rgba(16,185,129,0.15); color: var(--traders-green); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
         .theme-makkah .badge-pill { background: rgba(59,130,246,0.15); color: var(--makkah-blue); }
+        .theme-pty .badge-pill { background: rgba(251,191,36,0.15); color: var(--pty-gold); }
         
         .stats-row { display: flex; gap: 40px; margin: 30px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 24px 0; }
         .stat-item h4 { font-size: 32px; color: #fff; font-weight: 700; font-family: 'Cinzel', serif; }
@@ -181,6 +181,7 @@
         .btn-primary-action:hover { background: var(--traders-green-hover); }
         .theme-makkah .btn-primary-action { background: var(--makkah-blue); color: #ffffff; }
         .theme-makkah .btn-primary-action:hover { background: var(--makkah-blue-hover); }
+        .theme-pty .btn-primary-action { background: var(--pty-gold); color: #060913; }
         
         .btn-secondary-action { border: 1px solid var(--border-color); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; background: rgba(255,255,255,0.02); }
 
@@ -191,7 +192,7 @@
         .product-lens-meta h4 { font-family: 'Cinzel', serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
         .product-lens-meta p { color: var(--text-muted); font-size: 14px; }
 
-        .exec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 20px; }
+        .exec-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 24px; margin-top: 20px; }
         .exec-profile-card { background: #111a2e; border: 1px solid var(--border-color); border-radius: 8px; padding: 32px; display: flex; gap: 24px; align-items: center; }
         .exec-avatar { width: 100px; height: 100px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--border-color); flex-shrink: 0; }
         .exec-info h4 { font-family: 'Cinzel', serif; font-size: 18px; color: #fff; }
@@ -207,34 +208,16 @@
         .contact-channel-item { display: flex; gap: 16px; margin-bottom: 24px; }
         .contact-channel-icon { width: 44px; height: 44px; background: rgba(16,185,129,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--traders-green); font-weight: bold; flex-shrink: 0; }
         .theme-makkah .contact-channel-icon { background: rgba(59,130,246,0.1); color: var(--makkah-blue); }
+        .theme-pty .contact-channel-icon { background: rgba(251,191,36,0.1); color: var(--pty-gold); }
         .contact-channel-text h5 { color: #fff; font-size: 15px; }
         .contact-channel-text p { color: var(--text-muted); font-size: 14px; margin-top: 2px; }
 
         /* ==========================================================================
-           VIEW 2: DEDICATED REAL-CONTENT BUKHARI TRADERS SUITE (GREEN EMERALD THEME)
+           VIEW 2: BUKHARI TRADERS SUITE (GREEN EMERALD THEME)
            ========================================================================== */
         .theme-traders { background: linear-gradient(180deg, #05140f 0%, #060913 100%); }
         .theme-traders .accent-color { color: var(--traders-green); }
         .theme-traders .block-card { border-left: 4px solid var(--traders-green); }
-
-        /* Live Market Ticker Interface Panel */
-        .ticker-frame { background: #0b1120; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; margin-top: 24px; }
-        .ticker-header { background: #0a3d2c; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
-        .ticker-header h4 { font-family: 'Cinzel', serif; color: #fff; font-size: 16px; }
-        .ticker-tabs-strip { display: flex; background: #131b2e; padding: 6px; gap: 6px; }
-        .ticker-tab-btn { background: transparent; border: none; color: var(--text-muted); padding: 10px 20px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 4px; }
-        .ticker-tab-btn.tab-active { background: rgba(16,185,129,0.15); color: var(--traders-green); }
-
-        /* Internal Custom Calendar Rendering Grids */
-        .calendar-card { background: #111a2e; padding: 24px; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 20px; }
-        .months-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; margin: 16px 0; }
-        .month-box { text-align: center; padding: 10px 4px; font-size: 11px; font-weight: 600; border-radius: 4px; background: #172237; color: var(--text-muted); }
-        .month-box.state-p { background: #1e3a2f; color: var(--traders-green); border: 1px solid rgba(16,185,129,0.3); }
-        .month-box.state-g { background: #064e3b; color: #34d399; }
-        .month-box.state-h { background: #047857; color: #ffffff; }
-        
-        .legend-row { display: flex; gap: 16px; font-size: 12px; color: var(--text-muted); margin-bottom: 20px; }
-        .legend-indicator { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
 
         /* ==========================================================================
            VIEW 3: AL MAKKAH GENERAL STORE SPACE (BLUE RETAIL CORES)
@@ -244,11 +227,34 @@
         .theme-makkah .block-card { border-left: 4px solid var(--makkah-blue); }
 
         /* ==========================================================================
-           VIEW 4: BUKHARI PTY LTD SPACE (GOLD PREMIUM AUTOMOTIVE CORES)
+           VIEW 4: BUKHARI PTY LTD SPACE (PREMIUM CAR HIRE INSPIRED METRIC THEME)
            ========================================================================== */
-        .theme-pty { background: linear-gradient(180deg, #1c1809 0%, #060913 100%); }
+        /* UI structure utilizes colors inspired by 1000206211.jpg, 1000206213.jpg, 1000206215.jpg, 1000206217.jpg, 1000206219.jpg */
+        .theme-pty { background: linear-gradient(180deg, #121824 0%, #060913 100%); }
         .theme-pty .accent-color { color: var(--pty-gold); }
         .theme-pty .block-card { border-left: 4px solid var(--pty-gold); }
+        
+        .pty-hero-search {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 24px;
+            border: 1px solid #334155;
+        }
+        .pty-search-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .pty-input {
+            background: #0f172a;
+            border: 1px solid #475569;
+            padding: 12px;
+            border-radius: 6px;
+            color: #fff;
+            width: 100%;
+        }
 
         /* Footer System */
         footer { background: #03050a; padding: 40px 0; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--text-muted); text-align: center; }
@@ -256,9 +262,7 @@
         /* Responsive Mobile Conversions */
         @media (max-width: 992px) {
             .nav-container { flex-direction: column; height: auto; padding: 20px 0; gap: 16px; }
-            .hub-grid, .product-display-showcase, .exec-grid, .value-list, .contact-layout-split { grid-template-columns: 1fr; }
-            .months-grid { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-            .exec-profile-card { flex-direction: column; text-align: center; }
+            .hub-grid, .product-display-showcase, .exec-grid, .value-list, .contact-layout-split, .pty-search-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -283,26 +287,26 @@
     <main id="view-home" class="container page-view active-view">
         <section class="hub-hero">
             <h1>Corporate Matrix Desk</h1>
-            <p>Select any independent corporate entity segment below to open its dedicated long-form layout workspace and unique color palette architecture.</p>
+            <p>Select an independent corporate entity segment below to open its dedicated layout workspace and signature aesthetic configuration.</p>
         </section>
 
         <div class="hub-grid">
             <!-- Bukhari Traders Trigger Block -->
             <div class="hub-card hc-traders" onclick="togglePortfolioView('traders')">
                 <h2>Bukhari Traders</h2>
-                <p>Pakistan's leading grain commission agents specializing in wholesale wheat, rice, corn, barley, and cotton trading operations.</p>
+                <p>Established grain commission agents specializing in regional wholesale wheat, paddy, and rice agricultural commodity channels.</p>
                 <div class="hub-btn">Launch Trading Desk &rarr;</div>
             </div>
             <!-- Al Makkah General Store Trigger Block -->
             <div class="hub-card hc-makkah" onclick="togglePortfolioView('makkah')">
                 <h2>Al Makkah Store</h2>
-                <p>High-turnover consumer infrastructure distribution pipelines, retail operations, and localized inventory balancing channels.</p>
+                <p>Consumer distribution general merchandise storefront handling household supplies, essentials, and kitchen staples.</p>
                 <div class="hub-btn">Launch FMCG Suite &rarr;</div>
             </div>
             <!-- Bukhari PTY LTD Trigger Block -->
             <div class="hub-card hc-pty" onclick="togglePortfolioView('pty')">
                 <h2>Bukhari PTY LTD</h2>
-                <p>Premium fuel-efficient automotive fleet leasing architectures specialized for urban network operators and driver leasing.</p>
+                <p>Premium modern vehicle hire corporate operations workspace layout inspired by high-end transit fleet systems.</p>
                 <div class="hub-btn">Launch Mobility Suite &rarr;</div>
             </div>
         </div>
@@ -315,148 +319,88 @@
         <div class="container scroller-layout">
             
             <section class="block-card">
-                <span class="badge-pill">Trusted Since 1995</span>
-                <h2>Pakistan's Leading <span class="accent-color">Grain Commission Agents</span></h2>
-                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">Your trusted partner in grain market operations. Connecting farmers and buyers with integrity and excellence.</p>
+                <span class="badge-pill">Established Since 2007</span>
+                <h2>Premium Grain <span class="accent-color">Commission Agents</span></h2>
+                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">Connecting agricultural producers and regional wholesale trade channels with integrity and precision across specialized grain assets.</p>
                 
                 <div class="stats-row">
                     <div class="stat-item">
-                        <h4>1200+</h4>
-                        <p>Happy Clients</p>
+                        <h4>2007</h4>
+                        <p>Launch Horizon</p>
                     </div>
                     <div class="stat-item">
-                        <h4>25+</h4>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4>100%</h4>
-                        <p>Licensed & Insured</p>
+                        <h4>3 Core</h4>
+                        <p>Focused Commodities</p>
                     </div>
                 </div>
 
                 <div class="action-button-stack">
-                    <a href="#market-desk" class="btn-primary-action">📞 Get Live Prices Now</a>
-                    <a href="#crop-calendar-desk" class="btn-secondary-action">📊 View Market Analysis</a>
+                    <a href="tel:+923476051990" class="btn-primary-action">📞 Call Trade Desk</a>
+                    <a href="#traders-commodities" class="btn-secondary-action">🌾 View Commodities</a>
                 </div>
             </section>
 
-            <section id="market-desk" class="block-card">
-                <h2>Live <span class="accent-color">Market Prices</span></h2>
-                <p>Stay ahead with real-time grain prices across major Pakistani markets. Updated every 15 minutes for accurate trading decisions.</p>
-                
-                <div class="ticker-frame">
-                    <div class="ticker-header">
-                        <h4>Pakistan Market Prices</h4>
-                        <span style="font-size: 12px; color: #a7f3d0; font-weight: 500;">Last updated: 23:00 (Auto Refresh Active)</span>
-                    </div>
-                    <div class="ticker-tabs-strip">
-                        <button class="ticker-tab-btn tab-active" onclick="toggleTickerTab(event, 'wheat')">Wheat</button>
-                        <button class="ticker-tab-btn" onclick="toggleTickerTab(event, 'rice')">Rice</button>
-                        <button class="ticker-tab-btn" onclick="toggleTickerTab(event, 'corn')">Corn</button>
-                        <button class="ticker-tab-btn" onclick="toggleTickerTab(event, 'barley')">Barley</button>
-                        <button class="ticker-tab-btn" onclick="toggleTickerTab(event, 'cotton')">Cotton</button>
-                    </div>
-                    <div style="padding: 24px; background: #111a2e;" id="ticker-output-box">
-                        <p style="color: #fff; font-size: 15px; font-weight: 500;">Premium Milling Grade Wheat Asset Stream:</p>
-                        <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong class="accent-color" style="font-size: 18px; color: #fff;">Rs. 4,200</strong> per 40 KG Bag (Rahim Yar Khan Hub Markets).</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="block-card">
-                <h2>Monitored <span class="accent-color">Crop Inventory</span></h2>
-                <p>We source, grade, and supply premier regional commodities under tight quality controls.</p>
+            <section id="traders-commodities" class="block-card">
+                <h2>Core Focused <span class="accent-color">Commodities</span></h2>
+                <p>We strictly dedicate our wholesale processing, grading, and clearing expertise to three foundational regional staples.</p>
                 
                 <div class="product-display-showcase">
+                    <!-- Commodity 1 -->
                     <div class="product-lens-card">
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
-                            <h4>Quality Barley</h4>
-                            <p>Premium barley variants cultivated for bulk brewing and verified organic nutritional food product manufacturing pipelines.</p>
+                            <h4>Wheat</h4>
+                            <p>High-grade commercial milling wheat sourced directly from premier agricultural crop exchanges.</p>
                         </div>
                     </div>
+                    <!-- Commodity 2 -->
                     <div class="product-lens-card">
-                        <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1594242691515-b77da3f9e9cf?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1536304997881-a372c179924b?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
-                            <h4>Quality Cotton</h4>
-                            <p>Long-staple white premium cotton output harvested from established Punjab and specialized Sindh growing sectors.</p>
+                            <h4>Paddy</h4>
+                            <p>Carefully managed field-moisture paddy stock optimized for professional milling yield outcomes.</p>
                         </div>
                     </div>
+                    <!-- Commodity 3 -->
                     <div class="product-lens-card">
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
-                            <h4>Basmati Rice</h4>
-                            <p>Highly aromatic, long-grain export standard Basmati harvested directly from pure irrigated river valley basins.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="crop-calendar-desk" class="block-card">
-                <h2>Agricultural <span class="accent-color">Schedules Matrix</span></h2>
-                <p>Track optimal cultivation phases and harvest execution windows managed across our regional collection networks.</p>
-                
-                <div class="legend-row" style="margin-top: 16px;">
-                    <div><span class="legend-indicator" style="background: #1e3a2f; border: 1px solid rgba(16,185,129,0.3);"></span>P = Planting</div>
-                    <div><span class="legend-indicator" style="background: #064e3b;"></span>G = Growing</div>
-                    <div><span class="legend-indicator" style="background: #047857;"></span>H = Harvesting</div>
-                </div>
-
-                <div class="calendar-card">
-                    <h4>Wheat Operational Lifecycle</h4>
-                    <p style="font-size: 14px; margin-top: 4px;">Typically sown during mid-autumn periods and gathered close to the tail end of spring cycles.</p>
-                    <div class="months-grid">
-                        <div class="month-box state-g">Jan (G)</div><div class="month-box state-g">Feb (G)</div><div class="month-box state-g">Mar (G)</div>
-                        <div class="month-box state-h">Apr (H)</div><div class="month-box state-h">May (H)</div><div class="month-box">Jun</div>
-                        <div class="month-box">Jul</div><div class="month-box">Aug</div><div class="month-box">Sep</div>
-                        <div class="month-box state-p">Oct (P)</div><div class="month-box state-p">Nov (P)</div><div class="month-box state-p">Dec (P)</div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="block-card">
-                <h2>Meet Our <span class="accent-color">Leadership Team</span></h2>
-                <div class="exec-grid">
-                    <div class="exec-profile-card">
-                        <div class="exec-avatar" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop');"></div>
-                        <div class="exec-info">
-                            <h4>Muhammad Bukhari</h4>
-                            <span>Founder & CEO</span>
-                            <p>Over 25 years of specialized field presence, building reliable farmer relationships and accurate market metrics across Pakistan.</p>
+                            <h4>Rice</h4>
+                            <p>Premium processed long-grain rice selections structured for wholesale distribution pipelines.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="block-card">
-                <h2>Why Choose <span class="accent-color">Bukhari Traders?</span></h2>
+                <h2>Operational <span class="accent-color">Values</span></h2>
                 <div class="value-list" style="margin-top: 24px;">
                     <div class="value-node">
-                        <h4>⭐ Trusted Expertise</h4>
-                        <p>Over 25 years of consistent premium clearing history across major internal Pakistani crop storage exchanges.</p>
+                        <h4>🌾 Targeted Supply Focus</h4>
+                        <p>Specialization ensures thorough quality grading, optimized weight validation, and clean supply handling metrics for our three core grains.</p>
                     </div>
                     <div class="value-node">
-                        <h4>📈 Market Leadership</h4>
-                        <p>Highly responsive commission operations connected directly to key producers and wholesale distribution lines.</p>
+                        <h4>🤝 Wholesale Integrity</h4>
+                        <p>Honest clearing processes established on nearly two decades of consistent local counterparty trust.</p>
                     </div>
                 </div>
             </section>
 
             <section class="block-card">
-                <h2>Ready to <span class="accent-color">Start Trading?</span></h2>
+                <h2>Connect with <span class="accent-color">Bukhari Traders</span></h2>
                 <div class="contact-layout-split">
                     <div>
                         <div class="contact-channel-item">
                             <div class="contact-channel-icon">P</div>
                             <div class="contact-channel-text">
-                                <h5>Phone Line Contact</h5>
-                                <p>+92 300 123 4567</p>
+                                <h5>Direct Trade Line</h5>
+                                <p>+92 347 605 1990</p>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <input type="text" placeholder="Your Name" style="background: #172237; border: 1px solid var(--border-color); padding: 14px; border-radius: 6px; color: #fff; font-family: inherit;">
-                        <button type="button" class="btn-primary-action" style="cursor: pointer;">Send Secure Message</button>
+                    <div style="background: rgba(255,255,255,0.02); padding: 24px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: center; text-align: center;">
+                        <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px;">Contact our specialized commission desk for rapid wholesale order logistics.</p>
+                        <a href="tel:+923476051990" class="btn-primary-action" style="text-align: center; display: block;">Call Brokerage Now</a>
                     </div>
                 </div>
             </section>
@@ -469,156 +413,130 @@
     <main id="view-makkah" class="page-view theme-makkah">
         <div class="container scroller-layout">
             
-            <!-- Section 1: Hero Context Panel -->
             <section class="block-card">
-                <span class="badge-pill">Established Since 2008</span>
-                <h2>Everything you need — <span class="accent-color">All in one place</span></h2>
-                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">From daily essentials to household favorites, Al Makkah (operated in partnership with Naveed General Store) carries a wide range of trusted products at fair prices.</p>
+                <span class="badge-pill">Established Since 2020</span>
+                <h2>Al Makkah <span class="accent-color">General Store</span></h2>
+                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">A reliable hub providing household staples, consumer essentials, and reliable daily retail items to the community.</p>
                 
                 <div class="stats-row">
                     <div class="stat-item">
-                        <h4>4.8 ★</h4>
-                        <p>Rating on Google</p>
+                        <h4>2020</h4>
+                        <p>Establishment Year</p>
                     </div>
                     <div class="stat-item">
-                        <h4>18 Yrs</h4>
-                        <p>Community Trust</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4>100%</h4>
-                        <p>Customer Satisfaction</p>
+                        <h4>6:30 AM - 9:00 PM</h4>
+                        <p>Daily Operations</p>
                     </div>
                 </div>
 
                 <div class="action-button-stack">
-                    <a href="tel:03045656784" class="btn-primary-action">📞 Call Now: 0304-5656784</a>
-                    <a href="#makkah-products" class="btn-secondary-action">🛒 Browse Staples</a>
+                    <a href="tel:+923474888906" class="btn-primary-action">📞 Call Store Desk</a>
+                    <a href="#makkah-inventory" class="btn-secondary-action">🛒 View Categories</a>
                 </div>
             </section>
 
-            <!-- Section 2: Why Choose Us -->
-            <section class="block-card">
-                <h2>Why Choose <span class="accent-color">Al Makkah Store?</span></h2>
-                <p>Serving the local community with dedication, honesty, and a commitment to quality daily items.</p>
-                
-                <div class="value-list" style="margin-top: 24px;">
-                    <div class="value-node">
-                        <h4>🛒 Convenient & Complete</h4>
-                        <p>From fresh food supplies to household cleaning items, find your kitchen necessities fully stocked in a single stop.</p>
-                    </div>
-                    <div class="value-node">
-                        <h4>🤝 Reliable & Honest Prices</h4>
-                        <p>Built upon a strict baseline of transparency and community care, offering standard premium goods at fair, affordable prices.</p>
-                    </div>
-                    <div class="value-node">
-                        <h4>⭐ Top Rated Service</h4>
-                        <p>Proudly verified by the local community with a stellar 4.8 average rating on Google for helpful and friendly customer assistance.</p>
-                    </div>
-                    <div class="value-node">
-                        <h4>🏡 Deep Local Integration</h4>
-                        <p>A trusted, family-run retail presence dedicated specifically to servicing household consumers across Kharian.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 3: Product Inventory Showcase -->
-            <section id="makkah-products" class="block-card">
-                <h2>Products You Can <span class="accent-color">Count On</span></h2>
-                <p>We monitor and maintain premium stock lines across our consumer supply pipelines.</p>
+            <section id="makkah-inventory" class="block-card">
+                <h2>Product <span class="accent-color">Categories</span></h2>
+                <p>Stocking comprehensive selections across core everyday consumer fields.</p>
                 
                 <div class="product-display-showcase">
-                    <!-- Product 1 -->
                     <div class="product-lens-card">
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
-                            <h4>Groceries & Food Items</h4>
-                            <p>From fresh daily table staples to packaged consumer items, keeping your kitchen full and your family satisfied.</p>
+                            <h4>Groceries & Food Supplies</h4>
+                            <p>Daily table necessities, packaged items, and cooking ingredients kept fresh and fully supplied.</p>
                         </div>
                     </div>
-                    <!-- Product 2 -->
                     <div class="product-lens-card">
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
-                            <h4>Cleaning Supplies</h4>
-                            <p>Effective cleaning liquids, detergents, mops, and everyday brushes to maintain a tidy, hygienic household environment.</p>
+                            <h4>Household Cleaning</h4>
+                            <p>Effective detergents, cleaning formulas, soaps, and home sanitation essentials.</p>
                         </div>
                     </div>
-                    <!-- Product 3 -->
                     <div class="product-lens-card">
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
                             <h4>Spices & Kitchen Staples</h4>
-                            <p>Bring premium flavor to meals with our extensive range of spices, rice, lentils, oils, salt, sugar, and flour packages.</p>
+                            <p>Premium flavor profiles, fine flours, grains, and seasoning assortments for home cooking.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 4: Leadership Profile -->
             <section class="block-card">
-                <h2>Our <span class="accent-color">Founder's Story</span></h2>
+                <h2>Operations Management</h2>
                 <div class="exec-grid">
                     <div class="exec-profile-card">
-                        <div class="exec-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop');"></div>
+                        <div class="exec-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop');"></div>
                         <div class="exec-info">
-                            <h4>Muhammad Naveed</h4>
-                            <span>Founder & Owner</span>
-                            <p>With a passion for serving the community and a commitment to honesty and quality, Muhammad Naveed founded the general retail operations in 2008. What started as a small shop has now transformed into a reliable brand name across Kharian.</p>
+                            <h4>Zulqurnain Haider</h4>
+                            <span>Operations Director</span>
+                            <p>Managing day-to-day inventory pipelines, vendor coordination, and high-standard product sourcing accuracy for local consumers.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Section 5: Operation Hours & Contact Routing Split -->
             <section class="block-card">
-                <h2>Ready to Shop with <span class="accent-color">Confidence?</span></h2>
-                <p>Visit us today for quality products, fair prices, and friendly service—all in one place!</p>
-                
+                <h2>Outlet Information & <span class="accent-color">Contact Details</span></h2>
                 <div class="contact-layout-split">
                     <div>
                         <div class="contact-channel-item">
-                            <div class="contact-channel-icon">H</div>
+                            <div class="contact-channel-icon">🕒</div>
                             <div class="contact-channel-text">
                                 <h5>Operating Hours</h5>
-                                <p>Monday to Saturday — 9:00 AM to 9:00 PM</p>
+                                <p>Open Daily: 6:30 AM to 9:00 PM</p>
                             </div>
                         </div>
                         <div class="contact-channel-item">
-                            <div class="contact-channel-icon">A</div>
+                            <div class="contact-channel-icon">📍</div>
                             <div class="contact-channel-text">
-                                <h5>Retail Outlet Address</h5>
-                                <p>Main Bazar, Kharian, Punjab, Pakistan</p>
+                                <h5>Address</h5>
+                                <p>Al Makkah General Store, Gujrat Sargodha Road, Pahranwali, Pakistan</p>
                             </div>
                         </div>
                         <div class="contact-channel-item">
-                            <div class="contact-channel-icon">P</div>
+                            <div class="contact-channel-icon">📞</div>
                             <div class="contact-channel-text">
-                                <h5>Direct Phone Link</h5>
-                                <p>0304-5656784</p>
+                                <h5>Phone Connection</h5>
+                                <p>+92 347 488 8906</p>
                             </div>
                         </div>
                     </div>
                     <div style="background: rgba(255,255,255,0.02); padding: 32px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: center; text-align: center;">
-                        <h4 style="font-family:'Cinzel', serif; color:#fff; margin-bottom:12px;">Need Home Delivery or Bulk Booking?</h4>
-                        <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">Get in touch directly with our support desk via phone for fast coordination.</p>
-                        <a href="tel:03045656784" class="btn-primary-action" style="text-align: center; display: block;">Call Outlet Desk Now</a>
+                        <h4 style="font-family:'Cinzel', serif; color:#fff; margin-bottom:12px;">Stock Inquiries?</h4>
+                        <p style="color:var(--text-muted); font-size:14px; margin-bottom:20px;">Connect directly via our standard mobile terminal link for current item availability details.</p>
+                        <a href="tel:+923474888906" class="btn-primary-action" style="text-align: center; display: block;">Call Store Now</a>
                     </div>
                 </div>
             </section>
-
         </div>
     </main>
 
     <!-- ==========================================================================
-       PORTFOLIO VIEW 4: BUKHARI PTY LTD SPACE (GOLD PREMIUM AUTOMOTIVE CORES)
+       PORTFOLIO VIEW 4: BUKHARI PTY LTD SPACE (PREMIUM INTERFACE PALETTE THEME)
        ========================================================================== -->
     <main id="view-pty" class="page-view theme-pty">
         <div class="container scroller-layout">
             <section class="block-card">
+                <span class="badge-pill">Premium Mobility Layout</span>
                 <h2>Bukhari <span class="accent-color">PTY LTD</span></h2>
-                <p>Welcome to the premium fleet operations desk. The Australian transit asset matrices, Toyota Hybrid vehicle leasing schedules, and operator terms configurations are loading here.</p>
-                <div style="background: rgba(251, 191, 36, 0.1); border: 1px dashed var(--pty-gold); padding: 24px; border-radius: 8px; margin-top: 20px; text-align: center; color: #fde047;">
-                     Fleet Mobility Hub Initializing... Send screenshot details to build out this segment.
+                <p>An executive vehicle booking engine and corporate transit interface template, utilizing structural theme profiles inspired directly by premium hire services in Australia (referenced via 1000206211.jpg, 1000206213.jpg, 1000206215.jpg, 1000206217.jpg, and 1000206219.jpg).</p>
+                
+                <!-- Theme Visual Mockup Shell Inspired by Image References -->
+                <div class="pty-hero-search">
+                    <h3 style="font-size: 18px; margin-bottom: 8px;">Rent a vehicle with precision</h3>
+                    <p style="font-size: 13px; color: var(--text-muted);">Interactive viewport styling structure mimicking professional rental platforms.</p>
+                    
+                    <div class="pty-search-row">
+                        <input type="text" class="pty-input" placeholder="📍 Enter pick up city, address, or point of interest..." disabled>
+                        <button class="btn-primary-action" style="height: 100%; display: flex; align-items: center; justify-content: center;" disabled>Search Fleet</button>
+                    </div>
+                </div>
+
+                <div style="background: rgba(251, 191, 36, 0.05); border: 1px dashed var(--pty-gold); padding: 24px; border-radius: 8px; margin-top: 30px; text-align: center; color: #fde047; font-size: 14px;">
+                     ⚙️ Core operational asset text lines for Bukhari PTY LTD are unconfigured. Supply specific company copy details to populate this node.
                 </div>
             </section>
         </div>
@@ -627,7 +545,7 @@
     <!-- GLOBAL NETWORK SITE FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Bukhari Nexus Matrix Group. All retail profiles and community data verification frameworks fully protected.</p>
+            <p>&copy; 2026 Bukhari Nexus Matrix Group. Architectural interface nodes fully protected.</p>
         </div>
     </footer>
 
@@ -653,33 +571,6 @@
             }
 
             window.scrollTo({ top: 0, behavior: 'instant' });
-        }
-
-        function toggleTickerTab(event, assetKey) {
-            const parentStrip = event.currentTarget.parentElement;
-            parentStrip.querySelectorAll('.ticker-tab-btn').forEach(btn => {
-                btn.classList.remove('tab-active');
-            });
-
-            event.currentTarget.classList.add('tab-active');
-
-            const displayOutput = document.getElementById('ticker-output-box');
-            if(assetKey === 'wheat') {
-                displayOutput.innerHTML = `<p style="color: #fff; font-size: 15px; font-weight: 500;">Premium Milling Grade Wheat Asset Stream:</p>
-                                           <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong style="font-size: 18px; color: #fff;">Rs. 4,200</strong> per 40 KG Bag (Rahim Yar Khan Hub Markets).</p>`;
-            } else if(assetKey === 'rice') {
-                displayOutput.innerHTML = `<p style="color: #fff; font-size: 15px; font-weight: 500;">Premium Super Kernel Basmati Rice Stream:</p>
-                                           <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong style="font-size: 18px; color: #fff;">Rs. 7,800</strong> per 40 KG Bag (Punjab Sourcing Hubs).</p>`;
-            } else if(assetKey === 'corn') {
-                displayOutput.innerHTML = `<p style="color: #fff; font-size: 15px; font-weight: 500;">Hybrid Feed Grade Yellow Corn Stream:</p>
-                                           <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong style="font-size: 18px; color: #fff;">Rs. 2,950</strong> per 40 KG Bag (Regional Markets).</p>`;
-            } else if(assetKey === 'barley') {
-                displayOutput.innerHTML = `<p style="color: #fff; font-size: 15px; font-weight: 500;">Organic Clean Grain Barley Production Stream:</p>
-                                           <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong style="font-size: 18px; color: #fff;">Rs. 3,400</strong> per 40 KG Bag (Sourcing Exchanges).</p>`;
-            } else if(assetKey === 'cotton') {
-                displayOutput.innerHTML = `<p style="color: #fff; font-size: 15px; font-weight: 500;">Premium Fine Clean Seed Cotton Lint Stream:</p>
-                                           <p style="font-size: 14px; margin-top: 4px; color: var(--text-muted);">Average Price: <strong style="font-size: 18px; color: #fff;">Rs. 8,200</strong> per Maund (Sindh Sourcing Hubs).</p>`;
-            }
         }
     </script>
 </body>
