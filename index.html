@@ -5,69 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Asset Infrastructure | Bukharinexus Group</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { background-color: #060913; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; margin:0; }
-        header { background: rgba(11, 17, 32, 0.9); border-bottom: 1px solid #1e293b; padding: 20px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo { font-family: 'Cinzel', serif; font-size: 22px; color: #ffffff; text-decoration: none; font-weight: 700; letter-spacing: 2px; }
-        .logo span { color: #f59e0b; font-weight: 300; }
-        nav a { color: #94a3b8; text-decoration: none; margin-left: 25px; font-size: 14px; font-weight: 500; transition: color 0.3s; }
-        nav a:hover, nav a.active { color: #fbbf24; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .hero-section { padding: 140px 0 100px 0; text-align: center; background: radial-gradient(circle at top, #0f172a 0%, #060913 100%); border-bottom: 1px solid #1e293b; }
-        .hero-section h1 { font-family: 'Cinzel', serif; font-size: 46px; color: #ffffff; letter-spacing: 2px; margin-bottom: 25px; line-height: 1.2; }
-        .hero-section p { color: #94a3b8; font-size: 19px; max-width: 750px; margin: 0 auto 45px auto; line-height: 1.7; }
-        .cta-btn { background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%); color: #060913; padding: 16px 40px; font-family: 'Cinzel', serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; display: inline-block; transition: all 0.3s ease; border-radius: 4px; box-shadow: 0 4px 20px rgba(217, 119, 6, 0.2); }
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(217, 119, 6, 0.4); }
-        .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 80px; }
-        .preview-card { background: #0b1120; border: 1px solid #1e293b; padding: 35px; text-align: left; border-radius: 6px; transition: border 0.3s; }
-        .preview-card:hover { border-color: #f59e0b; }
-        .preview-card h3 { font-family: 'Cinzel', serif; color: #ffffff; font-size: 19px; margin-bottom: 12px; border-left: 3px solid #f59e0b; padding-left: 10px; }
-        .preview-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
-        footer { background: #04060c; padding: 40px 0; border-top: 1px solid #1e293b; font-size: 14px; color: #64748b; margin-top: 60px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .footer-address { text-align: right; line-height: 1.5; }
-        @media (max-width: 900px) { .preview-grid { grid-template-columns: 1fr; } .footer-container { flex-direction: column; text-align: center; gap: 20px; } .footer-address { text-align: center; } }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Header Navigation with Floating Logo & Waving Flags -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">BUKHARINEXUS <span>GROUP</span></a>
-            <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Our Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+            
+            <div class="nav-links-wrapper">
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Our Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <!-- Regional Waving Flags (Pure HTML/CSS) -->
+                <div class="flag-ensemble">
+                    <div class="flag-icon-container flag-pakistan" title="Pakistan Operations Office">
+                        <div class="white-bar"></div>
+                        <div class="crescent"></div>
+                    </div>
+                    <div class="flag-icon-container flag-australia" title="Australia Operations Office">
+                        <div class="canton"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- Main Hero Brand Introduction -->
     <section class="hero-section">
         <div class="container">
             <h1>Cross-Border Asset Orchestration</h1>
             <p>Bukharinexus Group anchors a diversified, multi-sector corporate framework—directing robust commercial trade origination, regional consumer commerce networks, and international enterprise logistics systems.</p>
-            
-            <a href="services.html" class="cta-btn">Explore Corporate Holdings</a>
-
-            <div class="preview-grid">
-                <div class="preview-card">
-                    <h3>Bukhari Traders</h3>
-                    <p>High-capacity grain origination, strategic storage, and multi-channel wholesale commodity distributions.</p>
-                </div>
-                <div class="preview-card">
-                    <h3>Al Makkah Store</h3>
-                    <p>FMCG distribution management powering direct B2B merchant logistics and retail store services.</p>
-                </div>
-                <div class="preview-card">
-                    <h3>Bukhari PTY LTD</h3>
-                    <p>Australian fleet engineering operations, customs import-export desks, and global freight routing.</p>
-                </div>
-            </div>
         </div>
     </section>
 
+    <!-- Interactive Mind Space Division Segment -->
+    <section class="mindspace-section">
+        <div class="section-intro">
+            <h2>Bukhari Nexus <span>(Mind Space)</span></h2>
+            <p>Select an industry vertical below to display dedicated operations parameters and sector background context.</p>
+        </div>
+
+        <!-- Tab Selection Row Controls -->
+        <div class="business-tabs">
+            <button class="tab-trigger active" onclick="switchBusiness(event, 'agri-panel')">
+                <span class="tab-dot dot-agri"></span> Agriculture Division
+            </button>
+            <button class="tab-trigger" onclick="switchBusiness(event, 'fmcg-panel')">
+                <span class="tab-dot dot-fmcg"></span> FMCG Distribution
+            </button>
+            <button class="tab-trigger" onclick="switchBusiness(event, 'chauffeur-panel')">
+                <span class="tab-dot dot-luxury"></span> Luxury Chauffeur
+            </button>
+        </div>
+
+        <!-- Content Display Box -->
+        <div class="business-display-box">
+            
+            <!-- Panel 1: Agriculture (Emerald Green Theme) -->
+            <div id="agri-panel" class="business-panel active">
+                <div class="panel-layout">
+                    <div class="panel-text">
+                        <h3>Global Agricultural Sourcing</h3>
+                        <p class="tagline">Bukhari Traders • Sourcing & Supply Solutions</p>
+                        <p>We manage high-capacity grain collection, strategic conditioning, and extensive wholesale distributions. By sourcing crops directly from local growers and regional commission networks, we stabilize large-scale distribution pipelines.</p>
+                        <ul>
+                            <li>Bulk crop origination and secure storage management.</li>
+                            <li>Integrated connections with regional agricultural commission houses.</li>
+                            <li>High-grade processing streams for premium rice and wheat varieties.</li>
+                        </ul>
+                    </div>
+                    <!-- Pure CSS Illustration for Agriculture -->
+                    <div class="panel-media">
+                        <div class="css-graphic graphic-agri">
+                            <div class="sun"></div>
+                            <div class="field-lines"></div>
+                            <div class="crop-stalk"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2: FMCG (Sapphire Blue Theme) -->
+            <div id="fmcg-panel" class="business-panel">
+                <div class="panel-layout">
+                    <div class="panel-text">
+                        <h3>FMCG Wholesale & Retail Logistics</h3>
+                        <p class="tagline">Al Makkah General Store • Consumer Supply Framework</p>
+                        <p>Our fast-moving consumer goods (FMCG) distribution arm ensures product availability across regional business pipelines. We supply local independent merchants while maintaining a highly reliable consumer storefront.</p>
+                        <ul>
+                            <li>Efficient processing for fast-moving product lines.</li>
+                            <li>Direct merchant wholesale delivery models.</li>
+                            <li>Optimized storage configurations to maintain peak freshness.</li>
+                        </ul>
+                    </div>
+                    <!-- Pure CSS Illustration for FMCG / Store Supply -->
+                    <div class="panel-media">
+                        <div class="css-graphic graphic-fmcg">
+                            <div class="store-roof"></div>
+                            <div class="shelf-line"></div>
+                            <div class="package box1"></div>
+                            <div class="package box2"></div>
+                            <div class="package box3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Luxury Chauffeur (Refined Gold Theme) -->
+            <div id="chauffeur-panel" class="business-panel">
+                <div class="panel-layout">
+                    <div class="panel-text">
+                        <h3>Chauffeur & Fleet Management</h3>
+                        <p class="tagline">Bukhari PTY LTD • Corporate Transit Solutions</p>
+                        <p>Operating a premium fleet network engineered to serve corporate clients and executive transport lines. We provide secure, professional, and tightly managed travel systems for private entities and international travelers.</p>
+                        <ul>
+                            <li>Premium fleet setups designed for executive transportation.</li>
+                            <li>Round-the-clock dispatch coordination across metropolitan hubs.</li>
+                            <li>Vetted, professional drivers focused on safety and privacy.</li>
+                        </ul>
+                    </div>
+                    <!-- Pure CSS Illustration for Luxury Fleet -->
+                    <div class="panel-media">
+                        <div class="css-graphic graphic-luxury">
+                            <div class="city-skyline"></div>
+                            <div class="luxury-car-silhouette">
+                                <div class="car-cabin"></div>
+                                <div class="wheel w1"></div>
+                                <div class="wheel w2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Segment -->
     <footer>
         <div class="footer-container">
             <div>
@@ -79,6 +161,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Interactive Tab-Switching Logic Script -->
+    <script>
+        function switchBusiness(event, panelId) {
+            const tabs = document.querySelectorAll('.tab-trigger');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            const panels = document.querySelectorAll('.business-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+            
+            event.currentTarget.classList.add('active');
+            document.getElementById(panelId).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
