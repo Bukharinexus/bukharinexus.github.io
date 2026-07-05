@@ -89,64 +89,39 @@ nav a.active {
     font-weight: 700;
 }
 
-/* Waving Flag Display Arrays */
+/* Waving Flag Animated Framing Engine */
 .flag-ensemble {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: center;
     margin-left: 20px;
     border-left: 1px solid #1e293b;
     padding-left: 20px;
 }
 
-.flag-icon-container {
-    width: 28px;
-    height: 18px;
-    border-radius: 2px;
-    position: relative;
+.flag-wrapper {
+    width: 32px;
+    height: 22px;
+    border-radius: 3px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    animation: clearWave 2s ease-in-out infinite alternate;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.flag-pakistan {
-    background-color: #004120;
-    animation-delay: 0.1s;
+.flag-wrapper:hover {
+    transform: scale(1.15);
 }
-.flag-pakistan .white-bar {
-    width: 25%;
+
+.waving-flag {
+    width: 100%;
     height: 100%;
-    background: #ffffff;
-    position: absolute;
-    left: 0;
-}
-.flag-pakistan .crescent {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    box-shadow: -2.5px 2px 0 0 #ffffff;
-    position: absolute;
-    top: 4px;
-    left: 45%;
-    transform: rotate(-45deg);
-}
-
-.flag-australia {
-    background-color: #00008b;
-    animation-delay: 0.4s;
-}
-.flag-australia .canton {
-    width: 45%;
-    height: 45%;
-    background: #ff0000;
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    position: absolute;
-}
-
-@keyframes clearWave {
-    0% { transform: skewY(-1deg); }
-    100% { transform: skewY(1.5deg) scale(1.02); }
+    object-fit: cover;
+    mix-blend-mode: normal;
 }
 
 /* --------------------------------------------------------------------------
@@ -321,161 +296,20 @@ nav a.active {
     flex: 0.8;
 }
 
+.panel-media img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #1e293b;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: block;
+}
+
 @keyframes panelReveal {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-/* --------------------------------------------------------------------------
-   PURE CSS VECTOR GRAPHICS GENERATOR ENGINES
-   -------------------------------------------------------------------------- */
-.css-graphic {
-    width: 100%;
-    height: 250px;
-    border-radius: 6px;
-    border: 1px solid #1e293b;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-/* 1. Agriculture Illustration (Fields and Rising Sun) */
-.graphic-agri {
-    background: linear-gradient(to bottom, #062f22, #041a14);
-}
-.graphic-agri .sun {
-    width: 60px;
-    height: 60px;
-    background: #10b981;
-    border-radius: 50%;
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    filter: blur(10px);
-    opacity: 0.6;
-}
-.graphic-agri .field-lines {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 120px;
-    background: repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(16, 185, 129, 0.1) 15px, rgba(16, 185, 129, 0.1) 30px);
-    border-top: 1px solid rgba(16, 185, 129, 0.3);
-}
-.graphic-agri .crop-stalk {
-    width: 4px;
-    height: 100px;
-    background: #34d399;
-    position: absolute;
-    bottom: 0;
-    right: 80px;
-    border-radius: 2px;
-}
-.graphic-agri .crop-stalk::before, .graphic-agri .crop-stalk::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 10px;
-    background: #34d399;
-    border-radius: 0 10px 0 10px;
-    top: 20px;
-    left: 3px;
-}
-.graphic-agri .crop-stalk::after {
-    border-radius: 10px 0 10px 0;
-    left: -19px;
-    top: 40px;
-}
-
-/* 2. FMCG / Wholesale Storage Illustration (Shelves and Boxes) */
-.graphic-fmcg {
-    background: linear-gradient(to bottom, #0f224a, #0b132b);
-}
-.graphic-fmcg .store-roof {
-    width: 80%;
-    height: 4px;
-    background: #3b82f6;
-    position: absolute;
-    top: 40px;
-    left: 10%;
-}
-.graphic-fmcg .shelf-line {
-    width: 80%;
-    height: 2px;
-    background: #1d4ed8;
-    position: absolute;
-    bottom: 60px;
-    left: 10%;
-}
-.graphic-fmcg .package {
-    position: absolute;
-    border-radius: 4px;
-    border: 1px solid rgba(96, 165, 250, 0.4);
-}
-.graphic-fmcg .box1 {
-    width: 40px;
-    height: 50px;
-    background: rgba(59, 130, 246, 0.2);
-    bottom: 62px;
-    left: 20%;
-}
-.graphic-fmcg .box2 {
-    width: 50px;
-    height: 40px;
-    background: rgba(96, 165, 250, 0.2);
-    bottom: 62px;
-    left: 45%;
-}
-.graphic-fmcg .box3 {
-    width: 35px;
-    height: 35px;
-    background: rgba(30, 58, 138, 0.4);
-    bottom: 62px;
-    left: 65%;
-}
-
-/* 3. Luxury Chauffeur Illustration (City and Clean Silhouette) */
-.graphic-luxury {
-    background: linear-gradient(to bottom, #3b200a, #180d05);
-}
-.graphic-luxury .city-skyline {
-    position: absolute;
-    bottom: 70px;
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(to top, rgba(251, 191, 36, 0.08), transparent);
-    border-bottom: 2px solid rgba(251, 191, 36, 0.2);
-}
-.graphic-luxury .luxury-car-silhouette {
-    width: 160px;
-    height: 35px;
-    background: #fbbf24;
-    position: absolute;
-    bottom: 50px;
-    left: calc(50% - 80px);
-    border-radius: 4px 12px 4px 4px;
-}
-.graphic-luxury .car-cabin {
-    width: 90px;
-    height: 25px;
-    background: #180d05;
-    position: absolute;
-    top: -18px;
-    left: 25px;
-    border-radius: 12px 20px 0 0;
-    border: 2px solid #fbbf24;
-}
-.graphic-luxury .wheel {
-    width: 20px;
-    height: 20px;
-    background: #060913;
-    border: 3px solid #fcd34d;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -10px;
-}
-.graphic-luxury .w1 { left: 25px; }
-.graphic-luxury .w2 { right: 25px; }
 
 /* --------------------------------------------------------------------------
    Standardized Footer Base
@@ -506,7 +340,7 @@ footer {
     .nav-container { flex-direction: column; gap: 15px; text-align: center; }
     .business-tabs { flex-direction: column; }
     .panel-layout { flex-direction: column-reverse; gap: 25px; }
-    .css-graphic { height: 180px; }
+    .panel-media img { height: 200px; }
     .footer-container { flex-direction: column; gap: 20px; text-align: center; }
     .footer-address { text-align: center; }
 }
