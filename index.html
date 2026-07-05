@@ -6,17 +6,17 @@
     <title>Bukhari Nexus Group Matrix</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Cinzel:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
            GLOBAL REINFORCED CORE ARCHITECTURE
            ========================================================================== */
         :root {
             --bg-deep: #060913;
-            --bg-card: #0b1120;
-            --border-color: #1e293b;
+            --bg-card: rgba(11, 17, 32, 0.85);
+            --border-color: rgba(255, 255, 255, 0.12);
             --text-primary: #f8fafc;
-            --text-muted: #94a3b8;
+            --text-muted: #cbd5e1;
             
             /* Visual Theme Indicators */
             --traders-green: #10b981;
@@ -36,12 +36,12 @@
             overflow-x: hidden;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
 
         /* Navigation Matrix Header */
         header {
             background: #0b1120;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -69,7 +69,7 @@
         nav button {
             background: none;
             border: none;
-            color: var(--text-muted);
+            color: #94a3b8;
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
@@ -88,9 +88,36 @@
         nav button.active-makkah { background: var(--makkah-blue); color: #fff; }
         nav button.active-pty { background: var(--pty-gold); color: #060913; }
 
-        /* View State Logic */
-        .page-view { display: none; }
+        /* View State Logic with Dynamic Screensaver Background Frame */
+        .page-view { 
+            display: none; 
+            position: relative;
+            min-height: calc(100vh - 80px);
+        }
         .page-view.active-view { display: block; }
+
+        /* Screensaver Container Architecture */
+        .bg-screensaver {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .bg-slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .bg-slide.active-slide { opacity: 0.25; } /* Heightened contrast balance overlay */
+        .bg-overlay-tint {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+        }
 
         /* Global Structural Row System */
         .scroller-layout {
@@ -109,6 +136,8 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 40px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .block-card h2, .block-card h3 {
@@ -121,10 +150,10 @@
         /* ==========================================================================
            VIEW 1: MULTI-COLOR MAIN HUB TERMINAL
            ========================================================================== */
+        .theme-home .bg-overlay-tint { background: linear-gradient(180deg, rgba(6,9,19,0.7) 0%, #060913 100%); }
         .hub-hero {
             text-align: center;
             padding: 80px 0 40px;
-            background: radial-gradient(circle at top, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
         }
         .hub-hero h1 { font-family: 'Cinzel', serif; font-size: 42px; margin-bottom: 16px; }
         .hub-hero p { color: var(--text-muted); font-size: 16px; max-width: 700px; margin: 0 auto; }
@@ -146,13 +175,14 @@
             flex-direction: column;
             justify-content: space-between;
             min-height: 320px;
+            backdrop-filter: blur(8px);
             transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
         .hub-card:hover { transform: translateY(-5px); }
 
-        .hc-traders:hover { border-color: var(--traders-green); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12); }
-        .hc-makkah:hover { border-color: var(--makkah-blue); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.12); }
-        .hc-pty:hover { border-color: var(--pty-gold); box-shadow: 0 10px 30px rgba(251, 191, 36, 0.12); }
+        .hc-traders:hover { border-color: var(--traders-green); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); }
+        .hc-makkah:hover { border-color: var(--makkah-blue); box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2); }
+        .hc-pty:hover { border-color: var(--pty-gold); box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2); }
 
         .hub-card h2 { font-family: 'Cinzel', serif; font-size: 24px; margin-bottom: 12px; color: #fff; }
         .hub-card p { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
@@ -168,9 +198,9 @@
         /* ==========================================================================
            COMPLEX REUSABLE UI ELEMENTS
            ========================================================================== */
-        .badge-pill { display: inline-flex; background: rgba(16,185,129,0.15); color: var(--traders-green); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
-        .theme-makkah .badge-pill { background: rgba(59,130,246,0.15); color: var(--makkah-blue); }
-        .theme-pty .badge-pill { background: rgba(251,191,36,0.15); color: var(--pty-gold); }
+        .badge-pill { display: inline-flex; background: rgba(16,185,129,0.25); color: var(--traders-green); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(16,185,129,0.3); }
+        .theme-makkah .badge-pill { background: rgba(59,130,246,0.25); color: var(--makkah-blue); border-color: rgba(59,130,246,0.3); }
+        .theme-pty .badge-pill { background: rgba(251,191,36,0.25); color: var(--pty-gold); border-color: rgba(251,191,36,0.3); }
         
         .stats-row { display: flex; gap: 40px; margin: 30px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 24px 0; }
         .stat-item h4 { font-size: 32px; color: #fff; font-weight: 700; font-family: 'Cinzel', serif; }
@@ -183,17 +213,17 @@
         .theme-makkah .btn-primary-action:hover { background: var(--makkah-blue-hover); }
         .theme-pty .btn-primary-action { background: var(--pty-gold); color: #060913; }
         
-        .btn-secondary-action { border: 1px solid var(--border-color); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; background: rgba(255,255,255,0.02); }
+        .btn-secondary-action { border: 1px solid var(--border-color); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 14px; background: rgba(255,255,255,0.05); backdrop-filter: blur(4px); }
 
         .product-display-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
-        .product-lens-card { background: #111a2e; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
+        .product-lens-card { background: rgba(17, 26, 46, 0.85); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; }
         .product-lens-img { width: 100%; height: 200px; background-size: cover; background-position: center; position: relative; }
         .product-lens-meta { padding: 24px; }
         .product-lens-meta h4 { font-family: 'Cinzel', serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
         .product-lens-meta p { color: var(--text-muted); font-size: 14px; }
 
         .exec-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 24px; margin-top: 20px; }
-        .exec-profile-card { background: #111a2e; border: 1px solid var(--border-color); border-radius: 8px; padding: 32px; display: flex; gap: 24px; align-items: center; }
+        .exec-profile-card { background: rgba(17, 26, 46, 0.85); border: 1px solid var(--border-color); border-radius: 8px; padding: 32px; display: flex; gap: 24px; align-items: center; }
         .exec-avatar { width: 100px; height: 100px; border-radius: 50%; background-size: cover; background-position: center; border: 2px solid var(--border-color); flex-shrink: 0; }
         .exec-info h4 { font-family: 'Cinzel', serif; font-size: 18px; color: #fff; }
         .exec-info span { font-size: 12px; color: var(--traders-green); font-weight: 700; text-transform: uppercase; display: block; margin: 2px 0 8px; }
@@ -206,63 +236,41 @@
 
         .contact-layout-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
         .contact-channel-item { display: flex; gap: 16px; margin-bottom: 24px; }
-        .contact-channel-icon { width: 44px; height: 44px; background: rgba(16,185,129,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--traders-green); font-weight: bold; flex-shrink: 0; }
-        .theme-makkah .contact-channel-icon { background: rgba(59,130,246,0.1); color: var(--makkah-blue); }
-        .theme-pty .contact-channel-icon { background: rgba(251,191,36,0.1); color: var(--pty-gold); }
+        .contact-channel-icon { width: 44px; height: 44px; background: rgba(16,185,129,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--traders-green); font-weight: bold; flex-shrink: 0; }
+        .theme-makkah .contact-channel-icon { background: rgba(59,130,246,0.15); color: var(--makkah-blue); }
+        .theme-pty .contact-channel-icon { background: rgba(251,191,36,0.15); color: var(--pty-gold); }
         .contact-channel-text h5 { color: #fff; font-size: 15px; }
         .contact-channel-text p { color: var(--text-muted); font-size: 14px; margin-top: 2px; }
 
         /* ==========================================================================
            VIEW 2: BUKHARI TRADERS SUITE (GREEN EMERALD THEME)
            ========================================================================== */
-        .theme-traders { background: linear-gradient(180deg, #05140f 0%, #060913 100%); }
+        .theme-traders .bg-overlay-tint { background: linear-gradient(180deg, rgba(5,20,15,0.8) 0%, #060913 100%); }
         .theme-traders .accent-color { color: var(--traders-green); }
         .theme-traders .block-card { border-left: 4px solid var(--traders-green); }
 
         /* ==========================================================================
            VIEW 3: AL MAKKAH GENERAL STORE SPACE (BLUE RETAIL CORES)
            ========================================================================== */
-        .theme-makkah { background: linear-gradient(180deg, #07132b 0%, #060913 100%); }
+        .theme-makkah .bg-overlay-tint { background: linear-gradient(180deg, rgba(7,19,43,0.8) 0%, #060913 100%); }
         .theme-makkah .accent-color { color: var(--makkah-blue); }
         .theme-makkah .block-card { border-left: 4px solid var(--makkah-blue); }
 
         /* ==========================================================================
-           VIEW 4: BUKHARI PTY LTD SPACE (PREMIUM CAR HIRE INSPIRED METRIC THEME)
+           VIEW 4: BUKHARI PTY LTD SPACE (GOLD PREMIUM AUTOMOTIVE)
            ========================================================================== */
-        /* UI structure utilizes colors inspired by 1000206211.jpg, 1000206213.jpg, 1000206215.jpg, 1000206217.jpg, 1000206219.jpg */
-        .theme-pty { background: linear-gradient(180deg, #121824 0%, #060913 100%); }
+        /* Design profiles references visualization metrics matching 1000206221.jpg and 1000206223.jpg templates */
+        .theme-pty .bg-overlay-tint { background: linear-gradient(180deg, rgba(18,24,36,0.85) 0%, #060913 100%); }
         .theme-pty .accent-color { color: var(--pty-gold); }
         .theme-pty .block-card { border-left: 4px solid var(--pty-gold); }
-        
-        .pty-hero-search {
-            background: #1e293b;
-            border-radius: 8px;
-            padding: 24px;
-            margin-top: 24px;
-            border: 1px solid #334155;
-        }
-        .pty-search-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 16px;
-            margin-top: 16px;
-        }
-        .pty-input {
-            background: #0f172a;
-            border: 1px solid #475569;
-            padding: 12px;
-            border-radius: 6px;
-            color: #fff;
-            width: 100%;
-        }
 
         /* Footer System */
-        footer { background: #03050a; padding: 40px 0; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--text-muted); text-align: center; }
+        footer { background: #03050a; padding: 40px 0; border-top: 1px solid var(--border-color); font-size: 13px; color: var(--text-muted); text-align: center; position: relative; z-index: 10; }
 
         /* Responsive Mobile Conversions */
         @media (max-width: 992px) {
             .nav-container { flex-direction: column; height: auto; padding: 20px 0; gap: 16px; }
-            .hub-grid, .product-display-showcase, .exec-grid, .value-list, .contact-layout-split, .pty-search-row { grid-template-columns: 1fr; }
+            .hub-grid, .product-display-showcase, .exec-grid, .value-list, .contact-layout-split { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -284,30 +292,39 @@
     <!-- ==========================================================================
        PORTFOLIO VIEW 1: MAIN NETWORK CENTRAL TERMINAL (HOME)
        ========================================================================== -->
-    <main id="view-home" class="container page-view active-view">
-        <section class="hub-hero">
-            <h1>Corporate Matrix Desk</h1>
-            <p>Select an independent corporate entity segment below to open its dedicated layout workspace and signature aesthetic configuration.</p>
-        </section>
+    <main id="view-home" class="page-view theme-home active-view">
+        <!-- Screensaver Architecture Module -->
+        <div class="bg-screensaver" data-interval="5000">
+            <div class="bg-slide active-slide" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-overlay-tint"></div>
+        </div>
 
-        <div class="hub-grid">
-            <!-- Bukhari Traders Trigger Block -->
-            <div class="hub-card hc-traders" onclick="togglePortfolioView('traders')">
-                <h2>Bukhari Traders</h2>
-                <p>Established grain commission agents specializing in regional wholesale wheat, paddy, and rice agricultural commodity channels.</p>
-                <div class="hub-btn">Launch Trading Desk &rarr;</div>
-            </div>
-            <!-- Al Makkah General Store Trigger Block -->
-            <div class="hub-card hc-makkah" onclick="togglePortfolioView('makkah')">
-                <h2>Al Makkah Store</h2>
-                <p>Consumer distribution general merchandise storefront handling household supplies, essentials, and kitchen staples.</p>
-                <div class="hub-btn">Launch FMCG Suite &rarr;</div>
-            </div>
-            <!-- Bukhari PTY LTD Trigger Block -->
-            <div class="hub-card hc-pty" onclick="togglePortfolioView('pty')">
-                <h2>Bukhari PTY LTD</h2>
-                <p>Premium modern vehicle hire corporate operations workspace layout inspired by high-end transit fleet systems.</p>
-                <div class="hub-btn">Launch Mobility Suite &rarr;</div>
+        <div class="container scroller-layout">
+            <section class="hub-hero">
+                <h1>Corporate Matrix Desk</h1>
+                <p>Select an independent corporate entity segment below to open its dedicated layout workspace and automated dynamic screensaver backdrop.</p>
+            </section>
+
+            <div class="hub-grid">
+                <!-- Bukhari Traders Trigger Block -->
+                <div class="hub-card hc-traders" onclick="togglePortfolioView('traders')">
+                    <h2>Bukhari Traders</h2>
+                    <p>Established grain commission agents specializing in regional wholesale wheat, paddy, and rice agricultural commodity channels.</p>
+                    <div class="hub-btn">Launch Trading Desk &rarr;</div>
+                </div>
+                <!-- Al Makkah General Store Trigger Block -->
+                <div class="hub-card hc-makkah" onclick="togglePortfolioView('makkah')">
+                    <h2>Al Makkah Store</h2>
+                    <p>Consumer distribution general merchandise storefront handling household supplies, essentials, and kitchen staples.</p>
+                    <div class="hub-btn">Launch FMCG Suite &rarr;</div>
+                </div>
+                <!-- Bukhari PTY LTD Trigger Block -->
+                <div class="hub-card hc-pty" onclick="togglePortfolioView('pty')">
+                    <h2>Bukhari PTY LTD</h2>
+                    <p>Premium modern vehicle fleet leasing operations workspace layout inspired by global mobility transit metrics.</p>
+                    <div class="hub-btn">Launch Mobility Suite &rarr;</div>
+                </div>
             </div>
         </div>
     </main>
@@ -316,12 +333,19 @@
        PORTFOLIO VIEW 2: BUKHARI TRADERS SUITE (GREEN EMERALD THEME)
        ========================================================================== -->
     <main id="view-traders" class="page-view theme-traders">
+        <!-- Screensaver Architecture Module - Dedicated Crop Iteration Loop -->
+        <div class="bg-screensaver" data-interval="4000">
+            <div class="bg-slide active-slide" style="background-image: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1536304997881-a372c179924b?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-overlay-tint"></div>
+        </div>
+
         <div class="container scroller-layout">
-            
             <section class="block-card">
                 <span class="badge-pill">Established Since 2007</span>
                 <h2>Premium Grain <span class="accent-color">Commission Agents</span></h2>
-                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">Connecting agricultural producers and regional wholesale trade channels with integrity and precision across specialized grain assets.</p>
+                <p style="color: var(--text-muted); font-size: 16px; max-width: 850px;">Connecting agricultural producers and regional wholesale trade channels with integrity and precision across specialized grain assets.</p>
                 
                 <div class="stats-row">
                     <div class="stat-item">
@@ -350,7 +374,7 @@
                         <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=400&auto=format&fit=crop');"></div>
                         <div class="product-lens-meta">
                             <h4>Wheat</h4>
-                            <p>High-grade commercial milling wheat sourced directly from premier agricultural crop exchanges.</p>
+                            <p>High-grade commercial milling wheat sourced directly from agricultural crop exchanges.</p>
                         </div>
                     </div>
                     <!-- Commodity 2 -->
@@ -411,12 +435,19 @@
        PORTFOLIO VIEW 3: AL MAKKAH GENERAL STORE SPACE (BLUE RETAIL CORES)
        ========================================================================== -->
     <main id="view-makkah" class="page-view theme-makkah">
+        <!-- Screensaver Architecture Module - Dedicated In-Store / Staples Loop -->
+        <div class="bg-screensaver" data-interval="4500">
+            <div class="bg-slide active-slide" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-overlay-tint"></div>
+        </div>
+
         <div class="container scroller-layout">
-            
             <section class="block-card">
                 <span class="badge-pill">Established Since 2020</span>
                 <h2>Al Makkah <span class="accent-color">General Store</span></h2>
-                <p style="color: #cbd5e1; font-size: 16px; max-width: 850px;">A reliable hub providing household staples, consumer essentials, and reliable daily retail items to the community.</p>
+                <p style="color: var(--text-muted); font-size: 16px; max-width: 850px;">A reliable hub providing household staples, consumer essentials, and reliable daily retail items to the community.</p>
                 
                 <div class="stats-row">
                     <div class="stat-item">
@@ -515,28 +546,54 @@
     </main>
 
     <!-- ==========================================================================
-       PORTFOLIO VIEW 4: BUKHARI PTY LTD SPACE (PREMIUM INTERFACE PALETTE THEME)
+       PORTFOLIO VIEW 4: BUKHARI PTY LTD SPACE (GOLD PREMIUM AUTOMOTIVE)
        ========================================================================== -->
     <main id="view-pty" class="page-view theme-pty">
+        <!-- Screensaver Architecture Module - Vehicle Fleet Imagery Loop -->
+        <div class="bg-screensaver" data-interval="3500">
+            <div class="bg-slide active-slide" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="bg-overlay-tint"></div>
+        </div>
+
         <div class="container scroller-layout">
             <section class="block-card">
-                <span class="badge-pill">Premium Mobility Layout</span>
+                <span class="badge-pill">Premium Mobility Fleet</span>
                 <h2>Bukhari <span class="accent-color">PTY LTD</span></h2>
-                <p>An executive vehicle booking engine and corporate transit interface template, utilizing structural theme profiles inspired directly by premium hire services in Australia (referenced via 1000206211.jpg, 1000206213.jpg, 1000206215.jpg, 1000206217.jpg, and 1000206219.jpg).</p>
-                
-                <!-- Theme Visual Mockup Shell Inspired by Image References -->
-                <div class="pty-hero-search">
-                    <h3 style="font-size: 18px; margin-bottom: 8px;">Rent a vehicle with precision</h3>
-                    <p style="font-size: 13px; color: var(--text-muted);">Interactive viewport styling structure mimicking professional rental platforms.</p>
-                    
-                    <div class="pty-search-row">
-                        <input type="text" class="pty-input" placeholder="📍 Enter pick up city, address, or point of interest..." disabled>
-                        <button class="btn-primary-action" style="height: 100%; display: flex; align-items: center; justify-content: center;" disabled>Search Fleet</button>
-                    </div>
-                </div>
+                <p style="color: var(--text-muted); font-size: 16px; max-width: 850px;">A professional corporate vehicle leasing matrix layout designed for high-capacity freight transit assets and passenger cars inspired by 1000206221.jpg and 1000206223.jpg structures.</p>
+            </section>
 
-                <div style="background: rgba(251, 191, 36, 0.05); border: 1px dashed var(--pty-gold); padding: 24px; border-radius: 8px; margin-top: 30px; text-align: center; color: #fde047; font-size: 14px;">
-                     ⚙️ Core operational asset text lines for Bukhari PTY LTD are unconfigured. Supply specific company copy details to populate this node.
+            <!-- Showcasing Cars, Trucks, and Logistics Vehicles Fleet Gallery -->
+            <section class="block-card">
+                <h2>Our Fleet <span class="accent-color">Showcase</span></h2>
+                <p>Explore specialized industrial haulage units and urban transit fleet vehicles optimized for corporate lease contracts.</p>
+                
+                <div class="product-display-showcase">
+                    <!-- Fleet Unit 1 -->
+                    <div class="product-lens-card">
+                        <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="product-lens-meta">
+                            <h4>Executive Sedans</h4>
+                            <p>Premium fuel-efficient commuter models optimized for urban staff transport and corporate operations networks.</p>
+                        </div>
+                    </div>
+                    <!-- Fleet Unit 2 -->
+                    <div class="product-lens-card">
+                        <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="product-lens-meta">
+                            <h4>Heavy Haulage Trucks</h4>
+                            <p>High-capacity commercial multi-axle freight trucks designed to manage demanding long-distance bulk logistics pipelines.</p>
+                        </div>
+                    </div>
+                    <!-- Fleet Unit 3 -->
+                    <div class="product-lens-card">
+                        <div class="product-lens-img" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=400&auto=format&fit=crop');"></div>
+                        <div class="product-lens-meta">
+                            <h4>Utility SUV Fleet</h4>
+                            <p>Rugged, all-terrain utility vehicles built out specifically to handle field management logistics coordination tasks safely.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -549,7 +606,7 @@
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC ARCHITECTURE SCRIPT -->
+    <!-- INTERACTION LOGIC & SCREENSAVER ENGINE SCRIPT -->
     <script>
         function togglePortfolioView(viewId) {
             document.querySelectorAll('.page-view').forEach(view => {
@@ -572,6 +629,21 @@
 
             window.scrollTo({ top: 0, behavior: 'instant' });
         }
+
+        // Screensaver Rotator Mechanism Initialization 
+        document.querySelectorAll('.bg-screensaver').forEach(saver => {
+            const slides = saver.querySelectorAll('.bg-slide');
+            if (slides.length <= 1) return;
+            
+            const intervalDuration = parseInt(saver.getAttribute('data-interval')) || 4000;
+            let currentSlideIndex = 0;
+
+            setInterval(() => {
+                slides[currentSlideIndex].classList.remove('active-slide');
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                slides[currentSlideIndex].classList.add('active-slide');
+            }, intervalDuration);
+        });
     </script>
 </body>
 </html>
