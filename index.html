@@ -3,156 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Asset Infrastructure | Bukharinexus Group</title>
+    <title>Bukhari Nexus Pvt Ltd | Global Asset Operations</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Sticky Navigation Bar with Floating Logo & Waving Flags -->
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">BUKHARINEXUS <span>GROUP</span></a>
-            
+            <a href="index.html" class="logo">BUKHARI NEXUS <span>PVT LTD</span></a>
             <div class="nav-links-wrapper">
                 <nav>
                     <a href="index.html" class="active">Home</a>
                     <a href="about.html">About Us</a>
-                    <a href="services.html">Our Portfolio</a>
+                    <a href="portfolio.html">Our Portfolio</a>
                     <a href="contact.html">Contact</a>
                 </nav>
-
-                <!-- Regional Waving Operations Flags (Animated Media) -->
                 <div class="flag-ensemble">
-                    <div class="flag-wrapper" title="Pakistan Operations Office">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Flag_of_Pakistan_waving_anim.gif" alt="Waving Pakistan Flag" class="waving-flag">
+                    <div class="flag-wrapper" title="Pakistan Operations Node">
+                        <video src="1000206053.mp4" autoplay loop muted playsinline class="waving-flag-video"></video>
                     </div>
-                    <div class="flag-wrapper" title="Australia Operations Office">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Animated-Flag-Australia.gif" alt="Waving Australia Flag" class="waving-flag">
+                    <div class="flag-wrapper" title="Australia Corporate Seat">
+                        <video src="1000206050.mp4" autoplay loop muted playsinline class="waving-flag-video"></video>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Hero Brand Introduction -->
     <section class="hero-section">
         <div class="container">
+            <span class="hero-pretitle">Enterprise Holdings & Sub-Sector Control</span>
             <h1>Cross-Border Asset Orchestration</h1>
-            <p>Bukharinexus Group anchors a diversified, multi-sector corporate framework—directing robust commercial trade origination, regional consumer commerce networks, and international enterprise logistics systems.</p>
+            <p>Bukhari Nexus Pvt Ltd anchors a diversified, multi-jurisdictional corporate framework—directing robust commercial trade origination, regional consumer commerce networks, and international enterprise logistics systems.</p>
         </div>
     </section>
 
-    <!-- Interactive Mind Space Division Segment -->
-    <section class="mindspace-section">
-        <div class="section-intro">
-            <h2>Bukhari Nexus <span>(Mind Space)</span></h2>
-            <p>Select an industry vertical below to display dedicated operations parameters and sector background context.</p>
-        </div>
+    <section class="portfolio-showcase-section">
+        <div class="container">
+            <div class="business-tabs">
+                <button class="tab-trigger active" onclick="switchBusiness(event, 'agri-panel')">Bukhari Traders</button>
+                <button class="tab-trigger" onclick="switchBusiness(event, 'fmcg-panel')">Al Makkah General Store</button>
+                <button class="tab-trigger" onclick="switchBusiness(event, 'chauffeur-panel')">Bukhari PTY LTD</button>
+            </div>
 
-        <!-- Tab Selection Row Controls -->
-        <div class="business-tabs">
-            <button class="tab-trigger active" onclick="switchBusiness(event, 'agri-panel')">
-                <span class="tab-dot dot-agri"></span> Agriculture Division
-            </button>
-            <button class="tab-trigger" onclick="switchBusiness(event, 'fmcg-panel')">
-                <span class="tab-dot dot-fmcg"></span> FMCG Distribution
-            </button>
-            <button class="tab-trigger" onclick="switchBusiness(event, 'chauffeur-panel')">
-                <span class="tab-dot dot-luxury"></span> Luxury Chauffeur
-            </button>
-        </div>
-
-        <!-- Content Display Box -->
-        <div class="business-display-box">
-            
-            <!-- Panel 1: Agriculture -->
-            <div id="agri-panel" class="business-panel active">
-                <div class="panel-layout">
-                    <div class="panel-text">
-                        <h3>Global Agricultural Sourcing</h3>
-                        <p class="tagline">Bukhari Traders • Sourcing & Supply Solutions</p>
-                        <p>We manage high-capacity grain collection, strategic conditioning, and extensive wholesale distributions. By sourcing crops directly from local growers and regional commission networks, we stabilize large-scale distribution pipelines.</p>
-                        <ul>
-                            <li>Bulk crop origination and secure storage management.</li>
-                            <li>Integrated connections with regional agricultural commission houses.</li>
-                            <li>High-grade processing streams for premium rice and wheat varieties.</li>
-                        </ul>
+            <div class="business-display-box">
+                <!-- Unit 1 -->
+                <div id="agri-panel" class="business-panel active">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>Global Agricultural Sourcing</h3>
+                            <p class="tagline">Wholesale Commodity Pipelines & Sourcing Strategy</p>
+                            <p>Operating under direct control of Bukhari Nexus Pvt Ltd, this division manages high-capacity grain collection, strategic conditioning, and extensive wholesale distributions across critical national hubs.</p>
+                            <ul>
+                                <li>Bulk crop origination and secure storage management networks.</li>
+                                <li>Integrated connections with regional agricultural commission houses.</li>
+                                <li>High-grade processing streams for premium rice and wheat varieties.</li>
+                            </ul>
+                            <a href="portfolio.html" class="panel-action-btn">View Inventory Framework</a>
+                        </div>
+                        <div class="panel-media">
+                            <img src="https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=600&auto=format&fit=crop" alt="Bukhari Traders Trade Grid">
+                        </div>
                     </div>
-                    <div class="panel-media">
-                        <img src="https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=600&auto=format&fit=crop" alt="Bukhari Traders grain and agricultural supply chain network">
+                </div>
+
+                <!-- Unit 2 -->
+                <div id="fmcg-panel" class="business-panel">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>FMCG Wholesale & Retail Logistics</h3>
+                            <p class="tagline">Consumer Goods Supply Network</p>
+                            <p>Al Makkah General Store balances the group portfolio with high-turnover consumer retail and local B2B merchant supply routes. Leveraging direct manufacturing accounts, it preserves strong market insulation.</p>
+                            <ul>
+                                <li>Efficient processing for fast-moving product lines.</li>
+                                <li>Direct merchant wholesale delivery models.</li>
+                                <li>Optimized storage configurations to maintain peak freshness.</li>
+                            </ul>
+                            <a href="portfolio.html" class="panel-action-btn">Examine Supply Lines</a>
+                        </div>
+                        <div class="panel-media">
+                            <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" alt="Al Makkah Logistics Hub">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 3 -->
+                <div id="chauffeur-panel" class="business-panel">
+                    <div class="panel-layout">
+                        <div class="panel-text">
+                            <h3>Chauffeur & Fleet Management</h3>
+                            <p class="tagline">Bukhari PTY LTD • Executive Corporate Transit</p>
+                            <p>Our international anchor entities control premium vehicle fleets serving corporate and executive transit markets across Australia, matched alongside cross-border logistics lanes and container freight structures.</p>
+                            <ul>
+                                <li>Premium fleet setups designed for executive transportation.</li>
+                                <li>Round-the-clock dispatch coordination across metropolitan hubs.</li>
+                                <li>Vetted, professional drivers focused on safety, security, and absolute privacy.</li>
+                            </ul>
+                            <a href="portfolio.html" class="panel-action-btn">Review Transport Fleet</a>
+                        </div>
+                        <div class="panel-media">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" alt="Bukhari PTY LTD Fleet">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Panel 2: FMCG -->
-            <div id="fmcg-panel" class="business-panel">
-                <div class="panel-layout">
-                    <div class="panel-text">
-                        <h3>FMCG Wholesale & Retail Logistics</h3>
-                        <p class="tagline">Al Makkah General Store • Consumer Supply Framework</p>
-                        <p>Our fast-moving consumer goods (FMCG) distribution arm ensures product availability across regional business pipelines. We supply local independent merchants while maintaining a highly reliable consumer storefront.</p>
-                        <ul>
-                            <li>Efficient processing for fast-moving product lines.</li>
-                            <li>Direct merchant wholesale delivery models.</li>
-                            <li>Optimized storage configurations to maintain peak freshness.</li>
-                        </ul>
-                    </div>
-                    <div class="panel-media">
-                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" alt="Al Makkah General Store organized retail distribution center shelves">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 3: Luxury Chauffeur -->
-            <div id="chauffeur-panel" class="business-panel">
-                <div class="panel-layout">
-                    <div class="panel-text">
-                        <h3>Chauffeur & Fleet Management</h3>
-                        <p class="tagline">Bukhari PTY LTD • Corporate Transit Solutions</p>
-                        <p>Operating a premium fleet network engineered to serve corporate clients and executive transport lines. We provide secure, professional, and tightly managed travel systems for private entities and international travelers.</p>
-                        <ul>
-                            <li>Premium fleet setups designed for executive transportation.</li>
-                            <li>Round-the-clock dispatch coordination across metropolitan hubs.</li>
-                            <li>Vetted, professional drivers focused on safety and privacy.</li>
-                        </ul>
-                    </div>
-                    <div class="panel-media">
-                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" alt="Bukhari PTY LTD premium fleet executive transport">
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- Footer Segment -->
     <footer>
         <div class="footer-container">
-            <div>
-                <p>&copy; 2026 Bukharinexus Group. All Rights Reserved. Private & Confidential.</p>
-            </div>
+            <p>&copy; 2026 Bukhari Nexus Pvt Ltd. All Rights Reserved. Private & Confidential.</p>
             <div class="footer-address">
-                <strong style="color:#fff;">Bukhari Traders | Global HQ</strong><br>
+                <strong>Bukhari Nexus Pvt Ltd | Global HQ</strong><br>
                 Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Tehsil Phalia, Pakistan
             </div>
         </div>
     </footer>
 
     <script>
-        function switchBusiness(event, panelId) {
-            const tabs = document.querySelectorAll('.tab-trigger');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            const panels = document.querySelectorAll('.business-panel');
-            panels.forEach(panel => panel.classList.remove('active'));
-            
-            event.currentTarget.classList.add('active');
-            document.getElementById(panelId).classList.add('active');
+        function switchBusiness(e, id) {
+            document.querySelectorAll('.tab-trigger').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.business-panel').forEach(p => p.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            document.getElementById(id).classList.add('active');
         }
     </script>
-
 </body>
 </html>
