@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- Header Navigation with Floating Logo & Waving Flags -->
+    <!-- Sticky Navigation Bar with Floating Logo & Waving Flags -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">BUKHARINEXUS <span>GROUP</span></a>
@@ -24,14 +24,13 @@
                     <a href="contact.html">Contact</a>
                 </nav>
 
-                <!-- Regional Waving Flags (Pure HTML/CSS) -->
+                <!-- Regional Waving Operations Flags (Animated Media) -->
                 <div class="flag-ensemble">
-                    <div class="flag-icon-container flag-pakistan" title="Pakistan Operations Office">
-                        <div class="white-bar"></div>
-                        <div class="crescent"></div>
+                    <div class="flag-wrapper" title="Pakistan Operations Office">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Flag_of_Pakistan_waving_anim.gif" alt="Waving Pakistan Flag" class="waving-flag">
                     </div>
-                    <div class="flag-icon-container flag-australia" title="Australia Operations Office">
-                        <div class="canton"></div>
+                    <div class="flag-wrapper" title="Australia Operations Office">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Animated-Flag-Australia.gif" alt="Waving Australia Flag" class="waving-flag">
                     </div>
                 </div>
             </div>
@@ -69,7 +68,7 @@
         <!-- Content Display Box -->
         <div class="business-display-box">
             
-            <!-- Panel 1: Agriculture (Emerald Green Theme) -->
+            <!-- Panel 1: Agriculture -->
             <div id="agri-panel" class="business-panel active">
                 <div class="panel-layout">
                     <div class="panel-text">
@@ -82,18 +81,13 @@
                             <li>High-grade processing streams for premium rice and wheat varieties.</li>
                         </ul>
                     </div>
-                    <!-- Pure CSS Illustration for Agriculture -->
                     <div class="panel-media">
-                        <div class="css-graphic graphic-agri">
-                            <div class="sun"></div>
-                            <div class="field-lines"></div>
-                            <div class="crop-stalk"></div>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?q=80&w=600&auto=format&fit=crop" alt="Bukhari Traders grain and agricultural supply chain network">
                     </div>
                 </div>
             </div>
 
-            <!-- Panel 2: FMCG (Sapphire Blue Theme) -->
+            <!-- Panel 2: FMCG -->
             <div id="fmcg-panel" class="business-panel">
                 <div class="panel-layout">
                     <div class="panel-text">
@@ -106,20 +100,13 @@
                             <li>Optimized storage configurations to maintain peak freshness.</li>
                         </ul>
                     </div>
-                    <!-- Pure CSS Illustration for FMCG / Store Supply -->
                     <div class="panel-media">
-                        <div class="css-graphic graphic-fmcg">
-                            <div class="store-roof"></div>
-                            <div class="shelf-line"></div>
-                            <div class="package box1"></div>
-                            <div class="package box2"></div>
-                            <div class="package box3"></div>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=600&auto=format&fit=crop" alt="Al Makkah General Store organized retail distribution center shelves">
                     </div>
                 </div>
             </div>
 
-            <!-- Panel 3: Luxury Chauffeur (Refined Gold Theme) -->
+            <!-- Panel 3: Luxury Chauffeur -->
             <div id="chauffeur-panel" class="business-panel">
                 <div class="panel-layout">
                     <div class="panel-text">
@@ -132,16 +119,8 @@
                             <li>Vetted, professional drivers focused on safety and privacy.</li>
                         </ul>
                     </div>
-                    <!-- Pure CSS Illustration for Luxury Fleet -->
                     <div class="panel-media">
-                        <div class="css-graphic graphic-luxury">
-                            <div class="city-skyline"></div>
-                            <div class="luxury-car-silhouette">
-                                <div class="car-cabin"></div>
-                                <div class="wheel w1"></div>
-                                <div class="wheel w2"></div>
-                            </div>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=600&auto=format&fit=crop" alt="Bukhari PTY LTD premium fleet executive transport">
                     </div>
                 </div>
             </div>
@@ -162,7 +141,6 @@
         </div>
     </footer>
 
-    <!-- Interactive Tab-Switching Logic Script -->
     <script>
         function switchBusiness(event, panelId) {
             const tabs = document.querySelectorAll('.tab-trigger');
