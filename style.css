@@ -1,0 +1,405 @@
+/* Bukhari Nexus Pvt Ltd - Master Design Framework */
+
+:root {
+    --bg-dark: #090e1a;
+    --bg-card: #111a2e;
+    --bg-nav: rgba(13, 22, 41, 0.85);
+    --primary: #10b981;
+    --primary-hover: #059669;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(16, 185, 129, 0.3);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.5;
+}
+
+/* 1. CORPORATE NAVBAR */
+.nexus-navbar {
+    background: var(--bg-nav);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.corporate-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.brand-logo {
+    font-size: 32px;
+}
+
+.brand-text h1 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.sub-legal {
+    font-size: 11px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-btn.active {
+    color: #042f1a;
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* 2. LAYOUT VIEWPORT */
+.nexus-main-content {
+    flex: 1;
+    width: 100%;
+    padding: 60px 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.nexus-main-content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    animation: fadeIn 0.6s ease;
+}
+
+.hero-section h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* 3. PREMIUM DEEP VERTICAL CARDS */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    animation: fadeIn 0.8s ease;
+}
+
+.business-preview-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-preview-card:not(.non-clickable):hover {
+    transform: translateY(-8px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow);
+}
+
+.card-badge {
+    align-self: flex-start;
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.card-bg-placeholder {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    background-color: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+}
+
+.business-preview-card h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.business-preview-card .desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.vertical-specs {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.vertical-specs span {
+    color: #cbd5e1;
+}
+
+.vertical-specs strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* 4. EXPANDABLE INNER ARCHITECTURE */
+.expand-inline-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.expand-inline-btn:hover {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: var(--primary);
+    color: #34d399;
+}
+
+.inline-hidden-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inline-hidden-details.open {
+    max-height: 1200px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.media-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.sub-media-box h4 {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.extended-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* 5. INFORMATION PRESENTATION LAYOUTS */
+.single-display-layout {
+    max-width: 850px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s ease;
+}
+
+.detail-display-card {
+    background: var(--bg-card);
+    border-left: 4px solid var(--primary);
+    border-radius: 0 16px 16px 0;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.detail-display-card h3 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.detail-display-card p {
+    font-size: 16px;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.detail-display-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* 6. SCREENSAVER LAYER */
+#nexus-flag-screensaver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+#nexus-flag-screensaver.active {
+    opacity: 0.12;
+}
+
+/* 7. CHAT WIDGET INTERFACE */
+#nexus-chat-box { position: fixed; bottom: 30px; right: 30px; z-index: 10000; }
+#chat-launcher { width: 65px; height: 65px; border-radius: 50%; background: var(--primary); border: none; color: white; font-size: 28px; cursor: pointer; box-shadow: 0 8px 25px rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+#chat-launcher:hover { transform: scale(1.05); }
+#chat-window { width: 360px; height: 480px; background: #0d1527; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.7); display: none; flex-direction: column; overflow: hidden; }
+#chat-header { background: #16223f; padding: 16px; display: flex; justify-content: space-between; align-items: center; color: white; font-weight: 700; font-size: 15px; border-bottom: 1px solid var(--border); }
+#chat-body { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+.msg { padding: 10px 14px; border-radius: 10px; max-width: 80%; line-height: 1.4; }
+.msg.bot { background: rgba(255,255,255,0.05); color: #f1f5f9; align-self: flex-start; border: 1px solid rgba(255,255,255,0.03); }
+.msg.user { background: var(--primary); color: #042f1a; font-weight: 700; align-self: flex-end; }
+#chat-actions { padding: 14px; display: flex; flex-direction: column; gap: 8px; background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.06); }
+.action-btn { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); color: #34d399; padding: 12px; border-radius: 8px; text-align: left; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+.action-btn:hover { background: var(--primary); color: #042f1a; }
+
+/* 8. CORPORATE FOOTER */
+.nexus-footer {
+    background: #050811;
+    border-top: 1px solid var(--border);
+    padding: 30px 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.footer-sub-text {
+    font-size: 12px;
+    color: #475569;
+    margin-top: 6px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-line {
+    color: #cbd5e1;
+}
+
+.footer-line .label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+    .nav-container { justify-content: center; }
+    .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .hero-section h2 { font-size: 30px; }
+}
