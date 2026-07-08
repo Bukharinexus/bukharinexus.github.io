@@ -1,11 +1,14 @@
-/* Bukhari Nexus Pvt Ltd - High-Performance Multi-Page Tab Architecture */
+/* ========================================================
+   Bukhari Nexus Pvt Ltd - Multi-CSS Splitting Engine
+   ======================================================== */
 
 const nexusDatabase = {
     modules: {
         home: {
             title: "Bukhari Nexus Enterprise Ecosystem",
-            subtitle: "Select an enterprise sector below to access its dedicated operational matrix, corporate administration, and regional desks.",
+            subtitle: "Select an enterprise sector below to access its unique operational framework, executive administration, and assets.",
             layout: "grid",
+            cssFile: "style.css", // Uses core global style
             items: [
                 {
                     badge: "Grains & Agriculture",
@@ -29,26 +32,41 @@ const nexusDatabase = {
         },
         traders: {
             title: "🌾 Bukhari Traders & Commission Agent",
-            layout: "dedicated-page",
-            flagCode: "pk",
+            layout: "portal",
+            cssFile: "traders.css", // Dedicated Traders Stylesheet
             content: `
-                <div class="single-display-layout">
-                    <div class="card-bg-placeholder" id="dedicated-hero-traders" style="height: 320px; margin-bottom: 30px;"></div>
-                    
-                    <div class="detail-display-card">
-                        <h3>Executive Directorate</h3>
-                        <p><strong>Managing Director:</strong> Sajjad Hussain</p>
-                        <p><strong>Corporate Trading Desk:</strong> +92 347 6051990</p>
-                        <p><strong>Primary Operations Address:</strong> Dinga Road, Kotla Mehmood Shah, Post Office Thatha Alia, Tehsil Phalia, Pakistan</p>
-                        
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-                        
-                        <h3>Operational Mandate & Logistics</h3>
-                        <p>Bukhari Traders directly oversees comprehensive harvest aggregation, milling supply lines, and industrial grain brokerage. We secure fluid commodity corridors between farming cooperatives and major commercial wholesale networks, stabilizing regional inventories with high-caliber quality assurance protocols.</p>
-                        
-                        <div class="media-subgrid" style="margin-top: 25px;">
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-grain-wheat" style="height:160px;"></div><h4>Milled Wheat Processing Node</h4></div>
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-grain-paddy" style="height:160px;"></div><h4>Premium Paddy Supply Network</h4></div>
+                <div class="portal-showcase-view">
+                    <div class="portal-hero" id="hero-traders"></div>
+                    <div class="portal-grid-layout">
+                        <div class="profile-main-card">
+                            <h3>Operational Mandate</h3>
+                            <p>Bukhari Traders directly oversees comprehensive harvest aggregation, milling supply lines, and industrial grain brokerage. We secure fluid commodity corridors between farming cooperatives and major commercial wholesale networks, stabilizing regional inventories with high-caliber quality assurance protocols.</p>
+                            
+                            <div class="sub-assets-row">
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-traders-sub1"></div>
+                                    <h4>Milled Wheat Processing Node</h4>
+                                </div>
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-traders-sub2"></div>
+                                    <h4>Premium Paddy Supply</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="directory-sidebar">
+                            <h4>Executive Directorate</h4>
+                            <div class="meta-field">
+                                <label>Managing Director</label>
+                                <p>Sajjad Hussain</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Corporate Trading Desk</label>
+                                <p>+92 347 6051990</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Primary Operations Base</label>
+                                <p style="font-size: 0.9rem;">Dinga Road, Kotla Mehmood Shah, Post Office Thatha Alia, Tehsil Phalia, Pakistan</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,26 +74,41 @@ const nexusDatabase = {
         },
         makkah: {
             title: "🛒 Al Makkah General Store",
-            layout: "dedicated-page",
-            flagCode: "pk",
+            layout: "portal",
+            cssFile: "makkah.css", // Dedicated Al Makkah Stylesheet
             content: `
-                <div class="single-display-layout">
-                    <div class="card-bg-placeholder" id="dedicated-hero-makkah" style="height: 320px; margin-bottom: 30px;"></div>
-                    
-                    <div class="detail-display-card">
-                        <h3>Executive Directorate</h3>
-                        <p><strong>Managing Director:</strong> Zulqur Nain Haider</p>
-                        <p><strong>Wholesale Desk Line:</strong> +92 347 4888906</p>
-                        <p><strong>Central Warehouse Address:</strong> Gujrat Sargodha Road, Pahranwali, Pakistan</p>
-                        
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-                        
-                        <h3>Wholesale Portfolio & Big Customer Distribution</h3>
-                        <p>Al Makkah General Store functions as a high-velocity fulfillment ecosystem structured for bulk merchant buying, larger family provisioning, and commercial sub-vendor supply. Our inventory tracks premium essential consumer packed goods, foundational grocery lines, and FMCG logistics to ensure immediate product availability at optimized commercial pricing.</p>
-                        
-                        <div class="media-subgrid" style="margin-top: 25px;">
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-makkah-aisle" style="height:160px;"></div><h4>Wholesale Inventory Aisles</h4></div>
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-makkah-fresh" style="height:160px;"></div><h4>Daily Consumer Supply Lines</h4></div>
+                <div class="portal-showcase-view">
+                    <div class="portal-hero" id="hero-makkah"></div>
+                    <div class="portal-grid-layout">
+                        <div class="profile-main-card">
+                            <h3>Wholesale Portfolio & Big Customer Distribution</h3>
+                            <p>Al Makkah General Store functions as a high-velocity fulfillment ecosystem structured for bulk merchant buying, larger family provisioning, and commercial sub-vendor supply. Our inventory tracks premium essential consumer packed goods, foundational grocery lines, and FMCG logistics to ensure immediate product availability at optimized commercial pricing.</p>
+                            
+                            <div class="sub-assets-row">
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-makkah-sub1"></div>
+                                    <h4>Wholesale Inventory Aisles</h4>
+                                </div>
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-makkah-sub2"></div>
+                                    <h4>Daily Consumer Supply Lines</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="directory-sidebar">
+                            <h4>Corporate Desk</h4>
+                            <div class="meta-field">
+                                <label>Managing Director</label>
+                                <p>Zulqur Nain Haider</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Wholesale Desk Line</label>
+                                <p>+92 347 4888906</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Central Warehouse Address</label>
+                                <p style="font-size: 0.9rem;">Gujrat Sargodha Road, Pahranwali, Pakistan</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -83,26 +116,41 @@ const nexusDatabase = {
         },
         pty: {
             title: "🚗 Bukhari Nexus PTY Ltd",
-            layout: "dedicated-page",
-            flagCode: "au",
+            layout: "portal",
+            cssFile: "pty.css", // Dedicated Bukhari PTY Stylesheet
             content: `
-                <div class="single-display-layout">
-                    <div class="card-bg-placeholder" id="dedicated-hero-pty" style="height: 320px; margin-bottom: 30px;"></div>
-                    
-                    <div class="detail-display-card">
-                        <h3>Executive Directorate</h3>
-                        <p><strong>Managing Director:</strong> Haseeb Sajjad</p>
-                        <p><strong>Fleet Operations Line:</strong> +61 474 024174</p>
-                        <p><strong>Registered Administrative Base:</strong> 83 Spring Farm Road, Kingston, TAS 7050, Australia</p>
-                        
-                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-                        
-                        <h3>Tasmanian Mobility Fleet Infrastructure</h3>
-                        <p>Bukhari Nexus PTY Ltd delivers highly structured commercial vehicle assets engineered directly for the contemporary passenger transport economy. We maintain a frontline fleet optimized for commercial food delivery drivers, verified Uber X ride-share configurations, and regional taxi platforms—maintaining highly specific operational density within the Hobart municipal sector while scaling capabilities across greater Tasmania.</p>
-                        
-                        <div class="media-subgrid" style="margin-top: 25px;">
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-pty-eats" style="height:160px;"></div><h4>Food Delivery Fleet Assets</h4></div>
-                            <div class="sub-media-box"><div class="card-bg-placeholder" id="img-pty-rideshare" style="height:160px;"></div><h4>Uber X & Taxi Platforms</h4></div>
+                <div class="portal-showcase-view">
+                    <div class="portal-hero" id="hero-pty"></div>
+                    <div class="portal-grid-layout">
+                        <div class="profile-main-card">
+                            <h3>Tasmanian Mobility Fleet Infrastructure</h3>
+                            <p>Bukhari Nexus PTY Ltd delivers highly structured commercial vehicle assets engineered directly for the contemporary passenger transport economy. We maintain a frontline fleet optimized for commercial food delivery drivers, verified Uber X ride-share configurations, and regional taxi platforms—maintaining highly specific operational density within the Hobart municipal sector while scaling capabilities across greater Tasmania.</p>
+                            
+                            <div class="sub-assets-row">
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-pty-sub1"></div>
+                                    <h4>Food Delivery Fleet Assets</h4>
+                                </div>
+                                <div class="asset-sub-box">
+                                    <div class="mini-img" id="img-pty-sub2"></div>
+                                    <h4>Uber X & Taxi Platforms</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="directory-sidebar">
+                            <h4>Oceania Administration</h4>
+                            <div class="meta-field">
+                                <label>Managing Director</label>
+                                <p>Haseeb Sajjad</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Fleet Operations Line</label>
+                                <p>+61 474 024174</p>
+                            </div>
+                            <div class="meta-field">
+                                <label>Registered Fleet Base</label>
+                                <p style="font-size: 0.9rem;">83 Spring Farm Road, Kingston, TAS 7050, Australia</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,53 +159,81 @@ const nexusDatabase = {
         about: {
             title: "Corporate Mandate",
             layout: "single",
+            cssFile: "style.css",
             content: `
-                <div class="detail-display-card">
+                <div class="standalone-box">
                     <h3>Architecting Global Reliability</h3>
                     <p>Bukhari Nexus Pvt Ltd operates as a synchronized parent corporate shell overseeing distinct commercial and logistical divisions. From anchoring primary grain trade routes in South Asia to standardizing gig-economy transport networks in Oceania, we specialize in structural supply chain optimization.</p>
-                    <p>Our operational ethos relies upon professional accountability, modern inventory controls, and asset placement that supports regional market scalability.</p>
                 </div>
             `
         },
         history: {
             title: "Our Trajectory",
             layout: "single",
+            cssFile: "style.css",
             content: `
-                <div class="detail-display-card">
+                <div class="standalone-box">
                     <h3>From Asset Development to Diversified Operations</h3>
-                    <p><strong>Phase 1: Foundations in Agribusiness</strong> — Established structural operations under Bukhari Traders, consolidating localized grain collection pipelines and processing setups.</p>
-                    <p><strong>Phase 2: Bulk Retail Expansion</strong> — Deployed Al Makkah General Store to interface directly with consumer markets, supplying bulk grocery staples to sub-retail spaces and high-volume consumers.</p>
-                    <p><strong>Phase 3: International Logistics Integration</strong> — Formed Bukhari Nexus PTY Ltd to anchor standard fleet asset provisions, bridging transport networks across crucial regional Tasmanian logistical sectors.</p>
+                    <div class="history-timeline">
+                        <div class="timeline-milestone">
+                            <h4>Phase 1: Foundations in Agribusiness</h4>
+                            <p>Established structural operations under Bukhari Traders, consolidating localized grain collection pipelines and processing setups.</p>
+                        </div>
+                        <div class="timeline-milestone">
+                            <h4>Phase 2: Bulk Retail Expansion</h4>
+                            <p>Deployed Al Makkah General Store to interface directly with consumer markets, supplying bulk grocery staples to sub-retail spaces and high-volume consumers.</p>
+                        </div>
+                        <div class="timeline-milestone">
+                            <h4>Phase 3: International Logistics Integration</h4>
+                            <p>Formed Bukhari Nexus PTY Ltd to anchor standard fleet asset provisions, bridging transport networks across crucial regional Tasmanian logistical sectors.</p>
+                        </div>
+                    </div>
                 </div>
             `
         },
         contact: {
             title: "Global Coordination Desks",
             layout: "single",
+            cssFile: "style.css",
             content: `
-                <div class="detail-display-card" style="margin-bottom: 24px;">
-                    <h3>Regional South Asia Headquarters</h3>
-                    <p><strong>Bukhari Traders Desk (Sajjad Hussain):</strong> +92 347 6051990</p>
-                    <p style="font-size:14px; color:#94a3b8; margin-left: 15px;">Dinga Road, Kotla Mehmood Shah, PO Thatha Alia, Tehsil Phalia, Pakistan</p>
-                    <p style="margin-top: 15px;"><strong>Al Makkah Desk (Zulqur Nain Haider):</strong> +92 347 4888906</p>
-                    <p style="font-size:14px; color:#94a3b8; margin-left: 15px;">Gujrat Sargodha Road, Pahranwali, Pakistan</p>
-                </div>
-                <div class="detail-display-card">
-                    <h3>Oceania Logistics Headquarters</h3>
-                    <p><strong>Bukhari Nexus PTY Ltd (Haseeb Sajjad):</strong> +61 474 024174</p>
-                    <p style="font-size:14px; color:#94a3b8; margin-left: 15px;">83 Spring Farm Road, Kingston, TAS 7050, Australia</p>
+                <div class="standalone-box">
+                    <p style="margin-bottom: 2rem; color: #94a3b8;">Direct contact channels for executive administration and trading inquiries across operations:</p>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #10b981;">🌾 Bukhari Traders (Sajjad Hussain)</h4>
+                            <p>Line: +92 347 6051990</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #10b981;">🛒 Al Makkah General Store (Zulqur Nain Haider)</h4>
+                            <p>Line: +92 347 4888906</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #10b981;">🚗 Bukhari Nexus PTY Ltd (Haseeb Sajjad)</h4>
+                            <p>Line: +61 474 024174</p>
+                        </div>
+                    </div>
                 </div>
             `
         }
     }
 };
 
-/* MASTER SINGLE-PAGE ROUTING LAYER */
+/* THE DYNAMIC STYLESHEET HOT-SWAPPER */
 function switchNexusModule(moduleId) {
     const module = nexusDatabase.modules[moduleId];
     if (!module) return;
 
-    // Update nav selections
+    // Hot-swap the CSS layout link inside index.html header safely
+    let styleLink = document.getElementById('nexus-dynamic-css');
+    if (!styleLink) {
+        styleLink = document.createElement('link');
+        styleLink.id = 'nexus-dynamic-css';
+        styleLink.rel = 'stylesheet';
+        document.head.appendChild(styleLink);
+    }
+    styleLink.href = module.cssFile;
+
+    // Toggle nav header active button selections
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
     const targetedBtn = document.getElementById(`btn-${moduleId}`);
     if (targetedBtn) targetedBtn.classList.add('active');
@@ -177,7 +253,7 @@ function switchNexusModule(moduleId) {
             htmlContent += `
                 <div class="business-preview-card" onclick="switchNexusModule('${item.targetModule}')" style="cursor:pointer;">
                     <span class="card-badge">${item.badge}</span>
-                    <div class="card-bg-placeholder" id="bg-render-${item.targetModule}"></div>
+                    <div class="card-img-placeholder" id="preview-img-${item.targetModule}"></div>
                     <h3>${item.title}</h3>
                     <p class="desc">${item.desc}</p>
                     <button class="expand-inline-btn" style="margin-top: auto;">Open Sector Portal Page →</button>
@@ -191,15 +267,11 @@ function switchNexusModule(moduleId) {
 
     holder.innerHTML = htmlContent;
 
-    // Trigger visual flag backdrops and dynamic imagery
-    if (typeof applyFlagScreenOverlay === 'function') {
-        applyFlagScreenOverlay(module.flagCode || 'clear');
-    }
+    // Run media injection matching elements
     if (typeof triggerMediaInjection === 'function') {
-        setTimeout(triggerMediaInjection, 60);
+        setTimeout(triggerMediaInjection, 80);
     }
     
-    // Auto Scroll to Top for crisp transition feel
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
