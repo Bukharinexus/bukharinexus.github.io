@@ -1,313 +1,426 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus | Apex of Enterprise, Retail & Global Trade</title>
-    <!-- Tailwind CSS for high-end minimalist styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for professional layout icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        nexusGold: '#D4AF37',
-                        nexusDark: '#0B0F19',
-                        nexusCard: '#151D30',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Bukhari Nexus Pvt Ltd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --deep-green: #0f5132;
+      --navy-blue: #0b1f3b;
+      --white: #ffffff;
+      --gold: #c9a34a;
+      --light-grey: #f3f4f6;
+      --text-grey: #4b5563;
+      --shadow: 0 10px 30px rgba(0,0,0,0.15);
+      --transition: 0.3s ease;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: "Open Sans", sans-serif;
+      background:#fff;
+      color:var(--text-grey);
+      line-height:1.6;
+    }
+    a { text-decoration:none; color:inherit; }
+
+    /* NAVIGATION */
+    header {
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+    nav {
+      max-width:1200px;
+      margin:auto;
+      padding:1rem 1.5rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo {
+      font-family:"Inter",sans-serif;
+      font-size:1.2rem;
+      font-weight:700;
+      color:var(--navy-blue);
+      text-transform:uppercase;
+    }
+    .logo span { color:var(--gold); }
+
+    .menu {
+      display:flex;
+      gap:1.5rem;
+      font-weight:600;
+      color:var(--navy-blue);
+    }
+    .menu a {
+      position:relative;
+      padding-bottom:4px;
+    }
+    .menu a::after {
+      content:"";
+      position:absolute;
+      bottom:0; left:0;
+      width:0; height:2px;
+      background:var(--gold);
+      transition:var(--transition);
+    }
+    .menu a:hover::after { width:100%; }
+
+    /* HERO */
+    .hero {
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      text-align:left;
+    }
+    .hero video {
+      position:absolute;
+      inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      z-index:-2;
+    }
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(11,31,59,0.85),
+        rgba(15,81,50,0.85)
+      );
+      z-index:-1;
+    }
+    .hero-content {
+      max-width:700px;
+      padding:2rem;
+      animation:fadeUp 1s ease;
+    }
+    .hero h1 {
+      font-family:"Inter",sans-serif;
+      font-size:2.8rem;
+      margin-bottom:1rem;
+    }
+    .hero p { margin-bottom:2rem; font-size:1.1rem; }
+
+    .btn {
+      display:inline-block;
+      padding:0.8rem 1.6rem;
+      border-radius:50px;
+      font-weight:600;
+      transition:var(--transition);
+      border:2px solid transparent;
+    }
+    .btn-primary {
+      background:var(--navy-blue);
+      color:#fff;
+      border-color:var(--gold);
+    }
+    .btn-primary:hover {
+      background:var(--deep-green);
+      transform:translateY(-3px);
+    }
+    .btn-secondary {
+      background:#fff;
+      color:var(--navy-blue);
+      border-color:var(--deep-green);
+    }
+    .btn-secondary:hover {
+      background:var(--light-grey);
+      transform:translateY(-3px);
+    }
+
+    /* SECTION */
+    section { padding:4rem 1.5rem; max-width:1200px; margin:auto; }
+
+    .heading {
+      font-family:"Inter",sans-serif;
+      font-size:2rem;
+      color:var(--navy-blue);
+      margin-bottom:1rem;
+    }
+    .subheading {
+      max-width:700px;
+      margin-bottom:2rem;
+    }
+
+    /* BUSINESS CARDS */
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:1.5rem;
+    }
+    .card {
+      position:relative;
+      border-radius:1rem;
+      overflow:hidden;
+      color:#fff;
+      height:300px;
+      box-shadow:var(--shadow);
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    .card:hover { transform:translateY(-5px); }
+
+    .card-bg {
+      position:absolute;
+      inset:0;
+      background-size:cover;
+      background-position:center;
+      transition:var(--transition);
+    }
+    .card:hover .card-bg { transform:scale(1.08); }
+
+    .card-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(11,31,59,0.9),
+        rgba(15,81,50,0.7)
+      );
+    }
+
+    .card-content {
+      position:absolute;
+      bottom:1.5rem;
+      left:1.5rem;
+      right:1.5rem;
+    }
+    .card-title {
+      font-family:"Inter",sans-serif;
+      font-size:1.4rem;
+      margin-bottom:0.5rem;
+    }
+    .card-desc { font-size:0.95rem; margin-bottom:1rem; }
+
+    .call-btn {
+      display:inline-block;
+      padding:0.5rem 1rem;
+      background:var(--gold);
+      color:var(--navy-blue);
+      border-radius:50px;
+      font-weight:700;
+      transition:var(--transition);
+    }
+    .call-btn:hover { background:#fff; }
+
+    /* ORG CHART */
+    .org-chart {
+      text-align:center;
+      margin-top:3rem;
+      font-family:"Inter",sans-serif;
+      font-weight:600;
+      color:var(--navy-blue);
+    }
+    .org-chart pre {
+      background:var(--light-grey);
+      padding:1.5rem;
+      border-radius:1rem;
+      box-shadow:var(--shadow);
+      overflow:auto;
+      text-align:left;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background:var(--light-grey);
+      padding:2rem;
+      border-radius:1rem;
+      box-shadow:var(--shadow);
+    }
+    .contact-box h3 {
+      font-family:"Inter",sans-serif;
+      margin-bottom:1rem;
+      color:var(--navy-blue);
+    }
+    .contact-box p { margin-bottom:0.5rem; }
+
+    /* FOOTER */
+    footer {
+      background:var(--navy-blue);
+      color:#fff;
+      padding:2rem 1.5rem;
+      margin-top:3rem;
+    }
+    footer .footer-grid {
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:2rem;
+    }
+    footer h4 {
+      font-family:"Inter",sans-serif;
+      margin-bottom:1rem;
+    }
+    footer p { font-size:0.9rem; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+  </style>
 </head>
-<body class="bg-nexusDark text-slate-200 font-sans antialiased selection:bg-nexusGold selection:text-nexusDark">
 
-    <!-- Header / Hero Section -->
-    <header class="relative min-h-screen flex flex-col justify-between items-center px-6 py-12 border-b border-slate-800 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-nexusDark to-nexusDark">
-        <div class="w-full max-w-7xl flex justify-between items-center">
-            <div class="text-xs tracking-[0.3em] font-bold text-nexusGold uppercase">Corporate HQ</div>
-            <a href="#directory" class="text-xs tracking-wider uppercase border border-slate-700 rounded-full px-4 py-2 hover:bg-slate-800 transition duration-300">Direct Contacts</a>
-        </div>
+<body>
 
-        <div class="w-full max-w-4xl text-center my-auto space-y-8">
-            <p class="text-xs md:text-sm tracking-[0.5em] font-semibold text-nexusGold uppercase">Bukhari Nexus Pvt Ltd</p>
-            <h1 class="text-5xl md:text-8xl font-black tracking-tight gradient-text uppercase">
-                BUKHARI NEXUS
-            </h1>
-            <div class="h-1 w-24 bg-nexusGold mx-auto rounded-full"></div>
-            <p class="text-lg md:text-2xl text-slate-400 font-light max-w-2xl mx-auto leading-relaxed">
-                A diversified holding company driving operational excellence across global agricultural trade, community retail, and specialized vehicle logistics.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="#businesses" class="bg-slate-100 text-nexusDark font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-nexusGold hover:text-nexusDark transition-all duration-300 transform hover:-translate-y-0.5">
-                    Explore Subsidiaries
-                </a>
-            </div>
-        </div>
+<!-- NAV -->
+<header>
+  <nav>
+    <div class="logo">Bukhari <span>Nexus</span> Pvt Ltd</div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#business">Businesses</a>
+      <a href="#org">Structure</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
 
-        <div class="animate-bounce text-slate-500 text-sm">
-            <a href="#businesses" class="flex flex-col items-center gap-2">
-                <span>Scroll to explore</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-    </header>
+<!-- HERO -->
+<section class="hero" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="https://videos.pexels.com/video-files/855331/855331-hd_1280_720_25fps.mp4" type="video/mp4">
+  </video>
 
-    <!-- Governance Section / Board of Directors -->
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="bg-nexusCard/50 border border-slate-800 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-1 space-y-4">
-                    <span class="text-xs uppercase tracking-[0.3em] text-nexusGold font-bold">Leadership</span>
-                    <h2 class="text-3xl font-bold tracking-tight text-white">Board of Directors</h2>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Steering corporate governance, risk assessment, and long-term asset development across all onshore and offshore operations.
-                    </p>
-                </div>
-                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div class="bg-nexusDark/60 border border-slate-800/80 p-6 rounded-2xl">
-                        <div class="text-xs text-nexusGold font-bold mb-1">Founder & Director</div>
-                        <div class="text-lg font-bold text-white">Haseeb Sajjad</div>
-                    </div>
-                    <div class="bg-nexusDark/60 border border-slate-800/80 p-6 rounded-2xl">
-                        <div class="text-xs text-nexusGold font-bold mb-1">Director</div>
-                        <div class="text-lg font-bold text-white">Sajjad Hussain</div>
-                    </div>
-                    <div class="bg-nexusDark/60 border border-slate-800/80 p-6 rounded-2xl">
-                        <div class="text-xs text-nexusGold font-bold mb-1">Director</div>
-                        <div class="text-lg font-bold text-white">Zulquarnain Haider</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="hero-content">
+    <h1>Building Connections Across Agriculture, Trade & Mobility</h1>
+    <p>
+      Bukhari Nexus Pvt Ltd operates across Pakistan and Australia, delivering trusted solutions in
+      agricultural trading, wholesale distribution, and vehicle rental services.
+    </p>
 
-    <!-- Subsidiaries Grid Section -->
-    <section id="businesses" class="py-20 px-6 bg-slate-950/40 border-t border-b border-slate-900">
-        <div class="max-w-7xl mx-auto space-y-16">
-            <div class="text-center space-y-4">
-                <span class="text-xs uppercase tracking-[0.3em] text-nexusGold font-bold">The Portfolio</span>
-                <h2 class="text-4xl font-bold tracking-tight text-white">Independent Subsidiaries</h2>
-                <p class="text-slate-400 max-w-xl mx-auto text-sm">
-                    Operating independently under distinct executive portfolios, equipped with dedicated channels for direct customer and partner engagement.
-                </p>
-            </div>
+    <a href="#business" class="btn btn-primary">Explore Our Businesses</a>
+    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+  </div>
+</section>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                
-                <!-- Pillar 1: Bukhari Traders -->
-                <div class="bg-nexusCard border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition duration-300 group">
-                    <div>
-                        <div class="relative h-56 bg-slate-800 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&q=80&w=800" alt="Wheat and Grain Commodity Trading" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-nexusCard to-transparent"></div>
-                            <span class="absolute top-4 left-4 bg-nexusDark/80 backdrop-blur-md text-nexusGold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-slate-700">Commodities</span>
-                        </div>
-                        <div class="p-8 space-y-4">
-                            <h3 class="text-2xl font-bold text-white">Bukhari Traders</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Specializing in the high-volume, structural trading and wholesale distribution of primary agricultural products: **Wheat, Paddy, and Rice**.
-                            </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Wheat Supply Chain Logistics</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Raw Paddy Sourcing & Grading</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Milled Rice Wholesale Lines</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 pt-0 space-y-4">
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Managing Director</div>
-                            <div class="text-sm font-semibold text-white">Sajjad Hussain</div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="tel:+923476051990" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold py-3 px-4 rounded-xl transition">
-                                <i class="fa-solid fa-phone"></i> Call
-                            </a>
-                            <a href="https://wa.me/923476051990" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 text-xs font-semibold py-3 px-4 rounded-xl transition border border-emerald-500/20">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<!-- BUSINESS SECTION -->
+<section id="business">
+  <h2 class="heading">Our Business Divisions</h2>
+  <p class="subheading">
+    Three specialised units under one international holding company.
+  </p>
 
-                <!-- Pillar 2: Al Makha General Store -->
-                <div class="bg-nexusCard border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition duration-300 group">
-                    <div>
-                        <div class="relative h-56 bg-slate-800 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="General Store Grocery" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-nexusCard to-transparent"></div>
-                            <span class="absolute top-4 left-4 bg-nexusDark/80 backdrop-blur-md text-nexusGold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-slate-700">Retail</span>
-                        </div>
-                        <div class="p-8 space-y-4">
-                            <h3 class="text-2xl font-bold text-white">Al Makha General Store</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Providing clean, dependable, and highly localized retail environments stocked with premium consumer staples and daily family necessities.
-                            </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Premium Daily Staples</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Quality Consumer Goods</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Community-Centric Operations</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 pt-0 space-y-4">
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Managing Director</div>
-                            <div class="text-sm font-semibold text-white">Zulquarnain Haider</div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="tel:+923474888906" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold py-3 px-4 rounded-xl transition">
-                                <i class="fa-solid fa-phone"></i> Call
-                            </a>
-                            <a href="https://wa.me/923474888906" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 text-xs font-semibold py-3 px-4 rounded-xl transition border border-emerald-500/20">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <div class="cards">
 
-                <!-- Pillar 3: Bukhari Pty Ltd -->
-                <div class="bg-nexusCard border border-slate-800 rounded-3xl overflow-hidden flex flex-col justify-between hover:border-slate-700 transition duration-300 group">
-                    <div>
-                        <div class="relative h-56 bg-slate-800 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Rideshare Fleet Vehicle" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-nexusCard to-transparent"></div>
-                            <span class="absolute top-4 left-4 bg-nexusDark/80 backdrop-blur-md text-nexusGold text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-slate-700">Fleet Logistics</span>
-                        </div>
-                        <div class="p-8 space-y-4">
-                            <h3 class="text-2xl font-bold text-white">Bukhari Pty Ltd</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Offering dedicated, fully-insured commercial vehicle solutions for professional **UberX rideshare** and **Uber Eats delivery** drivers.
-                            </p>
-                            <div class="pt-2 space-y-2">
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>UberX & Uber Eats Platform Compliant</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Comprehensive Commercial Insurance</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-xs text-slate-300">
-                                    <i class="fa-solid fa-circle-check text-nexusGold text-xs"></i>
-                                    <span>Flexible Fleet Leasing Models</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 pt-0 space-y-4">
-                        <div class="border-t border-slate-800/80 pt-4">
-                            <div class="text-[11px] text-slate-400 uppercase tracking-wider">Managing Director</div>
-                            <div class="text-sm font-semibold text-white">Haseeb Sajjad</div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="tel:+61474024174" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold py-3 px-4 rounded-xl transition">
-                                <i class="fa-solid fa-phone"></i> Call
-                            </a>
-                            <a href="https://wa.me/61474024174" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 text-xs font-semibold py-3 px-4 rounded-xl transition border border-emerald-500/20">
-                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- BUKHARI TRADERS -->
+    <div class="card">
+      <div class="card-bg"
+        style="background-image:url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-title">Bukhari Traders</div>
+        <div class="card-desc">Bulk trading of premium wheat, paddy, and rice.</div>
+        <a href="tel:+923476051990" class="call-btn">Call Sajjad Hussain</a>
+      </div>
+    </div>
 
-            </div>
-        </div>
-    </section>
+    <!-- AL MAKHA -->
+    <div class="card">
+      <div class="card-bg"
+        style="background-image:url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-title">Al Makha General Store</div>
+        <div class="card-desc">Premium local grocery and daily retail staples.</div>
+        <a href="tel:+923474888906" class="call-btn">Call Zulquarnain Haider</a>
+      </div>
+    </div>
 
-    <!-- Communication Routing Pipeline -->
-    <section class="py-20 px-6 max-w-5xl mx-auto space-y-12">
-        <div class="text-center space-y-3">
-            <span class="text-xs uppercase tracking-[0.3em] text-nexusGold font-bold">Onboarding Flow</span>
-            <h2 class="text-3xl font-bold tracking-tight text-white">How Inquiries Are Handled</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8 relative">
-            <div class="bg-nexusCard/30 border border-slate-800/60 p-6 rounded-2xl relative space-y-3">
-                <div class="w-8 h-8 rounded-full bg-slate-800 text-nexusGold flex items-center justify-center text-xs font-bold font-mono">01</div>
-                <h4 class="text-base font-bold text-white">Direct Branch Selection</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">Partners choose their target subsidiary sector directly, skipping unnecessary intermediate switchboards.</p>
-            </div>
-            <div class="bg-nexusCard/30 border border-slate-800/60 p-6 rounded-2xl relative space-y-3">
-                <div class="w-8 h-8 rounded-full bg-slate-800 text-nexusGold flex items-center justify-center text-xs font-bold font-mono">02</div>
-                <h4 class="text-base font-bold text-white">Isolated Unit Management</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">The communication hits the local device or inbox assigned strictly to that branch's operating manager.</p>
-            </div>
-            <div class="bg-nexusCard/30 border border-slate-800/60 p-6 rounded-2xl relative space-y-3">
-                <div class="w-8 h-8 rounded-full bg-slate-800 text-nexusGold flex items-center justify-center text-xs font-bold font-mono">03</div>
-                <h4 class="text-base font-bold text-white">Director Accountability</h4>
-                <p class="text-xs text-slate-400 leading-relaxed">High-scale supply bids or leasing alignments escalate cleanly to the portfolio executive for fast closure.</p>
-            </div>
-        </div>
-    </section>
+    <!-- BUKHARI PTY LTD -->
+    <div class="card">
+      <div class="card-bg"
+        style="background-image:url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-title">Bukhari Pty Ltd</div>
+        <div class="card-desc">UberX & Uber Eats car rentals for smart drivers.</div>
+        <a href="tel:+61474024174" class="call-btn">Call Haseeb Sajjad</a>
+      </div>
+    </div>
 
-    <!-- Master Contact Directory Footer -->
-    <footer id="directory" class="bg-nexusDark border-t border-slate-800 py-16 px-6">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="space-y-4">
-                    <div class="text-lg font-bold text-white tracking-wider">BUKHARI NEXUS</div>
-                    <p class="text-xs text-slate-500 leading-relaxed">
-                        A robust modern corporate framework coordinating structural distribution networks, regional brick-and-mortar operations, and urban logistics platforms.
-                    </p>
-                </div>
-                
-                <div class="space-y-3">
-                    <div class="text-xs font-bold text-nexusGold uppercase tracking-widest">Bukhari Traders</div>
-                    <div class="text-xs text-slate-400">Agricultural Supply Operations</div>
-                    <a href="tel:+923476051990" class="block text-sm text-white hover:text-nexusGold transition"><i class="fa-solid fa-phone text-xs mr-2 text-slate-500"></i>+92 347 6051990</a>
-                </div>
+  </div>
+</section>
 
-                <div class="space-y-3">
-                    <div class="text-xs font-bold text-nexusGold uppercase tracking-widest">Al Makha General Store</div>
-                    <div class="text-xs text-slate-400">Retail & Groceries Portfolio</div>
-                    <a href="tel:+923474888906" class="block text-sm text-white hover:text-nexusGold transition"><i class="fa-solid fa-phone text-xs mr-2 text-slate-500"></i>+92 347 4888906</a>
-                </div>
+<!-- ORG CHART -->
+<section id="org">
+  <h2 class="heading">Organisational Structure</h2>
 
-                <div class="space-y-3">
-                    <div class="text-xs font-bold text-nexusGold uppercase tracking-widest">Bukhari Pty Ltd</div>
-                    <div class="text-xs text-slate-400">Driver Vehicle Fleet Rental</div>
-                    <a href="tel:+61474024174" class="block text-sm text-white hover:text-nexusGold transition"><i class="fa-solid fa-phone text-xs mr-2 text-slate-500"></i>+61 474 024 174</a>
-                </div>
-            </div>
+  <div class="org-chart">
+    <pre>
+                BUKHARI NEXUS PVT LTD
+                     (Parent Holding)
+           ________________________|________________________
+          |                        |                        |
+   BUKHARI TRADERS        AL MAKHA GENERAL STORE      BUKHARI PTY LTD
+(Commodities & Logistics)   (Retail & Consumer)     (Corporate & Governance)
+    </pre>
+  </div>
+</section>
 
-            <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-600">
-                <div>&copy; 2026 Bukhari Nexus Pvt Ltd. All Rights Reserved.</div>
-                <div class="flex gap-4">
-                    <span class="hover:text-slate-400 transition cursor-pointer">Privacy Policy</span>
-                    <span class="hover:text-slate-400 transition cursor-pointer">Terms of Service</span>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="heading">Contact Us</h2>
+
+  <div class="contact-box">
+    <h3>Direct Contact Lines</h3>
+    <p><strong>Bukhari Traders:</strong> Sajjad Hussain — +92 347 6051990</p>
+    <p><strong>Al Makha General Store:</strong> Zulquarnain Haider — +92 347 4888906</p>
+    <p><strong>Bukhari Pty Ltd:</strong> Haseeb Sajjad — +61 474 024 174</p>
+
+    <h3 style="margin-top:1.5rem;">Group Contact</h3>
+    <p>For general enquiries, please call any director or use the contact form (coming soon).</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Bukhari Nexus Pvt Ltd</h4>
+      <p>Trusted business group connecting agriculture, retail, and mobility across borders.</p>
+    </div>
+
+    <div>
+      <h4>Operating Regions</h4>
+      <p>Pakistan 🇵🇰 & Australia 🇦🇺</p>
+    </div>
+
+    <div>
+      <h4>Divisions</h4>
+      <p>Bukhari Traders</p>
+      <p>Al Makha General Store</p>
+      <p>Bukhari Pty Ltd</p>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:1rem; font-size:0.85rem;">
+    © 2026 Bukhari Nexus Pvt Ltd. All rights reserved.
+  </p>
+</footer>
 
 </body>
 </html>
