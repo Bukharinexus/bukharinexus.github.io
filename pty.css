@@ -1,0 +1,170 @@
+/* ========================================================
+   🚗 BUKHARI NEXUS PTY LTD - TRANSPORT & FLEET MATRIX PORTAL CSS
+   ======================================================== */
+
+:root {
+    --pty-crimson: #ef4444;
+    --pty-dark-red: #991b1b;
+    --pty-bg: #070708;
+    --pty-card: #121214;
+    --pty-text: #fafafa;
+    --pty-muted: #fca5a5;
+}
+
+body {
+    background-color: var(--pty-bg) !important;
+    color: var(--pty-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Premium Navigation Frame Match */
+header {
+    background: rgba(18, 18, 20, 0.95) !important;
+    border-bottom: 2px solid var(--pty-crimson) !important;
+}
+
+.brand-section h1 {
+    color: #ffffff !important;
+}
+
+.brand-section span {
+    color: var(--pty-crimson) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Fullscreen Portal Layout */
+.portal-showcase-view {
+    animation: rapidSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Large Tech-Fleet Hero Image Banner */
+.portal-hero {
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7), inset 0 0 120px rgba(0,0,0,0.95);
+}
+
+.portal-grid-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .portal-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Core Corporate Copy Styling */
+.profile-main-card {
+    background: var(--pty-card);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border-right: 4px solid var(--pty-crimson);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.profile-main-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.profile-main-card p {
+    color: #d4d4d8;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Sub-Asset Photo Layouts */
+.sub-assets-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.asset-sub-box {
+    background: #1c1c1f;
+    border: 1px solid rgba(252, 165, 165, 0.05);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+.asset-sub-box:hover {
+    border-color: var(--pty-crimson);
+    background: #222226;
+}
+
+.asset-sub-box .mini-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.asset-sub-box h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Executive Directory Sidebar */
+.directory-sidebar {
+    background: linear-gradient(145deg, #18181c, #0e0e10);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.directory-sidebar h4 {
+    font-size: 1.3rem;
+    color: var(--pty-crimson);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-field {
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+.meta-field label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--pty-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.meta-field p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@keyframes rapidSlideIn {
+    from { opacity: 0; transform: translateX(15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
