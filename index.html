@@ -3,28 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus Pvt Ltd | Global Enterprise Ecosystem</title>
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Bukhari Nexus Pvt Ltd</title>
+    <!-- Base styles load first, then hot-swapped by our JavaScript script -->
+    <link rel="stylesheet" href="style.css" id="nexus-dynamic-css">
 </head>
 <body>
 
-    <!-- Smooth Country Flag Backdrop Overlay Layer -->
-    <div id="nexus-flag-screensaver"></div>
-
-    <!-- MAIN CORPORATE NAVBAR -->
-    <header class="nexus-navbar">
+    <!-- Premium Sticky Global Header Navigation Container -->
+    <header>
         <div class="nav-container">
-            <div class="corporate-brand" onclick="switchNexusModule('home')">
-                <span class="brand-logo">🌐</span>
-                <div class="brand-text">
-                    <h1>BUKHARI NEXUS</h1>
-                    <span class="sub-legal">Pvt Ltd</span>
-                </div>
+            <div class="brand-section" onclick="switchNexusModule('home')" style="cursor: pointer;">
+                <h1>BUKHARI NEXUS</h1>
+                <span>PVT LTD</span>
             </div>
             <nav class="nav-links">
-                <button class="nav-btn" id="btn-home" onclick="switchNexusModule('home')">Home Hub</button>
+                <button class="nav-btn active" id="btn-home" onclick="switchNexusModule('home')">Home Hub</button>
                 <button class="nav-btn" id="btn-about" onclick="switchNexusModule('about')">About Corporate</button>
                 <button class="nav-btn" id="btn-history" onclick="switchNexusModule('history')">Our History</button>
                 <button class="nav-btn" id="btn-contact" onclick="switchNexusModule('contact')">Global Offices</button>
@@ -32,29 +25,20 @@
         </div>
     </header>
 
-    <!-- CORE DISPLAY VIEWPORT -->
-    <main class="nexus-main-content">
-        <div class="container" id="dynamic-module-holder">
-            <!-- Loaded dynamically by the data engine -->
-        </div>
+    <!-- The Dynamic Content Injection Zone -->
+    <main id="dynamic-module-holder">
+        <!-- Built dynamic components render inside here smoothly -->
     </main>
 
-    <!-- PROFESSIONAL BUSINESS DATA FOOTER -->
-    <footer class="nexus-footer">
-        <div class="footer-container">
-            <div class="footer-info">
-                <p><strong>Bukhari Nexus Pvt Ltd</strong> © 2026 | Multi-Sector Global Network</p>
-                <p class="footer-sub-text">Registered Trade Entity | Agricultural Supply • FMCG Retail Warehousing • International Mobility Fleets</p>
-            </div>
-            <div class="footer-contacts">
-                <div class="footer-line">🌾 <span class="label">Traders:</span> +92 347 6051990</div>
-                <div class="footer-line">🛒 <span class="label">Al Makkah:</span> +92 347 4888906</div>
-                <div class="footer-line">🚗 <span class="label">PTY Fleet:</span> +61 474 024174</div>
-            </div>
-        </div>
+    <!-- Universal Corporate Network Footer -->
+    <footer>
+        <p>Bukhari Nexus Pvt Ltd &copy; 2026 | Multi-Sector Global Network</p>
+        <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.6;">
+            Registered Trade Entities: Agricultural Supply • FMCG Retail Warehousing • International Mobility Fleets
+        </p>
     </footer>
 
-    <!-- RUN MATRIX ORCHESTRATION LINKS -->
+    <!-- Core Engine Scripts -->
     <script src="nexus-data.js"></script>
     <script src="nexus-media.js"></script>
     <script src="nexus-chat.js"></script>
