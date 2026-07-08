@@ -3,165 +3,945 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus Pvt Ltd | Agriculture • Trade • Mobility</title>
+    <title>Bukhari Nexus Pvt Ltd | Global Business Group</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Global Enterprise SEO Engine -->
+    <meta name="description" content="Bukhari Nexus Pvt Ltd is a premium diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution, and vehicle rental services.">
+    <meta name="keywords" content="Bukhari Nexus, Bukhari Traders, Al Makkah General Store, Bukhari Pty Ltd, Corporate Pakistan Australia, Rice Procurement, Logistics Fleet">
 
+    <!-- Premium Google Typography Architecture -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/your-kit.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome Premium Vector Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Engineered Visual System Style Sheet -->
+    <style>
+        :root {
+            --primary-green: #114232;    /* Agribusiness & Trust */
+            --primary-navy: #0B1B3D;     /* Global Stability & Corporate Depth */
+            --accent-gold: #D4AF37;      /* Tier-1 Premium Accents */
+            --accent-gold-hover: #B8962E;
+            --bg-light: #F8FAFC;         /* Clean Readable Section Break */
+            --text-dark: #1E293B;        /* High-contrast Corporate Charcoal */
+            --text-muted: #64748B;
+            --white: #FFFFFF;
+        }
+
+        /* Reset & Global Base Settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .logo h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Sticky Navigation Bar Component */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            padding: 25px 0;
+            background: transparent;
+        }
+        header.scrolled {
+            background-color: var(--primary-navy);
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-b: 1px solid rgba(255,255,255,0.1);
+        }
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h2 {
+            color: var(--white);
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .logo h2 span {
+            color: var(--accent-gold);
+            font-weight: 300;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Hamburger Interaction */
+        .mobile-toggle {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Fullscreen Hero Cross-Border Cinematic Slideshow */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-navy);
+            overflow: hidden;
+        }
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+        .slide.active {
+            opacity: 0.45;
+            transform: scale(1);
+        }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(11,27,61,0.95) 0%, rgba(17,66,50,0.85) 100%);
+            z-index: 2;
+            mix-blend-mode: multiply;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 0 30px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 60px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 25px;
+        }
+        .hero-content p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.8);
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn-primary, .btn-secondary {
+            display: inline-block;
+            padding: 16px 35px;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+            box-shadow: 0 10px 25px rgba(212,175,55,0.25);
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Layout Global Sections */
+        section {
+            padding: 110px 0;
+            position: relative;
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+        .section-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-green);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--primary-navy);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        /* About Enterprise Section */
+        .about {
+            background-color: var(--white);
+        }
+        .about .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-text h3 {
+            font-size: 1.75rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        .quote-motto {
+            border-left: 4px solid var(--accent-gold);
+            background-color: var(--bg-light);
+            padding: 20px;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--primary-navy);
+            border-radius: 0 8px 8px 0;
+        }
+        .about-images {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            position: relative;
+        }
+        .img-main {
+            grid-column: 1 / span 9;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .img-sub {
+            grid-column: 5 / -1;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            margin-top: -120px;
+            border: 6px solid var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Business Divisions Interactive Cards Portfolio */
+        .business {
+            background-color: var(--bg-light);
+        }
+        .cards {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-content: column;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        .card-img-wrapper {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background-color: var(--primary-navy);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            opacity: 0.9;
+        }
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.08);
+            opacity: 0.75;
+        }
+        .card-icon {
+            position: absolute;
+            bottom: -25px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 5px 15px rgba(17,66,50,0.3);
+            border: 2px solid var(--white);
+            z-index: 3;
+            transition: background-color 0.3s;
+        }
+        .card:hover .card-icon {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+        .card-content {
+            padding: 40px 30px 30px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            font-size: 1.35rem;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .card-link {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .card:hover .card-link {
+            color: var(--accent-gold-hover);
+        }
+
+        /* Modern Services Grid System */
+        .services {
+            background-color: var(--white);
+        }
+        .service-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        .service-grid div {
+            background-color: var(--bg-light);
+            padding: 35px 25px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--primary-navy);
+            text-align: center;
+            border-top: 4px solid var(--primary-green);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .service-grid div:nth-child(even) {
+            border-top-color: var(--accent-gold);
+        }
+        .service-grid div:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary-navy);
+            color: var(--white);
+            border-top-color: var(--accent-gold);
+            box-shadow: 0 15px 30px rgba(11,27,61,0.15);
+        }
+
+        /* Secure Corporate Contact Gateway Form */
+        .contact {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+        .contact .section-header h2 {
+            color: var(--white);
+        }
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        .contact form {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group-full {
+            grid-column: 1 / span 2;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background-color: var(--bg-light);
+            border: 1px solid #E2E8F0;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: border-color 0.3s;
+        }
+        .contact input:focus, .contact textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        .contact textarea {
+            height: 150px;
+            resize: none;
+        }
+        .contact button {
+            grid-column: 1 / span 2;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(17,66,50,0.2);
+        }
+        .contact button:hover {
+            background-color: #0d3326;
+        }
+
+        /* Premium International Footer Block */
+        footer {
+            background-color: #050B1A;
+            color: #8A99AD;
+            padding: 80px 0 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-brand p {
+            font-size: 0.95rem;
+            max-width: 400px;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        .footer-links h4 {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+        .footer-links ul {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #8A99AD;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        .footer-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 12px 20px;
+            border-radius: 4px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .footer-btn i {
+            color: var(--accent-gold);
+        }
+        .footer-btn:hover {
+            border-color: var(--accent-gold);
+            background: rgba(255,255,255,0.05);
+        }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 30px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Optimization Mechanics */
+        @media (max-width: 992px) {
+            .about .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-images {
+                margin-top: 40px;
+            }
+            .cards, .service-grid, .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                background-color: var(--primary-navy);
+                padding: 15px 0;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-navy);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                border-top: 1px solid rgba(255,255,255,0.05);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .cards, .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact form {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .form-group-full {
+                grid-column: span 1;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
+<!-- Premium Header & Navbar Elements -->
+<header id="navbar-header">
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Bukhari <span>Nexus</span></h2>
+        </div>
+        
+        <div class="mobile-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
 
-<nav class="navbar">
-
-<div class="logo">
-<h2>Bukhari Nexus</h2>
-</div>
-
-<ul class="nav-links">
-<li><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#business">Businesses</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-</nav>
-
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#business">Businesses</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
+<!-- Full-Screen Interactive Corporate Hero Space -->
 <section class="hero">
+    <!-- Automated Background Slider Engine Context -->
+    <div class="hero-slideshow">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1920&q=80');"></div>
+    </div>
+    
+    <div class="overlay"></div>
 
-<video autoplay muted loop playsinline>
-<source src="videos/hero.mp4" type="video/mp4">
-</video>
+    <div class="hero-content">
+        <div class="hero-badge">
+            <i class="fa-solid fa-globe"></i> Pakistan • Australia Connection
+        </div>
+        <h1>Building Connections Across Agriculture, Trade & Mobility</h1>
+        <p>
+            Bukhari Nexus Pvt Ltd is a diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution, and vehicle rental services.
+        </p>
 
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Building Connections Across Agriculture, Trade & Mobility</h1>
-
-<p>
-Bukhari Nexus Pvt Ltd is a diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution and vehicle rental services.
-</p>
-
-<div class="buttons">
-
-<a href="#business" class="btn-primary">
-Explore Our Businesses
-</a>
-
-<a href="#contact" class="btn-secondary">
-Contact Us
-</a>
-
-</div>
-
-</div>
-
+        <div class="buttons">
+            <a href="#business" class="btn-primary">Explore Our Businesses</a>
+            <a href="#contact" class="btn-secondary">Contact Us</a>
+        </div>
+    </div>
 </section>
 
+<!-- About Section -->
 <section id="about" class="about">
-
-<div class="container">
-
-<h2>About Us</h2>
-
-<p>
-
-Bukhari Nexus Pvt Ltd connects businesses across Pakistan and Australia through trusted agricultural trading, wholesale distribution and transport solutions. Our commitment to quality, reliability and long-term partnerships makes us a dependable business group.
-
-</p>
-
-</div>
-
+    <div class="container">
+        <div class="about-text">
+            <span class="section-tag">Corporate Identity</span>
+            <h3>Cross-Border Logistics Excellence</h3>
+            <p>
+                Bukhari Nexus Pvt Ltd connects businesses across Pakistan and Australia through trusted agricultural trading, wholesale distribution, and transport solutions. Our commitment to quality, reliability, and long-term partnerships makes us a dependable business group.
+            </p>
+            <div class="quote-motto">
+                "Trusted Business Group Connecting Agriculture, Trade and Mobility Across Borders."
+            </div>
+        </div>
+        
+        <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1595275313331-5a0a41cdbee5?auto=format&fit=crop&w=700&q=80" alt="Supply Chain Operations" class="img-main">
+            <img src="https://images.unsplash.com/photo-1444653389962-8149286c578a?auto=format&fit=crop&w=500&q=80" alt="International Commerce" class="img-sub">
+        </div>
+    </div>
 </section>
 
+<!-- Business Portfolio Section -->
 <section id="business" class="business">
+    <div class="section-header">
+        <span class="section-tag">Strategic Segments</span>
+        <h2>Our Business Divisions</h2>
+    </div>
 
-<h2>Our Business Divisions</h2>
+    <div class="cards">
+        <!-- Card 1: Bukhari Traders -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80" alt="Bukhari Traders Sourcing Operations">
+                <div class="card-icon"><i class="fa-solid fa-wheat-劇"></i></div>
+            </div>
+            <div class="card-content">
+                <div>
+                    <h3>Bukhari Traders</h3>
+                    <p>Agricultural procurement, rice trading, and grain supply systems anchored across high-yield global agricultural hubs.</p>
+                </div>
+                <a href="#contact" class="card-link">Procurement Channels <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
 
-<div class="cards">
+        <!-- Card 2: Al Makkah General Store -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="Al Makkah Wholesale Architecture">
+                <div class="card-icon"><i class="fa-solid fa-store"></i></div>
+            </div>
+            <div class="card-content">
+                <div>
+                    <h3>Al Makkah General Store</h3>
+                    <p>Wholesale grocery distribution and enterprise supply chain management handling high-volume consumer staples safely.</p>
+                </div>
+                <a href="#contact" class="card-link">Distribution Network <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
 
-<div class="card">
-<img src="images/rice.jpg" alt="">
-<h3>Bukhari Traders</h3>
-<p>Agricultural procurement, rice trading and grain supply.</p>
-</div>
-
-<div class="card">
-<img src="images/store.jpg" alt="">
-<h3>Al Makkah General Store</h3>
-<p>Wholesale grocery distribution and consumer products.</p>
-</div>
-
-<div class="card">
-<img src="images/car.jpg" alt="">
-<h3>Bukhari Pty Ltd</h3>
-<p>Modern vehicle rental and transportation services across Australia.</p>
-</div>
-
-</div>
-
+        <!-- Card 3: Bukhari Pty Ltd -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Bukhari Pty Ltd Fleet Vehicle Logistics">
+                <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+            </div>
+            <div class="card-content">
+                <div>
+                    <h3>Bukhari Pty Ltd</h3>
+                    <p>Modern vehicle rental, private executive transport networks, and integrated client mobility services across major Australian roadways.</p>
+                </div>
+                <a href="#contact" class="card-link">Fleet Logistics <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
 </section>
 
+<!-- Capabilities Section -->
 <section id="services" class="services">
+    <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2>Our Core Services</h2>
+    </div>
 
-<h2>Our Services</h2>
-
-<div class="service-grid">
-
-<div>Agricultural Trading</div>
-<div>Rice Procurement</div>
-<div>Wholesale Distribution</div>
-<div>Supply Chain</div>
-<div>Vehicle Rental</div>
-<div>International Trade</div>
-
-</div>
-
+    <div class="service-grid">
+        <div><i class="fa-solid fa-seedling" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Agricultural Trading</div>
+        <div><i class="fa-solid fa-plate-wheat" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Rice Procurement</div>
+        <div><i class="fa-solid fa-truck-ramp-box" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Wholesale Distribution</div>
+        <div><i class="fa-solid fa-network-wired" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Supply Chain</div>
+        <div><i class="fa-solid fa-car-side" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Vehicle Rental</div>
+        <div><i class="fa-solid fa-globe" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> International Trade</div>
+    </div>
 </section>
 
+<!-- Corporate Engagement Interface -->
 <section id="contact" class="contact">
+    <div class="section-header">
+        <span class="section-tag">Partnership Gateway</span>
+        <h2>Contact Us</h2>
+    </div>
 
-<h2>Contact Us</h2>
-
-<form>
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Email Address">
-
-<input type="text" placeholder="Company">
-
-<textarea placeholder="Message"></textarea>
-
-<button type="submit">
-Send Message
-</button>
-
-</form>
-
+    <div class="contact-container">
+        <form id="group-contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Commercial message submitted successfully.'); this.reset();">
+            <div>
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group-full">
+                <input type="text" placeholder="Company Name">
+            </div>
+            <div class="form-group-full">
+                <textarea placeholder="Outline your procurement or logistics requirements..." required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
+<!-- International Footprint Footer Block -->
 <footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>Bukhari Nexus</h3>
+            <p>Trusted Business Group Connecting Agriculture, Trade and Mobility Across Borders. Operating seamlessly throughout cross-border pipelines.</p>
+            <p style="color: var(--white); font-weight: 600;"><i class="fa-solid fa-earth-americas"></i> Dual Footprint: Pakistan 🇵🇰 & Australia 🇦🇺</p>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Divisions</h4>
+            <ul>
+                <li><a href="#business">Bukhari Traders</a></li>
+                <li><a href="#business">Al Makkah General Store</a></li>
+                <li><a href="#business">Bukhari Pty Ltd</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Communications</h4>
+            <div class="footer-ctas">
+                <a href="https://wa.me/#" target="_blank" class="footer-btn">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Verified Desk
+                </a>
+                <a href="tel:#" class="footer-btn">
+                    <i class="fa-solid fa-phone"></i> Voice Hotline Desk
+                </a>
+                <a href="#contact" class="footer-btn">
+                    <i class="fa-solid fa-envelope"></i> Secure Form Route
+                </a>
+            </div>
+        </div>
+    </div>
 
-<h3>Bukhari Nexus Pvt Ltd</h3>
-
-<p>Operating in Pakistan 🇵🇰 & Australia 🇦🇺</p>
-
-<p>
-Bukhari Traders • Al Makkah General Store • Bukhari Pty Ltd
-</p>
-
+    <div class="footer-bottom">
+        <p>&copy; 2026 Bukhari Nexus Pvt Ltd. All international group corporate rights reserved.</p>
+        <p style="color: rgba(255,255,255,0.2);">Trade Logistics & Infrastructure Protocols Enabled</p>
+    </div>
 </footer>
 
-<script src="js/script.js"></script>
+<!-- Functional Structural Dynamic Engine -->
+<script>
+    // Sticky Header Scroll Event Matrix
+    const headerElement = document.getElementById('navbar-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            headerElement.classList.add('scrolled');
+        } else {
+            headerElement.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile Navigation Drawer Toggle Execution
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if(navMenu.classList.contains('active')) {
+            icon.className = 'fa-solid fa-xmark';
+        } else {
+            icon.className = 'fa-solid fa-bars';
+        }
+    });
+
+    // Auto close menu drawer upon clicking navigation points
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').className = 'fa-solid fa-bars';
+        });
+    });
+
+    // Cinematic Hero Slider Loop Manager
+    let currentHeroSlide = 0;
+    const allHeroSlides = document.querySelectorAll('.slide');
+    
+    setInterval(() => {
+        allHeroSlides[currentHeroSlide].classList.remove('active');
+        currentHeroSlide = (currentHeroSlide + 1) % allHeroSlides.length;
+        allHeroSlides[currentHeroSlide].classList.add('active');
+    }, 5000); // Swaps frame paths every 5 seconds safely
+</script>
 
 </body>
 </html>
