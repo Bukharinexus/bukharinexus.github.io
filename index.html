@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus Pvt Ltd | Global Business Group</title>
+    <title>Bukhari Nexus Pvt Ltd | Corporate Holding Group</title>
 
     <!-- Global Enterprise SEO Engine -->
-    <meta name="description" content="Bukhari Nexus Pvt Ltd is a premium diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution, and vehicle rental services.">
-    <meta name="keywords" content="Bukhari Nexus, Bukhari Traders, Al Makkah General Store, Bukhari Pty Ltd, Corporate Pakistan Australia, Rice Procurement, Logistics Fleet">
+    <meta name="description" content="Official corporate portal of Bukhari Nexus Pvt Ltd. A premier multi-divisional holding company formed via strategic consolidation in 2026, overseeing market-leading enterprises in global agriculture, wholesale FMCG supply, and Australian logistics.">
+    <meta name="keywords" content="Bukhari Nexus, Bukhari Traders, Al Makkah General Store, Bukhari Pty Ltd, 2026 Merger, Corporate Holding Company Pakistan, Basmati Rice Export, Australian Fleet Logistics">
 
     <!-- Premium Google Typography Architecture -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome Premium Vector Icon Library -->
+    <!-- FontAwesome Premium Vector Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Engineered Visual System Style Sheet -->
+    <!-- Custom Engineered Corporate Visual System Style Sheet -->
     <style>
         :root {
-            --primary-green: #114232;    /* Agribusiness & Trust */
-            --primary-navy: #0B1B3D;     /* Global Stability & Corporate Depth */
-            --accent-gold: #D4AF37;      /* Tier-1 Premium Accents */
-            --accent-gold-hover: #B8962E;
-            --bg-light: #F8FAFC;         /* Clean Readable Section Break */
-            --text-dark: #1E293B;        /* High-contrast Corporate Charcoal */
-            --text-muted: #64748B;
+            --primary-navy: #0A1128;      /* Executive Strength & Governance */
+            --primary-jade: #1C3F24;      /* Agribusiness Heritage & Trust */
+            --accent-gold: #DFB76C;       /* Tier-1 Premium Corporate Trim */
+            --accent-gold-hover: #C59B4E;
+            --bg-light: #F8FAFC;          /* Clean Minimalist Background */
+            --text-dark: #1E293B;         /* High-Contrast Corporate Charcoal */
+            --text-muted: #64748B;        /* Clean Secondary Text */
             --white: #FFFFFF;
+            --border-color: #E2E8F0;
+            --bezier-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Reset & Global Base Settings */
+        /* Global Structural Reset */
         * {
             margin: 0;
             padding: 0;
@@ -43,30 +45,31 @@
             font-family: 'Inter', sans-serif;
             color: var(--text-dark);
             background-color: var(--white);
-            line-height: 1.6;
+            line-height: 1.65;
             overflow-x: hidden;
         }
         h1, h2, h3, h4, .logo h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
-        /* Sticky Navigation Bar Component */
+        /* Sticky Navigation System */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            transition: all 0.4s ease;
-            padding: 25px 0;
+            transition: var(--bezier-smooth);
+            padding: 30px 0;
             background: transparent;
         }
         header.scrolled {
             background-color: var(--primary-navy);
-            padding: 15px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-b: 1px solid rgba(255,255,255,0.1);
+            padding: 18px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .navbar {
             max-width: 1200px;
@@ -78,8 +81,8 @@
         }
         .logo h2 {
             color: var(--white);
-            font-size: 1.5rem;
-            letter-spacing: 1.5px;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
         .logo h2 span {
@@ -89,15 +92,16 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 35px;
+            gap: 40px;
         }
         .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
             position: relative;
             padding: 5px 0;
         }
@@ -112,13 +116,11 @@
             width: 0;
             height: 2px;
             background-color: var(--accent-gold);
-            transition: width 0.3s ease;
+            transition: var(--bezier-smooth);
         }
         .nav-links a:hover::after {
             width: 100%;
         }
-
-        /* Mobile Hamburger Interaction */
         .mobile-toggle {
             display: none;
             color: var(--white);
@@ -126,7 +128,7 @@
             cursor: pointer;
         }
 
-        /* Fullscreen Hero Cross-Border Cinematic Slideshow */
+        /* Fullscreen Video / Image Slide Hero Workspace */
         .hero {
             position: relative;
             height: 100vh;
@@ -148,28 +150,26 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            transform: scale(1.05);
-            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+            transform: scale(1.08);
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
         }
         .slide.active {
-            opacity: 0.45;
+            opacity: 0.35;
             transform: scale(1);
         }
         .overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(11,27,61,0.95) 0%, rgba(17,66,50,0.85) 100%);
+            background: linear-gradient(135deg, rgba(10,17,40,0.95) 0%, rgba(28,63,36,0.85) 100%);
             z-index: 2;
-            mix-blend-mode: multiply;
         }
         .hero-content {
             position: relative;
             z-index: 3;
-            max-width: 900px;
+            max-width: 1000px;
             padding: 0 30px;
             text-align: center;
             color: var(--white);
-            margin-top: 60px;
         }
         .hero-badge {
             display: inline-flex;
@@ -177,54 +177,56 @@
             gap: 10px;
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             color: var(--accent-gold);
-            background: rgba(212, 175, 55, 0.1);
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(212, 175, 55, 0.25);
+            background: rgba(223, 183, 108, 0.12);
+            padding: 10px 24px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(223, 183, 108, 0.3);
         }
         .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            letter-spacing: -1px;
+            font-size: 3.8rem;
+            line-height: 1.15;
             margin-bottom: 25px;
+            font-weight: 800;
         }
         .hero-content p {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 300;
-            color: rgba(255,255,255,0.8);
-            max-width: 750px;
-            margin: 0 auto 40px auto;
-            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            max-width: 850px;
+            margin: 0 auto 50px auto;
+            line-height: 1.8;
         }
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
         }
         .btn-primary, .btn-secondary {
             display: inline-block;
-            padding: 16px 35px;
+            padding: 18px 40px;
             font-size: 0.85rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-decoration: none;
             border-radius: 4px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--bezier-smooth);
+            cursor: pointer;
         }
         .btn-primary {
             background-color: var(--accent-gold);
             color: var(--primary-navy);
-            box-shadow: 0 10px 25px rgba(212,175,55,0.25);
+            border: none;
+            box-shadow: 0 10px 30px rgba(223,183,108,0.2);
         }
         .btn-primary:hover {
             background-color: var(--accent-gold-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .btn-secondary {
             background-color: transparent;
@@ -234,35 +236,35 @@
         .btn-secondary:hover {
             background-color: var(--white);
             color: var(--primary-navy);
-            border-color: var(--white);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
-        /* Layout Global Sections */
+        /* Global Layout Sections */
         section {
-            padding: 110px 0;
+            padding: 140px 0;
             position: relative;
         }
         .section-header {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px auto;
+            max-width: 800px;
+            margin: 0 auto 80px auto;
             padding: 0 20px;
         }
         .section-tag {
             font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--primary-green);
+            letter-spacing: 3px;
+            color: var(--primary-jade);
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         .section-header h2 {
-            font-size: 2.25rem;
+            font-size: 2.6rem;
             color: var(--primary-navy);
             position: relative;
-            padding-bottom: 20px;
+            padding-bottom: 25px;
+            font-weight: 700;
         }
         .section-header h2::after {
             content: '';
@@ -270,72 +272,142 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
+            width: 60px;
             height: 3px;
             background-color: var(--accent-gold);
         }
 
-        /* About Enterprise Section */
-        .about {
-            background-color: var(--white);
-        }
+        /* About & 2026 Structural Consolidation Roadmap */
         .about .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 30px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.11fr 0.89fr;
+            gap: 80px;
             align-items: center;
         }
         .about-text h3 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             color: var(--primary-navy);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            line-height: 1.3;
         }
         .about-text p {
             color: var(--text-muted);
             margin-bottom: 25px;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
-        .quote-motto {
-            border-left: 4px solid var(--accent-gold);
+        .merger-history-block {
             background-color: var(--bg-light);
-            padding: 20px;
-            font-style: italic;
-            font-weight: 500;
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            margin-top: 35px;
+            border-radius: 0 6px 6px 0;
+        }
+        .merger-history-block h4 {
+            font-size: 1.1rem;
             color: var(--primary-navy);
-            border-radius: 0 8px 8px 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .about-images {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
+        .merger-history-block p {
+            font-size: 0.98rem;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        .about-display-pane {
             position: relative;
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
-        .img-main {
-            grid-column: 1 / span 9;
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        .metric-list {
+            list-style: none;
         }
-        .img-sub {
-            grid-column: 5 / -1;
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            margin-top: -120px;
-            border: 6px solid var(--white);
-            position: relative;
-            z-index: 2;
+        .metric-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .metric-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .metric-icon {
+            font-size: 1.5rem;
+            color: var(--primary-jade);
+            margin-top: 4px;
+        }
+        .metric-info h5 {
+            font-size: 1.05rem;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+        .metric-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
         }
 
-        /* Business Divisions Interactive Cards Portfolio */
-        .business {
+        /* Board of Directors Governance Grid */
+        .directors {
             background-color: var(--bg-light);
+        }
+        .director-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .director-card {
+            background-color: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary-navy);
+            transition: var(--bezier-smooth);
+        }
+        .director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border-top-color: var(--accent-gold);
+        }
+        .director-info {
+            padding: 35px 30px;
+        }
+        .director-info h3 {
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+        .director-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent-gold-hover);
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .director-bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #F1F5F9;
+            padding-top: 20px;
+            line-height: 1.6;
+        }
+
+        /* Business Divisions Portfolio Grid Section */
+        .business {
+            background-color: var(--white);
         }
         .cards {
             max-width: 1200px;
@@ -343,25 +415,27 @@
             padding: 0 30px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 35px;
         }
         .card {
             background: var(--white);
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 35px rgba(0,0,0,0.03);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--bezier-smooth);
             display: flex;
-            flex-content: column;
             flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border-color: rgba(223,183,108,0.3);
         }
         .card-img-wrapper {
             position: relative;
-            height: 240px;
+            height: 260px;
             overflow: hidden;
             background-color: var(--primary-navy);
         }
@@ -369,105 +443,114 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
             opacity: 0.9;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .card:hover .card-img-wrapper img {
-            transform: scale(1.08);
-            opacity: 0.75;
+            transform: scale(1.05);
+            opacity: 0.8;
         }
         .card-icon {
             position: absolute;
             bottom: -25px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-green);
+            right: 35px;
+            width: 55px;
+            height: 55px;
+            background-color: var(--primary-jade);
             color: var(--white);
             border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            box-shadow: 0 5px 15px rgba(17,66,50,0.3);
-            border: 2px solid var(--white);
+            font-size: 1.3rem;
+            border: 3px solid var(--white);
+            box-shadow: 0 8px 25px rgba(28,63,36,0.25);
             z-index: 3;
-            transition: background-color 0.3s;
+            transition: var(--bezier-smooth);
         }
         .card:hover .card-icon {
             background-color: var(--accent-gold);
             color: var(--primary-navy);
         }
         .card-content {
-            padding: 40px 30px 30px 30px;
+            padding: 45px 35px 40px 35px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
         .card h3 {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             color: var(--primary-navy);
             margin-bottom: 12px;
         }
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.98rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
         .card-link {
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary-green);
-            text-decoration: none;
+            letter-spacing: 1.5px;
+            color: var(--primary-jade);
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            margin-top: auto;
+            gap: 10px;
         }
         .card:hover .card-link {
             color: var(--accent-gold-hover);
         }
 
-        /* Modern Services Grid System */
+        /* Corporate Capabilities Grid Architecture */
         .services {
-            background-color: var(--white);
+            background-color: var(--bg-light);
         }
         .service-grid {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 30px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
         .service-grid div {
-            background-color: var(--bg-light);
-            padding: 35px 25px;
+            background-color: var(--white);
+            padding: 45px 35px;
             border-radius: 6px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--primary-navy);
             text-align: center;
-            border-top: 4px solid var(--primary-green);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-jade);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.01);
+            transition: var(--bezier-smooth);
         }
         .service-grid div:nth-child(even) {
             border-top-color: var(--accent-gold);
+        }
+        .service-grid div i {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-navy);
+            transition: color 0.3s;
         }
         .service-grid div:hover {
             transform: translateY(-5px);
             background-color: var(--primary-navy);
             color: var(--white);
             border-top-color: var(--accent-gold);
-            box-shadow: 0 15px 30px rgba(11,27,61,0.15);
+            box-shadow: 0 20px 40px rgba(10,17,40,0.15);
+        }
+        .service-grid div:hover i {
+            color: var(--accent-gold);
         }
 
-        /* Secure Corporate Contact Gateway Form */
+        /* Centralized Group Contact Gateway Form */
         .contact {
             background-color: var(--primary-navy);
             color: var(--white);
@@ -475,68 +558,212 @@
         .contact .section-header h2 {
             color: var(--white);
         }
+        .contact .section-header .section-tag {
+            color: var(--accent-gold);
+        }
         .contact-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 30px;
         }
         .contact form {
             background: var(--white);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            padding: 60px;
+            border-radius: 6px;
+            box-shadow: 0 30px 65px rgba(0,0,0,0.3);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 30px;
         }
         .form-group-full {
             grid-column: 1 / span 2;
         }
-        .contact input, .contact textarea {
+        .contact label {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+        }
+        .contact input, .contact select, .contact textarea {
             width: 100%;
-            padding: 14px 18px;
+            padding: 16px 20px;
             background-color: var(--bg-light);
-            border: 1px solid #E2E8F0;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-dark);
             transition: border-color 0.3s;
         }
-        .contact input:focus, .contact textarea:focus {
+        .contact input:focus, .contact select:focus, .contact textarea:focus {
             outline: none;
-            border-color: var(--primary-green);
+            border-color: var(--primary-jade);
         }
         .contact textarea {
-            height: 150px;
+            height: 160px;
             resize: none;
         }
         .contact button {
             grid-column: 1 / span 2;
             width: 100%;
-            padding: 16px;
-            background-color: var(--primary-green);
+            padding: 20px;
+            background-color: var(--primary-jade);
             color: var(--white);
             border: none;
             border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            box-shadow: 0 5px 15px rgba(17,66,50,0.2);
+            box-shadow: 0 5px 20px rgba(28,63,36,0.2);
         }
         .contact button:hover {
-            background-color: #0d3326;
+            background-color: #122b19;
         }
 
-        /* Premium International Footer Block */
+        /* Dynamic Deep-Dive Screen Architecture */
+        .business-deep-dive-page {
+            display: none; /* Controlled dynamically by JS engine */
+            background-color: var(--white);
+            min-height: 100vh;
+        }
+        .deep-dive-hero {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 100px 0 80px 0;
+            position: relative;
+        }
+        .deep-dive-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        .btn-back-hub {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 40px;
+            transition: color 0.3s;
+        }
+        .btn-back-hub:hover {
+            color: var(--white);
+        }
+        .deep-dive-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .deep-dive-hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        .deep-dive-body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 30px;
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            gap: 80px;
+        }
+        .deep-dive-main h2 {
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: 25px;
+        }
+        .deep-dive-main p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        .data-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 50px 0;
+        }
+        .stat-box {
+            background-color: var(--bg-light);
+            padding: 30px 25px;
+            border-radius: 4px;
+            border-left: 4px solid var(--primary-jade);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .stat-box h4 {
+            font-size: 2rem;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+        .stat-box p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .deep-dive-sidebar {
+            background-color: var(--bg-light);
+            padding: 45px;
+            border-radius: 6px;
+            height: fit-content;
+            border: 1px solid var(--border-color);
+        }
+        .deep-dive-sidebar h3 {
+            font-size: 1.3rem;
+            color: var(--primary-navy);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .spec-list {
+            list-style: none;
+        }
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.95rem;
+        }
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+        .spec-list li span:first-child {
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+        .spec-list li span:last-child {
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        /* Corporate Footer Matrix */
         footer {
-            background-color: #050B1A;
+            background-color: #040814;
             color: #8A99AD;
-            padding: 80px 0 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 100px 0 50px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
         }
         .footer-container {
             max-width: 1200px;
@@ -544,39 +771,39 @@
             padding: 0 30px;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
+            gap: 80px;
+            margin-bottom: 80px;
         }
         .footer-brand h3 {
             color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
         .footer-brand p {
-            font-size: 0.95rem;
-            max-width: 400px;
-            margin-bottom: 25px;
-            line-height: 1.7;
+            font-size: 1rem;
+            max-width: 460px;
+            margin-bottom: 35px;
+            line-height: 1.75;
         }
         .footer-links h4 {
             color: var(--white);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
         }
         .footer-links ul {
             list-style: none;
         }
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         .footer-links a {
             color: #8A99AD;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
         .footer-links a:hover {
@@ -585,21 +812,21 @@
         .footer-ctas {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
         .footer-btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 12px 20px;
+            gap: 14px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 15px 24px;
             border-radius: 4px;
             color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: var(--bezier-smooth);
         }
         .footer-btn i {
             color: var(--accent-gold);
@@ -607,42 +834,49 @@
         .footer-btn:hover {
             border-color: var(--accent-gold);
             background: rgba(255,255,255,0.05);
+            transform: translateY(-2px);
         }
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 30px 0 30px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255,255,255,0.04);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
-        /* Responsive Optimization Mechanics */
+        /* Responsive Optimization Controls */
+        @media (max-width: 1024px) {
+            .director-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .deep-dive-body {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
         @media (max-width: 992px) {
             .about .container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 60px;
             }
-            .about-images {
-                margin-top: 40px;
-            }
-            .cards, .service-grid, .footer-container {
+            .cards, .service-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .footer-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
             .hero-content h1 {
-                font-size: 2.75rem;
+                font-size: 3rem;
             }
         }
         @media (max-width: 768px) {
             header {
                 background-color: var(--primary-navy);
-                padding: 15px 0;
+                padding: 18px 0;
             }
             .mobile-toggle {
                 display: block;
@@ -655,34 +889,34 @@
                 width: 100%;
                 background-color: var(--primary-navy);
                 flex-direction: column;
-                padding: 30px;
-                gap: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                border-top: 1px solid rgba(255,255,255,0.05);
+                padding: 40px 30px;
+                gap: 25px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                border-top: 1px solid rgba(255,255,255,0.06);
             }
             .nav-links.active {
                 display: flex;
             }
-            .cards, .service-grid {
+            .cards, .service-grid, .director-grid {
                 grid-template-columns: 1fr;
             }
             .contact form {
                 grid-template-columns: 1fr;
-                padding: 30px 20px;
+                padding: 40px 25px;
             }
             .form-group-full {
                 grid-column: span 1;
             }
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
             }
             .buttons {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
             }
             .footer-bottom {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
                 text-align: center;
             }
         }
@@ -691,189 +925,389 @@
 
 <body>
 
-<!-- Premium Header & Navbar Elements -->
-<header id="navbar-header">
-    <nav class="navbar">
-        <div class="logo">
-            <h2>Bukhari <span>Nexus</span></h2>
+<!-- Primary Global Workspace Hub Wrapper -->
+<div id="main-corporate-hub">
+
+    <!-- Header & Navigation -->
+    <header id="navbar-header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Bukhari <span>Nexus</span></h2>
+            </div>
+            
+            <div class="mobile-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Group</a></li>
+                <li><a href="#directors">Leadership</a></li>
+                <li><a href="#business">Our Divisions</a></li>
+                <li><a href="#services">Capabilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Fullscreen Cinematic Hero Showcase -->
+    <section class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1920&q=80');"></div>
         </div>
         
-        <div class="mobile-toggle" id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+        <div class="overlay"></div>
 
-        <ul class="nav-links" id="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#business">Businesses</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- Full-Screen Interactive Corporate Hero Space -->
-<section class="hero">
-    <!-- Automated Background Slider Engine Context -->
-    <div class="hero-slideshow">
-        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1920&q=80');"></div>
-    </div>
-    
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-        <div class="hero-badge">
-            <i class="fa-solid fa-globe"></i> Pakistan • Australia Connection
-        </div>
-        <h1>Building Connections Across Agriculture, Trade & Mobility</h1>
-        <p>
-            Bukhari Nexus Pvt Ltd is a diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution, and vehicle rental services.
-        </p>
-
-        <div class="buttons">
-            <a href="#business" class="btn-primary">Explore Our Businesses</a>
-            <a href="#contact" class="btn-secondary">Contact Us</a>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <div class="about-text">
-            <span class="section-tag">Corporate Identity</span>
-            <h3>Cross-Border Logistics Excellence</h3>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-building-shield"></i> Unified Corporate Conglomerate
+            </div>
+            <h1>Building Connections Across Agriculture, Trade & Mobility</h1>
             <p>
-                Bukhari Nexus Pvt Ltd connects businesses across Pakistan and Australia through trusted agricultural trading, wholesale distribution, and transport solutions. Our commitment to quality, reliability, and long-term partnerships makes us a dependable business group.
+                Bukhari Nexus Pvt Ltd is a diversified business group operating across Pakistan and Australia, delivering trusted solutions in agricultural trading, wholesale distribution, and vehicle rental services.
             </p>
-            <div class="quote-motto">
-                "Trusted Business Group Connecting Agriculture, Trade and Mobility Across Borders."
+            <div class="buttons">
+                <a href="#business" class="btn-primary">Explore Our Businesses</a>
+                <a href="#contact" class="btn-secondary">Contact Us</a>
             </div>
+        </div>
+    </section>
+
+    <!-- About & Consolidated Corporate History -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-text">
+                <span class="section-tag">Holding Profile</span>
+                <h3>Strategic Asset & Enterprise Synergy</h3>
+                <p>
+                    Bukhari Nexus Pvt Ltd connects businesses across Pakistan and Australia through trusted agricultural trading, wholesale distribution, and transport solutions. Our commitment to quality, reliability, and long-term partnerships makes us a dependable business group.
+                </p>
+                <div class="merger-history-block">
+                    <h4>The 2026 Structural Consolidation</h4>
+                    <p>
+                        "In 2026, to maximize operational value and capitalize on cross-border logistics capabilities, our three previously independent businesses merged their market valuation and operational assets to integrate under the single holding governance of Bukhari Nexus Pvt Ltd."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="about-display-pane">
+                <ul class="metric-list">
+                    <li class="metric-item">
+                        <div class="metric-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="metric-info">
+                            <h5>Valuation-Backed Merger</h5>
+                            <p>Consolidated under a single balance sheet in 2026 to optimize resource allocation and capital spending.</p>
+                        </div>
+                    </li>
+                    <li class="metric-item">
+                        <div class="metric-icon"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                        <div class="metric-info">
+                            <h5>Decentralized Execution</h5>
+                            <p>Each subsidiary maintains its operational expertise while drawing on the financial strength of the parent company.</p>
+                        </div>
+                    </li>
+                    <li class="metric-item">
+                        <div class="metric-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="metric-info">
+                            <h5>Cross-Border Security</h5>
+                            <p>Dual-footprint infrastructure mitigates trade risks and secures safe logistics channels between Pakistan and Australia.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Board of Directors Governance Layer -->
+    <section id="directors" class="directors">
+        <div class="section-header">
+            <span class="section-tag">Corporate Governance</span>
+            <h2>Board of Directors</h2>
         </div>
         
-        <div class="about-images">
-            <img src="https://images.unsplash.com/photo-1595275313331-5a0a41cdbee5?auto=format&fit=crop&w=700&q=80" alt="Supply Chain Operations" class="img-main">
-            <img src="https://images.unsplash.com/photo-1444653389962-8149286c578a?auto=format&fit=crop&w=500&q=80" alt="International Commerce" class="img-sub">
-        </div>
-    </div>
-</section>
-
-<!-- Business Portfolio Section -->
-<section id="business" class="business">
-    <div class="section-header">
-        <span class="section-tag">Strategic Segments</span>
-        <h2>Our Business Divisions</h2>
-    </div>
-
-    <div class="cards">
-        <!-- Card 1: Bukhari Traders -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80" alt="Bukhari Traders Sourcing Operations">
-                <div class="card-icon"><i class="fa-solid fa-wheat-劇"></i></div>
-            </div>
-            <div class="card-content">
-                <div>
-                    <h3>Bukhari Traders</h3>
-                    <p>Agricultural procurement, rice trading, and grain supply systems anchored across high-yield global agricultural hubs.</p>
+        <div class="director-grid">
+            <!-- Director 1 -->
+            <div class="director-card">
+                <div class="director-info">
+                    <h3>Syed Sami Ullah Shah Bukhari</h3>
+                    <span class="director-title">Managing Director</span>
+                    <p class="director-bio">Directs the group’s international trade positions, cross-border capital flow strategies, and joint venture infrastructure alignments across Pakistan and Australian networks.</p>
                 </div>
-                <a href="#contact" class="card-link">Procurement Channels <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-        </div>
-
-        <!-- Card 2: Al Makkah General Store -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="Al Makkah Wholesale Architecture">
-                <div class="card-icon"><i class="fa-solid fa-store"></i></div>
-            </div>
-            <div class="card-content">
-                <div>
-                    <h3>Al Makkah General Store</h3>
-                    <p>Wholesale grocery distribution and enterprise supply chain management handling high-volume consumer staples safely.</p>
+            <!-- Director 2 -->
+            <div class="director-card">
+                <div class="director-info">
+                    <h3>Sohaib Sajjad</h3>
+                    <span class="director-title">Chief Executive Officer</span>
+                    <p class="director-bio">Commands the overall corporate execution framework, leading post-merger integration, standard operating governance, and multinational market placement strategies.</p>
                 </div>
-                <a href="#contact" class="card-link">Distribution Network <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-        </div>
-
-        <!-- Card 3: Bukhari Pty Ltd -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Bukhari Pty Ltd Fleet Vehicle Logistics">
-                <div class="card-icon"><i class="fa-solid fa-car"></i></div>
-            </div>
-            <div class="card-content">
-                <div>
-                    <h3>Bukhari Pty Ltd</h3>
-                    <p>Modern vehicle rental, private executive transport networks, and integrated client mobility services across major Australian roadways.</p>
+            <!-- Director 3 -->
+            <div class="director-card">
+                <div class="director-info">
+                    <h3>Haseeb Sajjad</h3>
+                    <span class="director-title">Director of Logistics</span>
+                    <p class="director-bio">Oversees global maritime container freight planning, cold-chain preservation protocols, and regional ground distribution management systems.</p>
                 </div>
-                <a href="#contact" class="card-link">Fleet Logistics <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Director 4 -->
+            <div class="director-card">
+                <div class="director-info">
+                    <h3>Ubaid Ur Rehman</h3>
+                    <span class="director-title">Director of Procurement</span>
+                    <p class="director-bio">Manages raw product sourcing syndicates, automated milling partner setups, and international phytosanitary compliance matrices.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Capabilities Section -->
-<section id="services" class="services">
-    <div class="section-header">
-        <span class="section-tag">Capabilities</span>
-        <h2>Our Core Services</h2>
-    </div>
+    <!-- Business Divisions Hub Landing Block -->
+    <section id="business" class="business">
+        <div class="section-header">
+            <span class="section-tag">Subsidiary Portfolio</span>
+            <h2>Our Business Divisions</h2>
+        </div>
 
-    <div class="service-grid">
-        <div><i class="fa-solid fa-seedling" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Agricultural Trading</div>
-        <div><i class="fa-solid fa-plate-wheat" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Rice Procurement</div>
-        <div><i class="fa-solid fa-truck-ramp-box" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Wholesale Distribution</div>
-        <div><i class="fa-solid fa-network-wired" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Supply Chain</div>
-        <div><i class="fa-solid fa-car-side" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> Vehicle Rental</div>
-        <div><i class="fa-solid fa-globe" style="margin-bottom: 12px; display: block; color: var(--accent-gold);"></i> International Trade</div>
-    </div>
-</section>
-
-<!-- Corporate Engagement Interface -->
-<section id="contact" class="contact">
-    <div class="section-header">
-        <span class="section-tag">Partnership Gateway</span>
-        <h2>Contact Us</h2>
-    </div>
-
-    <div class="contact-container">
-        <form id="group-contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Commercial message submitted successfully.'); this.reset();">
-            <div>
-                <input type="text" placeholder="Your Name" required>
+        <div class="cards">
+            <!-- Subsidiary Card 1: Bukhari Traders -->
+            <div class="card" onclick="openSubsidiaryPortal('portal-traders')">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80" alt="Bukhari Traders Procurement">
+                    <div class="card-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3>Bukhari Traders</h3>
+                        <p>Agricultural procurement, rice trading, and grain supply systems anchored across high-yield farming regions.</p>
+                    </div>
+                    <span class="card-link">Launch Division Profile <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
             </div>
-            <div>
-                <input type="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group-full">
-                <input type="text" placeholder="Company Name">
-            </div>
-            <div class="form-group-full">
-                <textarea placeholder="Outline your procurement or logistics requirements..." required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
 
-<!-- International Footprint Footer Block -->
+            <!-- Subsidiary Card 2: Al Makkah General Store -->
+            <div class="card" onclick="openSubsidiaryPortal('portal-makkah')">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=800&q=80" alt="Al Makkah Supply Facility">
+                    <div class="card-icon"><i class="fa-solid fa-store"></i></div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3>Al Makkah General Store</h3>
+                        <p>Wholesale grocery distribution networks feeding enterprise client demands flawlessly.</p>
+                    </div>
+                    <span class="card-link">Launch Division Profile <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Subsidiary Card 3: Bukhari Pty Ltd -->
+            <div class="card" onclick="openSubsidiaryPortal('portal-pty')">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Bukhari Pty Ltd Fleet Operations">
+                    <div class="card-icon"><i class="fa-solid fa-car"></i></div>
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3>Bukhari Pty Ltd</h3>
+                        <p>Modern vehicle rental, private transport networks, and integrated client mobility services across Australia.</p>
+                    </div>
+                    <span class="card-link">Launch Division Profile <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Group Capabilities Grid -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <span class="section-tag">Capabilities</span>
+            <h2>Centralized Core Services</h2>
+        </div>
+
+        <div class="service-grid">
+            <div><i class="fa-solid fa-seedling"></i> Agricultural Trading</div>
+            <div><i class="fa-solid fa-plate-wheat"></i> Rice Procurement</div>
+            <div><i class="fa-solid fa-truck-ramp-box"></i> Wholesale Distribution</div>
+            <div><i class="fa-solid fa-network-wired"></i> Supply Chain</div>
+            <div><i class="fa-solid fa-car-side"></i> Vehicle Rental</div>
+            <div><i class="fa-solid fa-globe"></i> International Trade</div>
+        </div>
+    </section>
+
+    <!-- Routing Contact Form Block -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <span class="section-tag">Inquiry Routing</span>
+            <h2>Corporate Contact Gate</h2>
+        </div>
+
+        <div class="contact-container">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Commercial intake routing completed successfully.'); this.reset();">
+                <div>
+                    <label>Full Name</label>
+                    <input type="text" placeholder="e.g., Syed Bukhari" required>
+                </div>
+                <div>
+                    <label>Corporate Email Address</label>
+                    <input type="email" placeholder="e.g., partner@domain.com" required>
+                </div>
+                <div class="form-group-full">
+                    <label>Company Designation / Entity</label>
+                    <input type="text" placeholder="Company Name Registered">
+                </div>
+                <div class="form-group-full">
+                    <label>Targeted Business Unit Division</label>
+                    <select required>
+                        <option value="" disabled selected>Select the division to handle your request...</option>
+                        <option value="nexus">Bukhari Nexus Pvt Ltd (Holding Inquiries)</option>
+                        <option value="traders">Bukhari Traders (Agribusiness & Commodities)</option>
+                        <option value="makkah">Al Makkah General Store (Wholesale FMCG & Supply)</option>
+                        <option value="pty">Bukhari Pty Ltd (Australian Vehicle Rental & Mobility)</option>
+                    </select>
+                </div>
+                <div class="form-group-full">
+                    <label>Operational Proposal / Inquiry Requirements</label>
+                    <textarea placeholder="Detail your exact procurement volumes, fleet scheduling, or corporate integration requirements..." required></textarea>
+                </div>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+</div> <!-- End Main Hub Workspace -->
+
+
+<!-- FULL SCREEN DEEP DIVE PORTAL SUBSIDIARY TEMPLATES -->
+
+<!-- Portal 1: Bukhari Traders Profile -->
+<div class="business-deep-dive-page" id="portal-traders">
+    <div class="deep-dive-hero">
+        <div class="deep-dive-hero-content">
+            <a href="javascript:void(0)" class="btn-back-hub" onclick="closeSubsidiaryPortal()"><i class="fa-solid fa-arrow-left"></i> Return to Corporate Hub</a>
+            <h1>Bukhari Traders</h1>
+            <p>A Specialized Subsidiary of Bukhari Nexus Pvt Ltd handling Global Agribusiness Procurement and Bulk Grain Trade Pipelines.</p>
+        </div>
+    </div>
+    <div class="deep-dive-body">
+        <div class="deep-dive-main">
+            <h2>Primary Commodity Sourcing Core</h2>
+            <p>Bukhari Traders operates as a dedicated agricultural supply engine within the holding group. We bridge fertile agrarian farming networks directly with international maritime ports, specializing in sourcing high-grade Basmati rice and choice grain variants under strict quality checks.</p>
+            <p>Through partnerships with processing facilities across top agricultural zones, we secure consistent grain polishing, sorting, and uniform length standards. Our transport steps use robust humidity-monitored setups, keeping products protected from original farms straight to cargo containers.</p>
+            
+            <div class="data-stats-strip">
+                <div class="stat-box"><h4>99.8%</h4><p>Purity Grade</p></div>
+                <div class="stat-box"><h4>Milled</h4><p>At Sourcing</p></div>
+                <div class="stat-box"><h4>Global</h4><p>Logistics Scope</p></div>
+            </div>
+            
+            <h2>Quality Metrics & Supply Chain Control</h2>
+            <p>Our operation checks structural grain moisture levels before storage to ensure product longevity. This focus allows us to answer demanding customs and sanitation criteria across diverse international delivery terminals safely.</p>
+        </div>
+        <div class="deep-dive-sidebar">
+            <h3>Operational Profile</h3>
+            <ul class="spec-list">
+                <li><span>Parent Entity</span> <span>Bukhari Nexus Pvt Ltd</span></li>
+                <li><span>Primary Markets</span> <span>Pakistan & Global Ports</span></li>
+                <li><span>Core Commodities</span> <span>Premium Basmati Rice, Cereal Grains</span></li>
+                <li><span>Processing Core</span> <span>Automated Sorter Sourcing</span></li>
+                <li><span>Compliance Baseline</span> <span>Phytosanitary Protocol Verified</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Portal 2: Al Makkah General Store Profile -->
+<div class="business-deep-dive-page" id="portal-makkah">
+    <div class="deep-dive-hero">
+        <div class="deep-dive-hero-content">
+            <a href="javascript:void(0)" class="btn-back-hub" onclick="closeSubsidiaryPortal()"><i class="fa-solid fa-arrow-left"></i> Return to Corporate Hub</a>
+            <h1>Al Makkah General Store</h1>
+            <p>A Specialized Subsidiary of Bukhari Nexus Pvt Ltd directing Wholesale FMCG Networks and B2B Staples Supply.</p>
+        </div>
+    </div>
+    <div class="deep-dive-body">
+        <div class="deep-dive-main">
+            <h2>B2B Inventory & Distribution Channels</h2>
+            <p>Al Makkah General Store acts as the wholesale consumer goods engine under the holding group. We manage large supply setups that provide inventory solutions for commercial grocers, localized retail units, and institutional food groups.</p>
+            <p>By using modern inventory practices, we balance our storage footprint to trim operational costs while supporting high delivery fulfillment targets. This structured system helps client shelves remain reliably stocked during peak buying periods.</p>
+            
+            <div class="data-stats-strip">
+                <div class="stat-box"><h4>24/7</h4><p>Fulfillment Flow</p></div>
+                <div class="stat-box"><h4>Bulk</h4><p>Volume Sourcing</p></div>
+                <div class="stat-box"><h4>Zero</h4><p>Stockout Goal</p></div>
+            </div>
+            
+            <h2>Fulfillment Architecture & Warehousing</h2>
+            <p>Our tracking centers keep clean logs of batch indices, item locations, and dispatch schedules. This clean configuration allows for fast picking and cross-docking workflows, cutting down traditional delivery wait times across the market.</p>
+        </div>
+        <div class="deep-dive-sidebar">
+            <h3>Operational Profile</h3>
+            <ul class="spec-list">
+                <li><span>Parent Entity</span> <span>Bukhari Nexus Pvt Ltd</span></li>
+                <li><span>Service Target</span> <span>B2B Wholesale & Commercial Supply</span></li>
+                <li><span>Product Lines</span> <span>Consumer Goods & Staples</span></li>
+                <li><span>Logistics Speed</span> <span>Scheduled Next-Day Fleet Drop</span></li>
+                <li><span>Tracking Tech</span> <span>SKU Inventory Mapping Systems</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Portal 3: Bukhari Pty Ltd Profile -->
+<div class="business-deep-dive-page" id="portal-pty">
+    <div class="deep-dive-hero">
+        <div class="deep-dive-hero-content">
+            <a href="javascript:void(0)" class="btn-back-hub" onclick="closeSubsidiaryPortal()"><i class="fa-solid fa-arrow-left"></i> Return to Corporate Hub</a>
+            <h1>Bukhari Pty Ltd</h1>
+            <p>A Specialized Subsidiary of Bukhari Nexus Pvt Ltd managing Automotive Fleets and Commercial Mobility Solutions across Australia.</p>
+        </div>
+    </div>
+    <div class="deep-dive-body">
+        <div class="deep-dive-main">
+            <h2>Australian Automotive Mobility Systems</h2>
+            <p>Bukhari Pty Ltd stands as the international transportation arm of the group, running a modern fleet network within Australia. We offer clean, reliable corporate fleet vehicle rentals designed for company travel, government sectors, and tourist markets.</p>
+            <p>Our vehicles span from efficient passenger models to executive options and utility transport. Every asset adheres to strict maintenance schedules, ensuring optimal on-road safety and performance standards on Australian roads.</p>
+            
+            <div class="data-stats-strip">
+                <div class="stat-box"><h4>100%</h4><p>Safety Audited</p></div>
+                <div class="stat-box"><h4>Late</h4><p>Model Fleet</p></div>
+                <div class="stat-box"><h4>AU</h4><p>Road Coverage</p></div>
+            </div>
+            
+            <h2>Corporate Account Fleet Integration</h2>
+            <p>We build tailored long-term fleet contracts for companies requiring flexible vehicle solutions. With comprehensive protection options and responsive support links, we assist enterprise clients in managing their field logistics smoothly.</p>
+        </div>
+        <div class="deep-dive-sidebar">
+            <h3>Operational Profile</h3>
+            <ul class="spec-list">
+                <li><span>Parent Entity</span> <span>Bukhari Nexus Pvt Ltd</span></li>
+                <li><span>Regional Scope</span> <span>Australia (Metropolitan & Regional)</span></li>
+                <li><span>Fleet Profiling</span> <span>Sedans, SUVs, Commercial Utilities</span></li>
+                <li><span>Account Service</span> <span>Corporate Long-Term Vehicle Contracts</span></li>
+                <li><span>Roadside Support</span> <span>24/7 Integrated Assistance Link</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Unified Group Corporate Footer Block -->
 <footer>
     <div class="footer-container">
         <div class="footer-brand">
             <h3>Bukhari Nexus</h3>
-            <p>Trusted Business Group Connecting Agriculture, Trade and Mobility Across Borders. Operating seamlessly throughout cross-border pipelines.</p>
-            <p style="color: var(--white); font-weight: 600;"><i class="fa-solid fa-earth-americas"></i> Dual Footprint: Pakistan 🇵🇰 & Australia 🇦🇺</p>
+            <p>A consolidated multi-divisional parent holding enterprise directing value-driven growth across international trade frameworks.</p>
+            <p style="color: var(--white); font-weight: 600; font-size: 0.9rem;"><i class="fa-solid fa-earth-americas"></i> Sovereign Operations: Pakistan 🇵🇰 & Australia 🇦🇺</p>
         </div>
         
         <div class="footer-links">
-            <h4>Divisions</h4>
+            <h4>Group Subsidiaries</h4>
             <ul>
-                <li><a href="#business">Bukhari Traders</a></li>
-                <li><a href="#business">Al Makkah General Store</a></li>
-                <li><a href="#business">Bukhari Pty Ltd</a></li>
+                <li><a href="javascript:void(0)" onclick="openSubsidiaryPortal('portal-traders')">Bukhari Traders</a></li>
+                <li><a href="javascript:void(0)" onclick="openSubsidiaryPortal('portal-makkah')">Al Makkah General Store</a></li>
+                <li><a href="javascript:void(0)" onclick="openSubsidiaryPortal('portal-pty')">Bukhari Pty Ltd</a></li>
             </ul>
         </div>
         
@@ -883,25 +1317,23 @@
                 <a href="https://wa.me/#" target="_blank" class="footer-btn">
                     <i class="fa-brands fa-whatsapp"></i> WhatsApp Verified Desk
                 </a>
-                <a href="tel:#" class="footer-btn">
-                    <i class="fa-solid fa-phone"></i> Voice Hotline Desk
-                </a>
                 <a href="#contact" class="footer-btn">
-                    <i class="fa-solid fa-envelope"></i> Secure Form Route
+                    <i class="fa-solid fa-envelope"></i> Secure Routing Desk
                 </a>
             </div>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2026 Bukhari Nexus Pvt Ltd. All international group corporate rights reserved.</p>
-        <p style="color: rgba(255,255,255,0.2);">Trade Logistics & Infrastructure Protocols Enabled</p>
+        <p>&copy; 2026 Bukhari Nexus Pvt Ltd. All international holding group rights reserved.</p>
+        <p style="color: rgba(255,255,255,0.15);">Corporate Capital & Trade Protocols Registered</p>
     </div>
 </footer>
 
-<!-- Functional Structural Dynamic Engine -->
+
+<!-- Functional Interactive Engine Script System -->
 <script>
-    // Sticky Header Scroll Event Matrix
+    // Sticky Header Scroll Controller
     const headerElement = document.getElementById('navbar-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -911,7 +1343,7 @@
         }
     });
 
-    // Mobile Navigation Drawer Toggle Execution
+    // Mobile Navigation Drawer Toggle Controller
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
     menuToggle.addEventListener('click', () => {
@@ -924,7 +1356,7 @@
         }
     });
 
-    // Auto close menu drawer upon clicking navigation points
+    // Automatically close mobile menu when navigation points are clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
@@ -932,15 +1364,45 @@
         });
     });
 
-    // Cinematic Hero Slider Loop Manager
+    // Automatic Cinematic Hero Slideshow Loop
     let currentHeroSlide = 0;
     const allHeroSlides = document.querySelectorAll('.slide');
-    
     setInterval(() => {
         allHeroSlides[currentHeroSlide].classList.remove('active');
         currentHeroSlide = (currentHeroSlide + 1) % allHeroSlides.length;
         allHeroSlides[currentHeroSlide].classList.add('active');
-    }, 5000); // Swaps frame paths every 5 seconds safely
+    }, 6000); // 6-second rotation interval
+
+    // DYNAMIC DEEP-DIVE SCREEN INTERACTION SWITCHER
+    function openSubsidiaryPortal(portalId) {
+        // Smoothly hide the primary global holding website layer
+        document.getElementById('main-corporate-hub').style.display = 'none';
+        
+        // Hide any previously opened subsidiary profiles to prevent cross-view bleeding
+        document.querySelectorAll('.business-deep-dive-page').forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // Show the targeted company profile full-screen
+        const selectedPortal = document.getElementById(portalId);
+        selectedPortal.style.display = 'block';
+        
+        // Snap the window viewport immediately to the absolute top position
+        window.scrollTo(0, 0);
+    }
+
+    function closeSubsidiaryPortal() {
+        // Completely clear away all subsidiary profiles from active screen space
+        document.querySelectorAll('.business-deep-dive-page').forEach(page => {
+            page.style.display = 'none';
+        });
+        
+        // Restore visibility to primary group framework base layout
+        document.getElementById('main-corporate-hub').style.display = 'block';
+        
+        // Scroll the viewport smoothly straight down back to the division portfolio grid position
+        document.getElementById('business').scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 
 </body>
