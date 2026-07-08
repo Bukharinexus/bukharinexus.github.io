@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari Nexus Pvt Ltd</title>
+    <title>Bukhari Nexus | Enterprise Portal</title>
+    <!-- We link to the main style.css for global layout and sector CSS for specifics -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="bg-container"><div id="active-bg"></div></div>
-    <main>
-        <div class="glass-card" onclick="updateView('traders')">
-            <h2>Bukhari Traders</h2>
-            <p>Agricultural Grain & Wheat Processing</p>
-        </div>
-        <div class="glass-card" onclick="updateView('makkah')">
-            <h2>Al Makkah General Store</h2>
-            <p>Wholesale Grocery & Bulk Distribution</p>
-        </div>
-        <div class="glass-card" onclick="updateView('pty')">
-            <h2>Bukhari PTY Ltd</h2>
-            <p>Hobart Rideshare & Fleet Rental</p>
+
+    <!-- Dynamic Background Container -->
+    <div id="bg-container">
+        <div id="active-bg"></div>
+    </div>
+
+    <!-- Main Navigation/Content Area -->
+    <main id="portal-root">
+        <div class="glass-hero">
+            <h1>BUKHARI NEXUS</h1>
+            <p>Select an Operational Sector</p>
+            
+            <div class="sector-grid">
+                <button class="nav-btn" onclick="updateView('traders')">Grains & Agriculture</button>
+                <button class="nav-btn" onclick="updateView('makkah')">FMCG & Retail</button>
+                <button class="nav-btn" onclick="updateView('pty')">Mobility & Fleet</button>
+            </div>
         </div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>
