@@ -5,10 +5,12 @@
   <title>Bukhari Nexus | Enterprise, Retail & Global Fleet Logistics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Premium Web Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <!-- FontAwesome Professional Icon Suite -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -37,11 +39,65 @@
       color: #e2e8f0;
       line-height: 1.6;
       overflow-x: hidden;
+      position: relative;
     }
     
     a { text-decoration:none; color:inherit; }
 
-    /* CORE MULTI-PAGE NAVIGATION SYSTEM */
+    /* FLOATING BACKGROUND IMAGE ENVIRONMENT */
+    .bg-floating-system {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -5;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .floating-photo {
+      position: absolute;
+      background-size: cover;
+      background-position: center;
+      border-radius: 30px;
+      opacity: 0.04; /* Highly subtle to keep copy highly readable */
+      filter: grayscale(30%) blur(1px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    }
+    
+    /* Configured floating nodes using optimized asset loops */
+    .photo-node-1 {
+      width: 350px; height: 350px;
+      top: 15%; left: -5%;
+      background-image: url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=600');
+      animation: floatMotionAlpha 22s infinite ease-in-out;
+    }
+    .photo-node-2 {
+      width: 400px; height: 400px;
+      bottom: 10%; right: -8%;
+      background-image: url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=600');
+      animation: floatMotionBeta 28s infinite ease-in-out;
+    }
+    .photo-node-3 {
+      width: 300px; height: 300px;
+      top: 50%; left: 75%;
+      background-image: url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=600');
+      animation: floatMotionAlpha 25s infinite ease-in-out;
+    }
+
+    /* Seamless Parallax/Drift Algorithms */
+    @keyframes floatMotionAlpha {
+      0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+      50% { transform: translateY(-45px) translateX(25px) rotate(6deg); }
+      100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    }
+    @keyframes floatMotionBeta {
+      0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+      50% { transform: translateY(35px) translateX(-35px) rotate(-8deg); }
+      100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    }
+
+    /* UNIVERSAL INTERFACE NAVIGATION BAR */
     header {
       position: fixed;
       top: 0; left: 0;
@@ -95,7 +151,7 @@
     .menu-tab:hover { color: var(--white); }
     .menu-tab:hover::after { width: 100%; }
     
-    /* Active State Highlight for Navigation Pages */
+    /* Strict Active Tab Color Management */
     .menu-tab.active-tab {
       color: var(--gold) !important;
       font-weight: 700;
@@ -105,13 +161,13 @@
       background: var(--gold);
     }
 
-    /* PAGE ROUTER CONTROLLER UTILITY */
+    /* PAGE ROUTER STRUCTURAL SWITCHES */
     .app-page {
-      display: none; /* Controlled via dynamic JS logic */
+      display: none;
       opacity: 0;
       transform: translateY(15px);
       transition: opacity 0.4s ease, transform 0.4s ease;
-      padding-top: 5rem; /* Offsets fixed navigation bar */
+      padding-top: 5rem;
       min-height: calc(100vh - 300px);
     }
     .app-page.active-page {
@@ -120,7 +176,7 @@
       transform: translateY(0);
     }
 
-    /* CINEMATIC HERO DESIGN */
+    /* CINEMATIC VIDEO BACKGROUND ARCHITECTURE */
     .hero {
       height: 85vh;
       position: relative;
@@ -170,7 +226,7 @@
       font-weight: 300;
     }
 
-    /* GLOBAL GENERAL LAYOUT STRUCTURE */
+    /* SECTION LAYOUT BLOCKS */
     .container {
       max-width: 1240px;
       margin: auto;
@@ -201,7 +257,7 @@
       color: var(--text-light);
     }
 
-    /* GRID MATRIX PLATFORM */
+    /* RESPONSIVE LAYOUT GRIDS */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -213,7 +269,7 @@
       gap: 3rem;
     }
 
-    /* COMPONENT STYLE DECORATIONS */
+    /* ASSET DECORATION CARDS */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border-line);
@@ -248,12 +304,12 @@
     .card-main h3 { font-family: "Inter", sans-serif; font-size: 1.5rem; color: #fff; margin-bottom: 0.75rem; }
     .card-main p { font-size: 0.95rem; color: #94a3b8; margin-bottom: 1.5rem; }
 
-    /* CORE LIST SYMBOLS */
+    /* CORE CHECKLISTS */
     .checklist { list-style: none; margin-bottom: 2rem; }
     .checklist li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: #cbd5e1; margin-bottom: 0.75rem; }
     .checklist li i { color: var(--gold); }
 
-    /* CONTACT CONSOLE SYSTEMS */
+    /* COMMUNICATION BUTTON CORES */
     .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: auto; }
     .action-link {
       display: flex; align-items: center; justify-content: center; gap: 0.5rem;
@@ -262,9 +318,9 @@
     .link-tel { background: rgba(255, 255, 255, 0.06); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
     .link-tel:hover { background: var(--white); color: var(--nexus-dark); }
     .link-wa { background: rgba(30, 189, 89, 0.15); color: #4ade80; border: 1px solid rgba(30,189,89,0.2); }
-    .link-wa:hover { background: var(--whatsapp-green); color: #white; }
+    .link-wa:hover { background: var(--whatsapp-green); color: var(--white); }
 
-    /* SPECIFIC CORPORATE PROSE STYLING */
+    /* DEDICATED BRAND PROSE CARDS */
     .prose-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-line);
@@ -279,19 +335,19 @@
     .prose-card h3 i { color: var(--gold); font-size: 1.2rem; }
     .prose-card p { font-size: 0.98rem; color: #cbd5e1; line-height: 1.7; text-align: justify; }
 
-    /* PIPELINE ONBOARDING STAGES */
+    /* FLEET PIPELINE BLOCKS */
     .flow-line { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     .flow-box { background: var(--card-bg); border: 1px solid var(--border-line); padding: 2rem; border-radius: 20px; }
     .flow-num { width: 32px; height: 32px; background: rgba(214,175,55,0.1); border: 1px solid var(--gold); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; }
 
-    /* ORGANISATIONAL CHART INTERFACE */
+    /* HIERARCHY MAP SHELL */
     .org-view pre {
       background: #040a14; border: 1px solid var(--border-line); color: var(--gold);
       padding: 2rem; border-radius: 20px; font-size: 0.85rem; overflow-x: auto;
       font-family: "Courier New", Courier, monospace; line-height: 1.5; text-align: center;
     }
 
-    /* DIRECT ROUTING MATRIX */
+    /* SECURITY DIRECTION MODULES */
     .routing-console { background: var(--card-bg); border: 1px solid var(--border-line); padding: 2.5rem; border-radius: 24px; }
     .routing-row { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; border-bottom: 1px solid var(--border-line); }
     .routing-row:last-child { border: none; }
@@ -304,7 +360,7 @@
     .circle-wa { background: rgba(30, 189, 89, 0.1); color: #4ade80; }
     .circle-wa:hover { background: var(--whatsapp-green); color: #fff; }
 
-    /* FOOTER DESIGN ELEMENTS */
+    /* REVENUE GROUP FOOTERS */
     footer { background: #040912; color: #fff; padding: 4rem 1.5rem 2rem 1.5rem; border-top: 1px solid var(--border-line); margin-top: 5rem; }
     .footer-grid { max-width: 1240px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; padding-bottom: 3rem; }
     footer h4 { font-family: "Inter", sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.25rem; color: var(--white); }
@@ -325,19 +381,30 @@
 </head>
 <body>
 
+  <!-- AUTOMATED VISUAL DRIFT ELEMENTS -->
+  <div class="bg-floating-system">
+    <div class="floating-photo photo-node-1"></div>
+    <div class="floating-photo photo-node-2"></div>
+    <div class="floating-photo photo-node-3"></div>
+  </div>
+
+  <!-- APPLICATION NAVIGATION INTERFACE WITH BOUND DATA IDENTIFIERS -->
   <header>
     <nav>
       <div class="logo">Bukhari <span>Nexus</span></div>
       <div class="menu">
-        <div class="menu-tab active-tab" onclick="navigateToPage('home')">Home</div>
-        <div class="menu-tab" onclick="navigateToPage('about')">About Group</div>
-        <div class="menu-tab" onclick="navigateToPage('traders')">Bukhari Traders</div>
-        <div class="menu-tab" onclick="navigateToPage('almakha')">Al Makha Store</div>
-        <div class="menu-tab" onclick="navigateToPage('pty')">Bukhari Pty Ltd</div>
+        <div class="menu-tab active-tab" data-page="home" onclick="navigateToPage('home')">Home</div>
+        <div class="menu-tab" data-page="about" onclick="navigateToPage('about')">About Group</div>
+        <div class="menu-tab" data-page="traders" onclick="navigateToPage('traders')">Bukhari Traders</div>
+        <div class="menu-tab" data-page="almakha" onclick="navigateToPage('almakha')">Al Makha Store</div>
+        <div class="menu-tab" data-page="pty" onclick="navigateToPage('pty')">Bukhari Pty Ltd</div>
       </div>
     </nav>
   </header>
 
+  <!-- ======================================================= -->
+  <!-- SEGMENT TAB 1: MASTER DISPATCHER SYSTEM                 -->
+  <!-- ======================================================= -->
   <div id="page-home" class="app-page active-page">
     <div class="hero">
       <video autoplay muted loop playsinline>
@@ -361,6 +428,7 @@
       </div>
       
       <div class="grid-3">
+        <!-- Bukhari Traders Overview -->
         <div class="card">
           <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
           <div class="card-main">
@@ -369,6 +437,7 @@
             <button class="btn btn-secondary" style="font-size:0.85rem; padding:0.6rem;" onclick="navigateToPage('traders')">Open Division Tab</button>
           </div>
         </div>
+        <!-- Al Makha Overview -->
         <div class="card">
           <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
           <div class="card-main">
@@ -377,6 +446,7 @@
             <button class="btn btn-secondary" style="font-size:0.85rem; padding:0.6rem;" onclick="navigateToPage('almakha')">Open Division Tab</button>
           </div>
         </div>
+        <!-- Bukhari Pty Ltd Overview -->
         <div class="card">
           <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
           <div class="card-main">
@@ -389,6 +459,9 @@
     </div>
   </div>
 
+  <!-- ======================================================= -->
+  <!-- SEGMENT TAB 2: BRAND PROSE CORE MODULE                  -->
+  <!-- ======================================================= -->
   <div id="page-about" class="app-page">
     <div class="container">
       <div class="heading-zone">
@@ -416,3 +489,264 @@
         <div class="prose-card">
           <h3><i class="fa-solid fa-map-location-dot"></i> Future Core Plans</h3>
           <p>The group is scaling up capital allocation models to automate regional processing plants for primary commodities. Concurrently, our Australian fleet framework under Bukhari Pty Ltd is expanding into secondary urban hubs, integrating energy-efficient and hybrid vehicle classes. Additionally, digital system integrations are rolling out to link retail storefront inventory management with centralized distribution points.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- SEGMENT TAB 3: BUKHARI TRADERS OPERATIVE CORE          -->
+  <!-- ======================================================= -->
+  <div id="page-traders" class="app-page">
+    <div class="container">
+      <div class="heading-zone">
+        <span class="section-tag">Division Portfolio Alpha</span>
+        <h2 class="heading">Bukhari Traders</h2>
+        <p class="subheading">Bulk agricultural commodity distribution channels, wholesale management, and precise moisture and class grading protocols.</p>
+      </div>
+
+      <div class="grid-2">
+        <div style="background-image:url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200'); background-size:cover; background-position:center; border-radius:24px; min-height:350px;"></div>
+        
+        <div class="card-main" style="background:var(--card-bg); border-radius:24px; border:1px solid var(--border-line);">
+          <h3>Primary Commodity Operations</h3>
+          <p>Bukhari Traders functions at the vanguard of wholesale macro agricultural networks. We coordinate the collection, storage verification, and distribution arrays for vital industrial crop outputs, servicing millers, large-scale supply partners, and global markets.</p>
+          
+          <ul class="checklist">
+            <li><i class="fa-solid fa-seedling"></i> <strong>Wheat Supply Lines:</strong> High-volume logistics mapping premium grades direct to regional flour mills.</li>
+            <li><i class="fa-solid fa-leaf"></i> <strong>Raw Paddy Procurement:</strong> Heartland field level sourcing and rigid pre-milling classification testing.</li>
+            <li><i class="fa-solid fa-wheat-awn"></i> <strong>Rice Wholesale Distribution:</strong> Polished, graded long-grain and aromatic varieties packed for macro markets.</li>
+          </ul>
+
+          <div style="border-top:1px solid var(--border-line); padding-top:1.5rem; margin-top:auto;">
+            <p style="font-size:0.75rem; text-transform:uppercase; color:var(--text-light); margin-bottom:0.25rem;">Division Desk Executive</p>
+            <h4 style="color:#fff; font-size:1.1rem; margin-bottom:1rem;">Sajjad Hussain</h4>
+            <div class="btn-row">
+              <a href="tel:+923476051990" class="action-link link-tel"><i class="fa-solid fa-phone"></i> Call Direct</a>
+              <a href="https://wa.me/923476051990" target="_blank" class="action-link link-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Desk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- SEGMENT TAB 4: AL MAKHA CORE SYSTEMS OPERATIVE          -->
+  <!-- ======================================================= -->
+  <div id="page-almakha" class="app-page">
+    <div class="container">
+      <div class="heading-zone">
+        <span class="section-tag">Division Portfolio Beta</span>
+        <h2 class="heading">Al Makha General Store</h2>
+        <p class="subheading">Securing community supply stability via organized merchant spaces and high-turnover consumer goods availability.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card-main" style="background:var(--card-bg); border-radius:24px; border:1px solid var(--border-line);">
+          <h3>Community Retail Strategy</h3>
+          <p>Al Makha General Store operates as our dedicated neighborhood retail asset division. By controlling inventory channels directly and verifying quality protocols at supply entry points, the store environments deliver excellent daily access to staples for local families.</p>
+          
+          <ul class="checklist">
+            <li><i class="fa-solid fa-box"></i> <strong>Consumer Packages:</strong> Highly organized distribution lines keeping shelves systematically stocked.</li>
+            <li><i class="fa-solid fa-store"></i> <strong>Optimized Storefront Layouts:</strong> Clean physical layouts providing accessible, rapid customer purchasing flow.</li>
+            <li><i class="fa-solid fa-cart-flatbed-suitcases"></i> <strong>Staple Inflow Control:</strong> Direct connections with wholesalers to maintain price and volume stability.</li>
+          </ul>
+
+          <div style="border-top:1px solid var(--border-line); padding-top:1.5rem; margin-top:auto;">
+            <p style="font-size:0.75rem; text-transform:uppercase; color:var(--text-light); margin-bottom:0.25rem;">Division Desk Executive</p>
+            <h4 style="color:#fff; font-size:1.1rem; margin-bottom:1rem;">Zulquarnain Haider</h4>
+            <div class="btn-row">
+              <a href="tel:+923474888906" class="action-link link-tel"><i class="fa-solid fa-phone"></i> Call Direct</a>
+              <a href="https://wa.me/923474888906" target="_blank" class="action-link link-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Desk</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="background-image:url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=1200'); background-size:cover; background-position:center; border-radius:24px; min-height:350px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- SEGMENT TAB 5: ONSHORE VEHICLE MANAGEMENT DEPLOYMENTS   -->
+  <!-- ======================================================= -->
+  <div id="page-pty" class="app-page">
+    <div class="container">
+      <div class="heading-zone">
+        <span class="section-tag">Division Portfolio Gamma</span>
+        <h2 class="heading">Bukhari Pty Ltd</h2>
+        <p class="subheading">Providing optimized, comprehensive, and legally-vetted commercial car rental fleets for expert on-demand on-road drivers.</p>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:4rem;">
+        <div style="background-image:url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200'); background-size:cover; background-position:center; border-radius:24px; min-height:350px;"></div>
+        
+        <div class="card-main" style="background:var(--card-bg); border-radius:24px; border:1px solid var(--border-line);">
+          <h3>Rideshare Fleet Operations</h3>
+          <p>Operating in high-demand transportation environments, Bukhari Pty Ltd coordinates vehicle leasing models optimized for professional delivery workers and rideshare drivers seeking zero maintenance hurdles.</p>
+          
+          <ul class="checklist">
+            <li><i class="fa-solid fa-car"></i> <strong>UberX Approved Stock:</strong> Vehicles matching all mechanical age, scale, and multi-point regulatory platform requirements.</li>
+            <li><i class="fa-solid fa-pizza-slice"></i> <strong>Uber Eats Logistics:</strong> High-efficiency, low-consumption options configured for food distribution runs.</li>
+            <li><i class="fa-solid fa-shield-halved"></i> <strong>Commercial Insurance Covers:</strong> Total coverage frameworks protecting lease operators against unexpected on-road liabilities.</li>
+          </ul>
+
+          <div style="border-top:1px solid var(--border-line); padding-top:1.5rem; margin-top:auto;">
+            <p style="font-size:0.75rem; text-transform:uppercase; color:var(--text-light); margin-bottom:0.25rem;">Division Desk Executive</p>
+            <h4 style="color:#fff; font-size:1.1rem; margin-bottom:1rem;">Haseeb Sajjad</h4>
+            <div class="btn-row">
+              <a href="tel:+61474024174" class="action-link link-tel"><i class="fa-solid fa-phone"></i> Call Direct</a>
+              <a href="https://wa.me/61474024174" target="_blank" class="action-link link-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Desk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIPELINE PIPES SYSTEM -->
+      <div class="heading-zone" style="margin-bottom:2.5rem;">
+        <span class="section-tag">Driver Logistics Pipeline</span>
+        <h3 class="heading" style="font-size:1.8rem;">Onboarding & Lease Pipeline</h3>
+      </div>
+
+      <div class="flow-line">
+        <div class="flow-box">
+          <div class="flow-num">01</div>
+          <h5 style="color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Verification Checks</h5>
+          <p style="font-size:0.85rem; color:var(--text-light);">Drivers supply documentation verifying active platform status, driving metrics, and visa validity maps.</p>
+        </div>
+        <div class="flow-box">
+          <div class="flow-num">02</div>
+          <h5 style="color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Vehicle Allocation</h5>
+          <p style="font-size:0.85rem; color:var(--text-light);">Matching driver deployment preference with optimal fuel-saving hybrids or delivery fleet units.</p>
+        </div>
+        <div class="flow-box">
+          <div class="flow-num">03</div>
+          <h5 style="color:#fff; font-size:1.1rem; margin-bottom:0.5rem;">Contract & Handover</h5>
+          <p style="font-size:0.85rem; color:var(--text-light);">Signing custom terms, processing insurance logs, and handing over car keys for immediate income generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- UNIVERSAL VISUAL MAP COMPONENTS                         -->
+  <!-- ======================================================= -->
+  <section class="container" style="padding-top:0; padding-bottom: 2rem;">
+    <div class="heading-zone">
+      <span class="section-tag">System Blueprints</span>
+      <h2 class="heading">Group Hierarchy Map</h2>
+    </div>
+    <div class="org-view">
+      <pre>
+                      BUKHARI NEXUS PVT LTD
+                         (Parent Holding)
+       _________________________|_________________________
+      |                         |                         |
+BUKHARI TRADERS      AL MAKHA GENERAL STORE        BUKHARI PTY LTD
+(Wheat, Paddy & Rice)    (Retail & Groceries)     (UberX & Uber Eats Fleet)
+      </pre>
+    </div>
+  </section>
+
+  <!-- MASTER DIRECT COMM CONSOLE DIRECTORY -->
+  <section class="container" style="padding-top:0;">
+    <div class="routing-console">
+      <h3 style="font-family:'Inter',sans-serif; color:#fff; font-size:1.3rem; margin-bottom:1.5rem; border-left:3px solid var(--gold); padding-left:0.7rem;">Master Global Contact Console</h3>
+      
+      <!-- Row 1 -->
+      <div class="routing-row">
+        <div class="routing-meta">
+          <p>Bukhari Traders — Commodities Group</p>
+          <h5>Sajjad Hussain</h5>
+        </div>
+        <div class="routing-actions">
+          <a href="tel:+923476051990" class="circle-btn circle-phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://wa.me/923476051990" target="_blank" class="circle-btn circle-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="routing-row">
+        <div class="routing-meta">
+          <p>Al Makha General Store — Consumer Footprint</p>
+          <h5>Zulquarnain Haider</h5>
+        </div>
+        <div class="routing-actions">
+          <a href="tel:+923474888906" class="circle-btn circle-phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://wa.me/923474888906" target="_blank" class="circle-btn circle-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="routing-row">
+        <div class="routing-meta">
+          <p>Bukhari Pty Ltd — Fleet Management Hub</p>
+          <h5>Haseeb Sajjad</h5>
+        </div>
+        <div class="routing-actions">
+          <a href="tel:+61474024174" class="circle-btn circle-phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://wa.me/61474024174" target="_blank" class="circle-btn circle-wa"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSURE CONTROL UNIT FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Bukhari Nexus Pvt Ltd</h4>
+        <p>A multi-regional corporate group steering complex supply infrastructure, neighborhood consumer hubs, and commercial vehicle leasing pools safely across modern markets.</p>
+      </div>
+      <div>
+        <h4>Operating Regions</h4>
+        <p>Pakistan Territory Operations 🇵🇰</p>
+        <p style="margin-top:0.4rem;">Australian Continental Fleet Hub 🇦🇺</p>
+      </div>
+      <div class="footer-links">
+        <h4>Operational Sub-Sectors</h4>
+        <p><i class="fa-solid fa-angle-right"></i> Wheat, Paddy & Rice Trade</p>
+        <p><i class="fa-solid fa-angle-right"></i> Stable Local Consumer Retailing</p>
+        <p><i class="fa-solid fa-angle-right"></i> Rideshare and Gig Vehicle Fleets</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Bukhari Nexus Pvt Ltd. All international corporate segments logged and fully organized.
+    </div>
+  </footer>
+
+  <!-- SECURE EXPLICIT DESK COMPONENT INTERFACE MANAGER -->
+  <script>
+    function navigateToPage(pageId) {
+      // 1. Target all active pages and reset visibility tags safely
+      const pages = document.querySelectorAll('.app-page');
+      pages.forEach(page => {
+        page.classList.remove('active-page');
+      });
+
+      // 2. Clear all navigation active highlight loops cleanly
+      const tabs = document.querySelectorAll('.menu-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active-tab');
+      });
+
+      // 3. Mount selected container module dynamically
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      }
+
+      // 4. Force high-accuracy menu highlight tracking via clean data selectors
+      const targetTab = document.querySelector(`.menu-tab[data-page="${pageId}"]`);
+      if (targetTab) {
+        targetTab.classList.add('active-tab');
+      }
+
+      // 5. Instantly translate vertical viewing frames back to clean coordinates
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
