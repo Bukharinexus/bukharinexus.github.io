@@ -4,53 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukhari Nexus Pvt Ltd</title>
-    <link rel="stylesheet" href="style.css" id="nexus-dynamic-css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- THE SLIDESHOW CONTAINER CORE -->
-    <div class="slideshow-background-container" id="nexus-slideshow-chassis"></div>
-
-    <!-- PREMIUM GLASS HEADER SYSTEM -->
-    <header>
-        <div class="nav-container">
-            <div class="brand-wrapper" onclick="switchNexusModule('home')">
-                <div class="brand-circle-logo">BN</div>
-                <div class="brand-title">
-                    <h1>BUKHARI NEXUS</h1>
-                    <span>ENTERPRISE CO.</span>
-                </div>
-            </div>
-            <nav class="nav-links">
-                <button class="nav-btn active" id="btn-home" onclick="switchNexusModule('home')">Home Hub</button>
-                <button class="nav-btn" id="btn-about" onclick="switchNexusModule('about')">Our Mandate</button>
-                <button class="nav-btn" id="btn-history" onclick="switchNexusModule('history')">Chronology</button>
-                <button class="nav-btn" id="btn-contact" onclick="switchNexusModule('contact')">Desks</button>
-            </nav>
+    <div id="bg-container"><div id="active-bg"></div></div>
+    <main>
+        <div class="glass-card" onclick="updateView('traders')">
+            <h2>Bukhari Traders</h2>
+            <p>Agricultural Grain & Wheat Processing</p>
         </div>
-    </header>
-
-    <!-- MAIN DYNAMIC SECTOR PRESENTATION CORE -->
-    <main id="dynamic-module-holder"></main>
-
-    <!-- SCROLLING LOGO MARQUEE -->
-    <div class="marquee-zone" id="marquee-footer-bar">
-        <div class="marquee-track">
-            <div class="marquee-item">🌾 WHEAT AGRI BROKERAGE</div>
-            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
-            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
-            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
-            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
-            <div class="marquee-item">🌾 WHEAT AGRI BROKERAGE</div>
-            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
-            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
-            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
-            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
+        <div class="glass-card" onclick="updateView('makkah')">
+            <h2>Al Makkah General Store</h2>
+            <p>Wholesale Grocery & Bulk Distribution</p>
         </div>
-    </div>
-
-    <!-- APP ENGINE LOADERS -->
-    <script src="nexus-data.js"></script>
-    <script src="nexus-chat.js"></script>
+        <div class="glass-card" onclick="updateView('pty')">
+            <h2>Bukhari PTY Ltd</h2>
+            <p>Hobart Rideshare & Fleet Rental</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
