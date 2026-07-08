@@ -1,170 +1,112 @@
 /* ========================================================
-   🚗 BUKHARI NEXUS PTY LTD - TRANSPORT & FLEET MATRIX PORTAL CSS
+   BUKHARI NEXUS PTY LTD - CYBER MOBILITY DASHBOARD
    ======================================================== */
 
-:root {
-    --pty-crimson: #ef4444;
-    --pty-dark-red: #991b1b;
-    --pty-bg: #070708;
-    --pty-card: #121214;
-    --pty-text: #fafafa;
-    --pty-muted: #fca5a5;
-}
-
 body {
-    background-color: var(--pty-bg) !important;
-    color: var(--pty-text) !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: transparent !important;
 }
 
-/* Premium Navigation Frame Match */
 header {
-    background: rgba(18, 18, 20, 0.95) !important;
-    border-bottom: 2px solid var(--pty-crimson) !important;
+    background: rgba(15, 5, 5, 0.6) !important;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.4) !important;
+    backdrop-filter: blur(30px) !important;
 }
 
-.brand-section h1 {
+/* Floating ultra-pill oval styles */
+.nav-btn {
+    border-radius: 50px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: #9ca3af !important;
+    background: rgba(255,255,255,0.02) !important;
+    padding: 0.5rem 1.5rem !important;
+}
+.nav-btn.active {
+    background: linear-gradient(90deg, #ef4444, #f43f5e) !important; /* Glowing Red Gradient */
     color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    border-color: transparent !important;
 }
 
-.brand-section span {
-    color: var(--pty-crimson) !important;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* Fullscreen Portal Layout */
 .portal-showcase-view {
-    animation: rapidSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Large Tech-Fleet Hero Image Banner */
-.portal-hero {
-    width: 100%;
-    height: 380px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    border: 1px solid rgba(239, 68, 68, 0.25);
-    margin-bottom: 2.5rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.7), inset 0 0 120px rgba(0,0,0,0.95);
+    padding: 3rem 0;
 }
 
 .portal-grid-layout {
-    display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-@media (max-width: 900px) {
-    .portal-grid-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Core Corporate Copy Styling */
+/* Floating Gloss Capsule Card */
 .profile-main-card {
-    background: var(--pty-card);
-    border-radius: 16px;
-    padding: 2.5rem;
-    border-right: 4px solid var(--pty-crimson);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    background: rgba(15, 10, 10, 0.5) !important;
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    border-radius: 30px !important;
+    padding: 3rem !important;
+    box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.05), 0 20px 50px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* Asymmetric glowing red indicator light top-left */
+.profile-main-card::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ef4444;
 }
 
 .profile-main-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.25rem;
-    color: #ffffff;
-    letter-spacing: -0.5px;
+    color: #ffffff !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+    margin-left: 1.5rem;
 }
 
-.profile-main-card p {
-    color: #d4d4d8;
-    line-height: 1.8;
-    font-size: 1.05rem;
-}
-
-/* Sub-Asset Photo Layouts */
-.sub-assets-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-}
-
-.asset-sub-box {
-    background: #1c1c1f;
-    border: 1px solid rgba(252, 165, 165, 0.05);
-    border-radius: 12px;
-    padding: 1.2rem;
-    text-align: center;
-    transition: all 0.25s ease;
-}
-
-.asset-sub-box:hover {
-    border-color: var(--pty-crimson);
-    background: #222226;
-}
-
-.asset-sub-box .mini-img {
-    height: 160px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.asset-sub-box h4 {
-    font-size: 0.95rem;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-/* Executive Directory Sidebar */
+/* Premium Carbon Minimalist Sidebar Container */
 .directory-sidebar {
-    background: linear-gradient(145deg, #18181c, #0e0e10);
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    border-radius: 16px;
-    padding: 2.2rem;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #09090b, #18181b) !important;
+    border-radius: 24px !important;
+    padding: 2.5rem !important;
+    border: 1px solid rgba(255,255,255,0.05) !important;
 }
 
 .directory-sidebar h4 {
-    font-size: 1.3rem;
-    color: var(--pty-crimson);
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(239, 68, 68, 0.2);
-    padding-bottom: 0.75rem;
+    color: #f43f5e;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 2rem;
 }
 
 .meta-field {
-    margin-bottom: 1.5rem;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.01);
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 1.2rem !important;
+    border-radius: 16px !important;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: border-color 0.3s;
+}
+
+.meta-field:hover {
+    border-color: rgba(239, 68, 68, 0.3);
 }
 
 .meta-field label {
-    display: block;
-    font-size: 0.75rem;
+    color: #71717a !important;
+    font-size: 0.7rem !important;
     text-transform: uppercase;
-    color: var(--pty-muted);
-    letter-spacing: 1px;
-    margin-bottom: 0.4rem;
-    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 .meta-field p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #ffffff;
-}
-
-@keyframes rapidSlideIn {
-    from { opacity: 0; transform: translateX(15px); }
-    to { opacity: 1; transform: translateX(0); }
+    color: #ffffff !important;
+    font-family: monospace; /* Industrial telematics/fleet font style */
+    font-size: 1.05rem;
 }
