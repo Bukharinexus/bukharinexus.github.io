@@ -1,85 +1,35 @@
-/* ========================================================
-   BUKHARI TRADERS - EXCLUSIVE AGRICULTURAL TRADING DESIGN
-   ======================================================== */
+/* BUKHARI TRADERS: PREMIUM AGRI-PORTAL */
 
+/* Removes all solid backgrounds to let the background slide show through */
 body {
-    background: transparent !important; /* Forces the background photos to become fully visible */
+    background: transparent !important;
 }
 
-/* Eliminate the generic parent header layout completely */
-header {
-    background: rgba(20, 25, 15, 0.4) !important;
-    border-bottom: 2px solid #eab308 !important;
-}
-
-/* Unique Navigation Styling Just For This Sector */
-.nav-btn {
-    border-radius: 4px !important; /* Flat professional block cuts instead of rounded pills */
-    border: 1px solid rgba(234, 179, 8, 0.3) !important;
+/* The main container styling */
+.glass-hero {
+    background: rgba(20, 20, 10, 0.3) !important; /* Soft earthy transparent tint */
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(212, 175, 55, 0.4) !important; /* Gold accent border */
+    border-radius: 40px 0px 40px 0px !important; /* Unique angular framing */
+    padding: 3rem !important;
+    margin: 2rem !important;
     color: #fef08a !important;
-    background: rgba(0,0,0,0.4) !important;
-}
-.nav-btn.active {
-    background: #eab308 !important;
-    color: #000000 !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
 }
 
-/* Transparent Circular Profile Cards instead of stiff boxes */
-.portal-showcase-view {
-    padding: 2rem 0;
-    animation: fadeIn 0.5s ease-in;
-}
-
-.portal-grid-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* The Main Display Panel: Completely translucent so you can see your grain images clearly */
-.profile-main-card {
-    background: rgba(10, 15, 10, 0.4) !important;
-    border: 2px dashed rgba(234, 179, 8, 0.4) !important; /* Agricultural industrial border asset */
-    border-radius: 40px 0px 40px 0px !important; /* Asymmetric unique frame curvature */
-    padding: 3rem !important;
-    backdrop-filter: blur(4px) !important;
-}
-
-.profile-main-card h3 {
-    color: #eab308 !important;
-    font-size: 2rem !important;
-    letter-spacing: 1px;
-}
-
-/* Directory Sidebar Custom Geometry */
-.directory-sidebar {
-    background: linear-gradient(180deg, rgba(0,0,0,0.85), rgba(30,25,10,0.85)) !important;
-    border-radius: 50% / 15% !important; /* Ultra distinct curved oval framing */
-    padding: 3rem !important;
-    border: 1px solid #eab308 !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-}
-
-.directory-sidebar h4 {
-    text-align: center;
-    color: #fef08a;
-    font-size: 1.4rem;
-    border-bottom: 1px solid rgba(234, 179, 8, 0.2);
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.meta-field {
-    background: rgba(255,255,255,0.03) !important;
-    padding: 1rem !important;
-    border-radius: 12px !important;
-    margin-bottom: 1rem;
-    border-left: 4px solid #eab308 !important;
-}
-
-.meta-field label {
-    color: #eab308 !important;
-    font-weight: bold;
-    font-size: 0.8rem;
+/* Styling the buttons to look like high-end navigation */
+.nav-btn {
+    background: rgba(212, 175, 55, 0.1) !important;
+    border: 1px solid #d4af37 !important;
+    color: #fef08a !important;
+    padding: 1rem 2rem !important;
+    border-radius: 0 !important;
     text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #d4af37 !important;
+    color: #000 !important;
 }
