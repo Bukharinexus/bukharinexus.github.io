@@ -8,12 +8,8 @@
 </head>
 <body>
 
-    <!-- AUTOMATIC ENTERPRISE IMAGE REVOLVING BACKGROUND CHASSIS -->
-    <div class="slideshow-background-container" id="nexus-slideshow-chassis">
-        <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?auto=format&fit=crop&q=80&w=1600');"></div>
-        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1600');"></div>
-        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1600');"></div>
-    </div>
+    <!-- THE SLIDESHOW CONTAINER CORE -->
+    <div class="slideshow-background-container" id="nexus-slideshow-chassis"></div>
 
     <!-- PREMIUM GLASS HEADER SYSTEM -->
     <header>
@@ -35,27 +31,17 @@
     </header>
 
     <!-- MAIN DYNAMIC SECTOR PRESENTATION CORE -->
-    <main id="dynamic-module-holder">
-        <!-- Javascript components render content inside cleanly -->
-    </main>
+    <main id="dynamic-module-holder"></main>
 
-    <!-- SCROLLING WORLD BRAND LOGO MATRIX LOOP -->
+    <!-- SCROLLING LOGO MARQUEE -->
     <div class="marquee-zone" id="marquee-footer-bar">
         <div class="marquee-track">
-            <!-- Set 1 -->
-            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
+            <div class="marquee-item">🌾 WHEAT AGRI BROKERAGE</div>
             <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
             <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
             <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
             <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
-            <!-- Set 2 (Duplicated for seamless looping) -->
-            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
-            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
-            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
-            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
-            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
-            <!-- Set 3 -->
-            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
+            <div class="marquee-item">🌾 WHEAT AGRI BROKERAGE</div>
             <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
             <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
             <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
@@ -63,25 +49,8 @@
         </div>
     </div>
 
-    <!-- MAIN APP CONTROLLER ENGINES -->
+    <!-- APP ENGINE LOADERS -->
     <script src="nexus-data.js"></script>
-    <script src="nexus-media.js"></script>
     <script src="nexus-chat.js"></script>
-
-    <!-- CORE AUTOMATIC SLIDESHOW RUNNER SCRIPT -->
-    <script>
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.bg-slide');
-        
-        function runAutomaticSlideshow() {
-            if(slides.length === 0) return;
-            slides[currentSlideIndex].classList.remove('active');
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            slides[currentSlideIndex].classList.add('active');
-        }
-        
-        // Rotates the background photo seamlessly every 5.5 seconds
-        setInterval(runAutomaticSlideshow, 5500);
-    </script>
 </body>
 </html>
