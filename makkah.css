@@ -1,0 +1,169 @@
+/* ========================================================
+   🛒 AL MAKKAH GENERAL STORE - PROFESSIONAL WHOLESALE PORTAL CSS
+   ======================================================== */
+
+:root {
+    --makkah-blue: #3b82f6;
+    --makkah-light-blue: #60a5fa;
+    --makkah-bg: #09111e;
+    --makkah-card: #142238;
+    --makkah-text: #f8fafc;
+    --makkah-muted: #93c5fd;
+}
+
+body {
+    background-color: var(--makkah-bg) !important;
+    color: var(--makkah-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Premium Navigation Frame Match */
+header {
+    background: rgba(20, 34, 56, 0.95) !important;
+    border-bottom: 2px solid var(--makkah-blue) !important;
+}
+
+.brand-section h1 {
+    color: #ffffff !important;
+}
+
+.brand-section span {
+    color: var(--makkah-light-blue) !important;
+    font-weight: bold;
+}
+
+/* Fullscreen Portal Layout */
+.portal-showcase-view {
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+/* Large Wholesale Store Hero Image Banner */
+.portal-hero {
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.9);
+}
+
+.portal-grid-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .portal-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Core Corporate Copy Styling */
+.profile-main-card {
+    background: var(--makkah-card);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border-top: 4px solid var(--makkah-blue);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.profile-main-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.profile-main-card p {
+    color: #cbd5e1;
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+/* Sub-Asset Photo Layouts */
+.sub-assets-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.asset-sub-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.asset-sub-box:hover {
+    border-color: var(--makkah-blue);
+    transform: translateY(-2px);
+}
+
+.asset-sub-box .mini-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.asset-sub-box h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Executive Directory Sidebar */
+.directory-sidebar {
+    background: linear-gradient(145deg, #101c2e, #0a1220);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.directory-sidebar h4 {
+    font-size: 1.3rem;
+    color: var(--makkah-muted);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-field {
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.meta-field label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--makkah-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.meta-field p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
