@@ -4,43 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukhari Nexus Pvt Ltd</title>
-    <!-- Base styles load first, then hot-swapped by our JavaScript script -->
     <link rel="stylesheet" href="style.css" id="nexus-dynamic-css">
 </head>
 <body>
 
-    <!-- Premium Sticky Global Header Navigation Container -->
+    <!-- AUTOMATIC ENTERPRISE IMAGE REVOLVING BACKGROUND CHASSIS -->
+    <div class="slideshow-background-container" id="nexus-slideshow-chassis">
+        <div class="bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1574325131876-a7999fd7f2b1?auto=format&fit=crop&q=80&w=1600');"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1600');"></div>
+        <div class="bg-slide" style="background-image: url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1600');"></div>
+    </div>
+
+    <!-- PREMIUM GLASS HEADER SYSTEM -->
     <header>
         <div class="nav-container">
-            <div class="brand-section" onclick="switchNexusModule('home')" style="cursor: pointer;">
-                <h1>BUKHARI NEXUS</h1>
-                <span>PVT LTD</span>
+            <div class="brand-wrapper" onclick="switchNexusModule('home')">
+                <div class="brand-circle-logo">BN</div>
+                <div class="brand-title">
+                    <h1>BUKHARI NEXUS</h1>
+                    <span>ENTERPRISE CO.</span>
+                </div>
             </div>
             <nav class="nav-links">
                 <button class="nav-btn active" id="btn-home" onclick="switchNexusModule('home')">Home Hub</button>
-                <button class="nav-btn" id="btn-about" onclick="switchNexusModule('about')">About Corporate</button>
-                <button class="nav-btn" id="btn-history" onclick="switchNexusModule('history')">Our History</button>
-                <button class="nav-btn" id="btn-contact" onclick="switchNexusModule('contact')">Global Offices</button>
+                <button class="nav-btn" id="btn-about" onclick="switchNexusModule('about')">Our Mandate</button>
+                <button class="nav-btn" id="btn-history" onclick="switchNexusModule('history')">Chronology</button>
+                <button class="nav-btn" id="btn-contact" onclick="switchNexusModule('contact')">Desks</button>
             </nav>
         </div>
     </header>
 
-    <!-- The Dynamic Content Injection Zone -->
+    <!-- MAIN DYNAMIC SECTOR PRESENTATION CORE -->
     <main id="dynamic-module-holder">
-        <!-- Built dynamic components render inside here smoothly -->
+        <!-- Javascript components render content inside cleanly -->
     </main>
 
-    <!-- Universal Corporate Network Footer -->
-    <footer>
-        <p>Bukhari Nexus Pvt Ltd &copy; 2026 | Multi-Sector Global Network</p>
-        <p style="font-size: 0.75rem; margin-top: 0.5rem; opacity: 0.6;">
-            Registered Trade Entities: Agricultural Supply • FMCG Retail Warehousing • International Mobility Fleets
-        </p>
-    </footer>
+    <!-- SCROLLING WORLD BRAND LOGO MATRIX LOOP -->
+    <div class="marquee-zone" id="marquee-footer-bar">
+        <div class="marquee-track">
+            <!-- Set 1 -->
+            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
+            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
+            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
+            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
+            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
+            <!-- Set 2 (Duplicated for seamless looping) -->
+            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
+            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
+            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
+            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
+            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
+            <!-- Set 3 -->
+            <div class="marquee-item">🌾 WHEAT AGRI brokerage</div>
+            <div class="marquee-item">🚗 TASMANIAN MOBILITY PLATFORMS</div>
+            <div class="marquee-item">🛒 FMCG BULK PACK DISTRIBUTIONS</div>
+            <div class="marquee-item">🇦🇺 PACIFIC LOGISTICS HUB</div>
+            <div class="marquee-item">🇵🇰 SOUTH ASIA AGRI-CHANNELS</div>
+        </div>
+    </div>
 
-    <!-- Core Engine Scripts -->
+    <!-- MAIN APP CONTROLLER ENGINES -->
     <script src="nexus-data.js"></script>
     <script src="nexus-media.js"></script>
     <script src="nexus-chat.js"></script>
+
+    <!-- CORE AUTOMATIC SLIDESHOW RUNNER SCRIPT -->
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.bg-slide');
+        
+        function runAutomaticSlideshow() {
+            if(slides.length === 0) return;
+            slides[currentSlideIndex].classList.remove('active');
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            slides[currentSlideIndex].classList.add('active');
+        }
+        
+        // Rotates the background photo seamlessly every 5.5 seconds
+        setInterval(runAutomaticSlideshow, 5500);
+    </script>
 </body>
 </html>
