@@ -1,0 +1,168 @@
+/* ========================================================
+   🌾 BUKHARI TRADERS & COMMISSION AGENT - PREMIUM PORTAL CSS
+   ======================================================== */
+
+:root {
+    --traders-gold: #d97706;
+    --traders-green: #15803d;
+    --traders-bg: #0b0f0b;
+    --traders-card: #141c16;
+    --traders-text: #f0fdf4;
+    --traders-muted: #86efac;
+}
+
+body {
+    background-color: var(--traders-bg) !important;
+    color: var(--traders-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Premium Navigation Frame Match */
+header {
+    background: rgba(20, 28, 22, 0.9) !important;
+    border-bottom: 2px solid var(--traders-gold) !important;
+}
+
+.brand-section h1 {
+    color: #ffffff !important;
+}
+
+.brand-section span {
+    color: var(--traders-gold) !important;
+    font-weight: bold;
+}
+
+/* Fullscreen Portal Layout */
+.portal-showcase-view {
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Large Industrial Hero Image Banner */
+.portal-hero {
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    margin-bottom: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.9);
+}
+
+.portal-grid-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .portal-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Core Corporate Copy Styling */
+.profile-main-card {
+    background: var(--traders-card);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border-left: 5px solid var(--traders-green);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.profile-main-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+    color: var(--traders-gold);
+    letter-spacing: -0.5px;
+}
+
+.profile-main-card p {
+    color: #e2e8f0;
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+/* Sub-Asset Photo Layouts */
+.sub-assets-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.asset-sub-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(134, 239, 172, 0.1);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.asset-sub-box:hover {
+    transform: scale(1.02);
+}
+
+.asset-sub-box .mini-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.asset-sub-box h4 {
+    font-size: 0.95rem;
+    color: var(--traders-text);
+    font-weight: 600;
+}
+
+/* Executive Directory Sidebar Sidebar */
+.directory-sidebar {
+    background: linear-gradient(145deg, #131b15, #0d120e);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.directory-sidebar h4 {
+    font-size: 1.3rem;
+    color: var(--traders-gold);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(217, 119, 6, 0.2);
+    padding-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-field {
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.meta-field label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--traders-muted);
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.meta-field p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
