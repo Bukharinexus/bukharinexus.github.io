@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bukhari Nexus | Apex of Enterprise, Retail & Global Trade</title>
+  <title>Bukhari Nexus | Enterprise, Retail & Global Fleet Logistics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- FontAwesome Icons for Enterprise Elements -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -21,12 +19,13 @@
       --white: #ffffff;
       --gold: #d4af37;
       --whatsapp-green: #1ebd59;
-      --light-grey: #f8f9fa;
       --card-bg: #111a2e;
+      --light-grey: #f8f9fa;
       --text-grey: #4b5563;
-      --text-light: #9ca3af;
-      --shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      --transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+      --text-light: #94a3b8;
+      --border-line: rgba(255, 255, 255, 0.05);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -37,24 +36,25 @@
       background: var(--nexus-dark);
       color: #e2e8f0;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     
     a { text-decoration:none; color:inherit; }
 
-    /* NAVIGATION */
+    /* CORE MULTI-PAGE NAVIGATION SYSTEM */
     header {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      background: rgba(7, 15, 30, 0.85);
+      background: rgba(7, 15, 30, 0.9);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-b: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border-line);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
       z-index: 1000;
     }
     nav {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: auto;
       padding: 1.2rem 1.5rem;
       display: flex;
@@ -67,23 +67,24 @@
       font-weight: 900;
       color: var(--white);
       text-transform: uppercase;
-      tracking: 1px;
+      letter-spacing: 1px;
     }
     .logo span { color: var(--gold); }
 
     .menu {
       display: flex;
-      gap: 2rem;
+      gap: 1.75rem;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #cbd5e1;
     }
-    .menu a {
+    .menu-tab {
       position: relative;
-      padding-bottom: 4px;
+      padding: 0.5rem 0;
+      cursor: pointer;
       transition: var(--transition);
     }
-    .menu a::after {
+    .menu-tab::after {
       content: "";
       position: absolute;
       bottom: 0; left: 0;
@@ -91,12 +92,37 @@
       background: var(--gold);
       transition: var(--transition);
     }
-    .menu a:hover { color: var(--white); }
-    .menu a:hover::after { width: 100%; }
+    .menu-tab:hover { color: var(--white); }
+    .menu-tab:hover::after { width: 100%; }
+    
+    /* Active State Highlight for Navigation Pages */
+    .menu-tab.active-tab {
+      color: var(--gold) !important;
+      font-weight: 700;
+    }
+    .menu-tab.active-tab::after {
+      width: 100%;
+      background: var(--gold);
+    }
 
-    /* HERO */
+    /* PAGE ROUTER CONTROLLER UTILITY */
+    .app-page {
+      display: none; /* Controlled via dynamic JS logic */
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      padding-top: 5rem; /* Offsets fixed navigation bar */
+      min-height: calc(100vh - 300px);
+    }
+    .app-page.active-page {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CINEMATIC HERO DESIGN */
     .hero {
-      height: 100vh;
+      height: 85vh;
       position: relative;
       display: flex;
       align-items: center;
@@ -104,6 +130,7 @@
       color: #fff;
       text-align: center;
       padding: 0 1.5rem;
+      margin-bottom: 2rem;
     }
     .hero video {
       position: absolute;
@@ -116,23 +143,16 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(7, 15, 30, 0.85),
-        rgba(15, 81, 50, 0.75)
-      );
+      background: linear-gradient(to bottom, rgba(7, 15, 30, 0.9), rgba(11, 31, 59, 0.8));
       z-index: -1;
     }
-    .hero-content {
-      max-width: 850px;
-      animation: fadeUp 1s ease;
-    }
+    .hero-content { max-width: 850px; }
     .hero-tag {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 6px;
       color: var(--gold);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       font-weight: 700;
     }
     .hero h1 {
@@ -142,58 +162,23 @@
       line-height: 1.2;
       margin-bottom: 1.5rem;
       text-transform: uppercase;
-      letter-spacing: -1px;
     }
     .hero p { 
       margin-bottom: 2.5rem; 
       font-size: 1.2rem; 
       color: #cbd5e1;
       font-weight: 300;
-      line-height: 1.7;
     }
 
-    .hero-btns {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+    /* GLOBAL GENERAL LAYOUT STRUCTURE */
+    .container {
+      max-width: 1240px;
+      margin: auto;
+      padding: 4rem 1.5rem;
     }
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--white);
-      color: var(--nexus-dark);
-    }
-    .btn-primary:hover {
-      background: var(--gold);
-      color: var(--nexus-dark);
-      transform: translateY(-3px);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--white);
-      transform: translateY(-3px);
-    }
-
-    /* SECTION INFRASTRUCTURE */
-    section { padding: 6rem 1.5rem; max-width: 1240px; margin: auto; }
-
     .heading-zone {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
     }
     .section-tag {
       font-size: 0.75rem;
@@ -214,18 +199,24 @@
       max-width: 600px;
       margin: 0.5rem auto 0 auto;
       color: var(--text-light);
-      font-size: 1rem;
     }
 
-    /* MODERNIZED SECTOR CARDS */
-    .cards {
+    /* GRID MATRIX PLATFORM */
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
     }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 3rem;
+    }
+
+    /* COMPONENT STYLE DECORATIONS */
     .card {
       background: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-line);
       border-radius: 24px;
       overflow: hidden;
       display: flex;
@@ -233,580 +224,195 @@
       box-shadow: var(--shadow);
       transition: var(--transition);
     }
-    .card:hover { 
-      transform: translateY(-8px); 
-      border-color: rgba(212, 175, 55, 0.3);
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(212, 175, 55, 0.25);
     }
-
-    .card-media {
-      position: relative;
-      height: 220px;
-      overflow: hidden;
-    }
-    .card-bg {
-      width: 100%;
-      height: 100%;
+    .card-banner {
+      height: 200px;
       background-size: cover;
       background-position: center;
-      transition: var(--transition);
+      position: relative;
     }
-    .card:hover .card-bg { transform: scale(1.06); }
-    
     .card-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, var(--card-bg) 100%, transparent 0%);
-      opacity: 0.4;
+      background: linear-gradient(to top, var(--card-bg), transparent);
     }
-
-    .card-badge {
-      position: absolute;
-      top: 1.25rem; left: 1.25rem;
-      background: rgba(7, 15, 30, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
-      padding: 0.4rem 0.9rem;
-      border-radius: 50px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--gold);
-      letter-spacing: 1.5px;
-    }
-
-    .card-body {
+    .card-main {
       padding: 2rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
-    .card-title {
-      font-family: "Inter", sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.75rem;
-    }
-    .card-desc { 
-      font-size: 0.95rem; 
-      color: #94a3b8; 
-      margin-bottom: 1.5rem;
-      min-height: 45px;
-    }
+    .card-main h3 { font-family: "Inter", sans-serif; font-size: 1.5rem; color: #fff; margin-bottom: 0.75rem; }
+    .card-main p { font-size: 0.95rem; color: #94a3b8; margin-bottom: 1.5rem; }
 
-    /* Core Product Feature Lists */
-    .card-features {
-      list-style: none;
-      margin-bottom: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 1.25rem;
-    }
-    .card-features li {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      margin-bottom: 0.65rem;
-    }
-    .card-features li i {
-      color: var(--gold);
-      font-size: 0.9rem;
-    }
+    /* CORE LIST SYMBOLS */
+    .checklist { list-style: none; margin-bottom: 2rem; }
+    .checklist li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.88rem; color: #cbd5e1; margin-bottom: 0.75rem; }
+    .checklist li i { color: var(--gold); }
 
-    .management-tag {
-      margin-top: auto;
-      padding-bottom: 1.25rem;
+    /* CONTACT CONSOLE SYSTEMS */
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: auto; }
+    .action-link {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.8rem; border-radius: 12px; font-size: 0.85rem; font-weight: 700; transition: var(--transition);
     }
-    .management-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-light);
-    }
-    .management-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--white);
-    }
+    .link-tel { background: rgba(255, 255, 255, 0.06); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+    .link-tel:hover { background: var(--white); color: var(--nexus-dark); }
+    .link-wa { background: rgba(30, 189, 89, 0.15); color: #4ade80; border: 1px solid rgba(30,189,89,0.2); }
+    .link-wa:hover { background: var(--whatsapp-green); color: #white; }
 
-    /* Action Control Blocks */
-    .card-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-    .action-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.75rem;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      transition: var(--transition);
-    }
-    .action-phone {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .action-phone:hover {
-      background: var(--white);
-      color: var(--nexus-dark);
-    }
-    .action-whatsapp {
-      background: rgba(30, 189, 89, 0.15);
-      color: #4ade80;
-      border: 1px solid rgba(30, 189, 89, 0.2);
-    }
-    .action-whatsapp:hover {
-      background: var(--whatsapp-green);
-      color: var(--white);
-    }
-
-    /* PIPELINE ONBOARDING SYSTEM */
-    .pipeline-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .pipeline-node {
+    /* SPECIFIC CORPORATE PROSE STYLING */
+    .prose-card {
       background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 20px;
-      position: relative;
-    }
-    .node-index {
-      width: 36px; height: 36px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: monospace;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-    .node-title {
-      font-family: "Inter", sans-serif;
-      font-size: 1.15rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-    .node-desc {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-
-    /* ORG CHART */
-    .org-chart {
-      margin-top: 1rem;
-    }
-    .org-chart pre {
-      background: #040a14;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--gold);
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
-      overflow-x: auto;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      font-family: "Courier New", Courier, monospace;
-    }
-
-    /* CONTACT CONSOLE */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .contact-box {
-      background: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-line);
       padding: 2.5rem;
       border-radius: 24px;
-      box-shadow: var(--shadow);
+      position: relative;
     }
-    .contact-box h3 {
-      font-family: "Inter", sans-serif;
-      font-size: 1.4rem;
-      margin-bottom: 1.5rem;
-      color: var(--white);
-      border-left: 3px solid var(--gold);
-      padding-left: 0.75rem;
+    .prose-card h3 {
+      font-family: "Inter", sans-serif; font-size: 1.5rem; color: var(--white);
+      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
     }
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    .contact-row:last-child { border: none; }
-    
-    .contact-info-side p { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; }
-    .contact-info-side h5 { font-size: 1.1rem; color: var(--white); font-weight: 600; margin-top: 0.15rem; }
-    
-    .contact-actions-side {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .icon-btn {
-      width: 42px; height: 42px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      font-size: 1.1rem;
-    }
-    .icon-btn-phone { background: rgba(255,255,255,0.05); color: #fff; }
-    .icon-btn-phone:hover { background: var(--white); color: var(--nexus-dark); }
-    .icon-btn-wa { background: rgba(30, 189, 89, 0.1); color: #4ade80; }
-    .icon-btn-wa:hover { background: var(--whatsapp-green); color: #fff; }
+    .prose-card h3 i { color: var(--gold); font-size: 1.2rem; }
+    .prose-card p { font-size: 0.98rem; color: #cbd5e1; line-height: 1.7; text-align: justify; }
 
-    /* FOOTER */
-    footer {
-      background: #040912;
-      color: #fff;
-      padding: 4rem 1.5rem 2rem 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-    footer .footer-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 3rem;
-      padding-bottom: 3rem;
-    }
-    footer h4 {
-      font-family: "Inter", sans-serif;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1.25rem;
-      color: var(--white);
-    }
-    footer p { font-size: 0.9rem; color: #94a3b8; line-height: 1.7; }
-    
-    .footer-links p {
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .footer-links i { color: var(--gold); font-size: 0.8rem; }
+    /* PIPELINE ONBOARDING STAGES */
+    .flow-line { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .flow-box { background: var(--card-bg); border: 1px solid var(--border-line); padding: 2rem; border-radius: 20px; }
+    .flow-num { width: 32px; height: 32px; background: rgba(214,175,55,0.1); border: 1px solid var(--gold); color: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 1rem; }
 
-    .footer-bottom {
-      max-width: 1200px;
-      margin: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #64748b;
+    /* ORGANISATIONAL CHART INTERFACE */
+    .org-view pre {
+      background: #040a14; border: 1px solid var(--border-line); color: var(--gold);
+      padding: 2rem; border-radius: 20px; font-size: 0.85rem; overflow-x: auto;
+      font-family: "Courier New", Courier, monospace; line-height: 1.5; text-align: center;
     }
 
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(30px); }
-      to { opacity:1; transform:translateY(0); }
-    }
+    /* DIRECT ROUTING MATRIX */
+    .routing-console { background: var(--card-bg); border: 1px solid var(--border-line); padding: 2.5rem; border-radius: 24px; }
+    .routing-row { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; border-bottom: 1px solid var(--border-line); }
+    .routing-row:last-child { border: none; }
+    .routing-meta h5 { font-size: 1.1rem; color: #fff; font-weight: 600; }
+    .routing-meta p { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .routing-actions { display: flex; gap: 0.5rem; }
+    .circle-btn { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .circle-phone { background: rgba(255,255,255,0.05); color: #fff; }
+    .circle-phone:hover { background: #fff; color: var(--nexus-dark); }
+    .circle-wa { background: rgba(30, 189, 89, 0.1); color: #4ade80; }
+    .circle-wa:hover { background: var(--whatsapp-green); color: #fff; }
+
+    /* FOOTER DESIGN ELEMENTS */
+    footer { background: #040912; color: #fff; padding: 4rem 1.5rem 2rem 1.5rem; border-top: 1px solid var(--border-line); margin-top: 5rem; }
+    .footer-grid { max-width: 1240px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 3rem; padding-bottom: 3rem; }
+    footer h4 { font-family: "Inter", sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.25rem; color: var(--white); }
+    footer p { font-size: 0.88rem; color: #94a3b8; line-height: 1.7; }
+    .footer-links p { font-size: 0.88rem; color: #cbd5e1; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+    .footer-links i { color: var(--gold); font-size: 0.75rem; }
+    .footer-bottom { max-width: 1240px; margin: auto; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 2rem; text-align: center; font-size: 0.85rem; color: #64748b; }
 
     @media(max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: 1rem; }
-      nav .menu { display: none; } /* Kept clean for single-page dynamic layouts */
-      .card-actions { grid-template-columns: 1fr; }
-      .contact-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
-      .contact-actions-side { w-full; }
+      nav { flex-direction: column; gap: 1rem; text-align: center; }
+      .menu { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .routing-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
     }
   </style>
 </head>
-
 <body>
 
-<!-- DYNAMIC NAV BAR -->
-<header>
-  <nav>
-    <div class="logo">Bukhari <span>Nexus</span></div>
-    <div class="menu">
-      <a href="#home">Home</a>
-      <a href="#business">Divisions</a>
-      <a href="#pipeline">Operations</a>
-      <a href="#org">Structure</a>
-      <a href="#contact">Contact Direct</a>
-    </div>
-  </nav>
-</header>
-
-<!-- CINEMATIC VIDEO HERO BACKGROUND -->
-<section class="hero" id="home">
-  <video autoplay muted loop playsinline>
-    <source src="https://videos.pexels.com/video-files/855331/855331-hd_1280_720_25fps.mp4" type="video/mp4" />
-  </video>
-
-  <div class="hero-content">
-    <div class="hero-tag">Bukhari Nexus Pvt Ltd</div>
-    <h1>Building Connections Across Agriculture, Trade & Mobility</h1>
-    <p>
-      An international holding network operating across Pakistan and Australia, delivering expert trading supply lines, community footprint retail, and smart driver fleet management solutions.
-    </p>
-
-    <div class="hero-btns">
-      <a href="#business" class="btn btn-primary">Explore Asset Sectors</a>
-      <a href="#contact" class="btn btn-secondary">Direct Routing Desk</a>
-    </div>
-  </div>
-</section>
-
-<!-- SUBSIDIARIES PRODUCT CARD MATRIX -->
-<section id="business">
-  <div class="heading-zone">
-    <span class="section-tag">Subsidiaries Portfolio</span>
-    <h2 class="heading">Independent Business Divisions</h2>
-    <p class="subheading">
-      Three structured corporate units functioning with specialized localized assets and direct access pipelines.
-    </p>
-  </div>
-
-  <div class="cards">
-
-    <!-- DIVISION 1: BUKHARI TRADERS -->
-    <div class="card">
-      <div class="card-media">
-        <div class="card-bg" style="background-image:url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="card-overlay"></div>
-        <div class="card-badge">Commodities</div>
+  <header>
+    <nav>
+      <div class="logo">Bukhari <span>Nexus</span></div>
+      <div class="menu">
+        <div class="menu-tab active-tab" onclick="navigateToPage('home')">Home</div>
+        <div class="menu-tab" onclick="navigateToPage('about')">About Group</div>
+        <div class="menu-tab" onclick="navigateToPage('traders')">Bukhari Traders</div>
+        <div class="menu-tab" onclick="navigateToPage('almakha')">Al Makha Store</div>
+        <div class="menu-tab" onclick="navigateToPage('pty')">Bukhari Pty Ltd</div>
       </div>
-      <div class="card-body">
-        <div class="card-title">Bukhari Traders</div>
-        <div class="card-desc">Bulk trading and structural distribution loops of high-grade primary agricultural stock.</div>
-        
-        <ul class="card-features">
-          <li><i class="fa-solid fa-circle-check"></i> Premium Wheat Milling Distribution</li>
-          <li><i class="fa-solid fa-circle-check"></i> Raw Paddy Supply Chain Sourcing</li>
-          <li><i class="fa-solid fa-circle-check"></i> Milled & Graded Rice Wholesale</li>
-        </ul>
+    </nav>
+  </header>
 
-        <div class="management-tag">
-          <div class="management-label">Operating Director</div>
-          <div class="management-name">Sajjad Hussain</div>
-        </div>
-        <div class="card-actions">
-          <a href="tel:+923476051990" class="action-btn action-phone">
-            <i class="fa-solid fa-phone"></i> Direct Call
-          </a>
-          <a href="https://wa.me/923476051990" target="_blank" class="action-btn action-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
+  <div id="page-home" class="app-page active-page">
+    <div class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="https://videos.pexels.com/video-files/855331/855331-hd_1280_720_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content">
+        <div class="hero-tag">Bukhari Nexus Pvt Ltd</div>
+        <h1>Building Connections Across Agriculture, Retail & Mobility</h1>
+        <p>A multi-sector corporate matrix coordinating premium asset lines, specialized merchant supplies, and local delivery vehicle infrastructure across global territories.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="navigateToPage('about')">Read Our History</button>
+          <button class="btn btn-secondary" onclick="navigateToPage('traders')">View Businesses</button>
         </div>
       </div>
     </div>
 
-    <!-- DIVISION 2: AL MAKHA GENERAL STORE -->
-    <div class="card">
-      <div class="card-media">
-        <div class="card-bg" style="background-image:url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="card-overlay"></div>
-        <div class="card-badge">Retail & Goods</div>
+    <div class="container">
+      <div class="heading-zone">
+        <span class="section-tag">Corporate Ecosystem</span>
+        <h2 class="heading">Operational Segments</h2>
       </div>
-      <div class="card-body">
-        <div class="card-title">Al Makha General Store</div>
-        <div class="card-desc">Dependable community brick-and-mortar setups providing consumer-packaged daily essentials.</div>
-        
-        <ul class="card-features">
-          <li><i class="fa-solid fa-circle-check"></i> Quality Local Consumer Staples</li>
-          <li><i class="fa-solid fa-circle-check"></i> Clean, Efficient Storefront Environments</li>
-          <li><i class="fa-solid fa-circle-check"></i> Customer-First Neighborhood Retail</li>
-        </ul>
-
-        <div class="management-tag">
-          <div class="management-label">Operating Director</div>
-          <div class="management-name">Zulquarnain Haider</div>
-        </div>
-        <div class="card-actions">
-          <a href="tel:+923474888906" class="action-btn action-phone">
-            <i class="fa-solid fa-phone"></i> Direct Call
-          </a>
-          <a href="https://wa.me/923474888906" target="_blank" class="action-btn action-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- DIVISION 3: BUKHARI PTY LTD -->
-    <div class="card">
-      <div class="card-media">
-        <div class="card-bg" style="background-image:url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
-        <div class="card-overlay"></div>
-        <div class="card-badge">Fleet Logistics</div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Bukhari Pty Ltd</div>
-        <div class="card-desc">Tailored, high-compliance vehicle leasing models servicing active transport and gig sectors.</div>
-        
-        <ul class="card-features">
-          <li><i class="fa-solid fa-circle-check"></i> UberX Driver Passenger Solutions</li>
-          <li><i class="fa-solid fa-circle-check"></i> Uber Eats Optimized Delivery Vehicles</li>
-          <li><i class="fa-solid fa-circle-check"></i> Comprehensive Commercial Road Insurance</li>
-        </ul>
-
-        <div class="management-tag">
-          <div class="management-label">Operating Director</div>
-          <div class="management-name">Haseeb Sajjad</div>
-        </div>
-        <div class="card-actions">
-          <a href="tel:+61474024174" class="action-btn action-phone">
-            <i class="fa-solid fa-phone"></i> Direct Call
-          </a>
-          <a href="https://wa.me/61474024174" target="_blank" class="action-btn action-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PIPELINE ROUTING MAP -->
-<section id="pipeline">
-  <div class="heading-zone">
-    <span class="section-tag">Communications Pipeline</span>
-    <h2 class="heading">Isolated Inquiry Routing Flow</h2>
-    <p class="subheading">How our decentralized operational network connects incoming queries with high accuracy.</p>
-  </div>
-  
-  <div class="pipeline-grid">
-    <div class="pipeline-node">
-      <div class="node-index">01</div>
-      <div class="node-title">Target Asset Pick</div>
-      <div class="node-desc">Partners and clients pinpoint their operational segment instantly on-site, skipping standard gateway blocks.</div>
-    </div>
-    <div class="pipeline-node">
-      <div class="node-index">02</div>
-      <div class="node-title">Localized Management Hand-off</div>
-      <div class="node-desc">Inquiries forward directly to the localized system terminals assigned specifically to that branch's operating unit.</div>
-    </div>
-    <div class="pipeline-node">
-      <div class="node-index">03</div>
-      <div class="node-title">Direct Director Execution</div>
-      <div class="node-desc">High-yield acquisition requests, lease options, or trade bids scale upward instantly to the portfolio executive.</div>
-    </div>
-  </div>
-</section>
-
-<!-- VISUAL ORGANISATIONAL MATRIX MAP -->
-<section id="org">
-  <div class="heading-zone">
-    <span class="section-tag">Structure</span>
-    <h2 class="heading">Corporate Ecosystem Architecture</h2>
-  </div>
-
-  <div class="org-chart">
-    <pre>
-                      BUKHARI NEXUS PVT LTD
-                         (Parent Holding)
-       _________________________|_________________________
-      |                         |                         |
-BUKHARI TRADERS      AL MAKHA GENERAL STORE        BUKHARI PTY LTD
-(Wheat, Paddy & Rice)    (Retail & Groceries)     (UberX & Uber Eats Fleet)
-    </pre>
-  </div>
-</section>
-
-<!-- MASTER DIRECT ROUTING CONSOLE -->
-<section id="contact">
-  <div class="heading-zone">
-    <span class="section-tag">Global Communications</span>
-    <h2 class="heading">Connect Directly with Our Directors</h2>
-    <p class="subheading">Bypass intermediate operators. Access targeted enterprise support networks through zero-gatekeeper routing.</p>
-  </div>
-
-  <div class="contact-container">
-    <div class="contact-box">
-      <h3>subsidiary Communication Routing Lines</h3>
       
-      <!-- Routing Row 1 -->
-      <div class="contact-row">
-        <div class="contact-info-side">
-          <p>Bukhari Traders — Commodities Operations</p>
-          <h5>Sajjad Hussain</h5>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="card-main">
+            <h3>Bukhari Traders</h3>
+            <p>Wholesale logistics, quality milling selections, and direct supply systems for high-volume cereal crops.</p>
+            <button class="btn btn-secondary" style="font-size:0.85rem; padding:0.6rem;" onclick="navigateToPage('traders')">Open Division Tab</button>
+          </div>
         </div>
-        <div class="contact-actions-side">
-          <a href="tel:+923476051990" class="icon-btn icon-btn-phone" title="Call Director"><i class="fa-solid fa-phone"></i></a>
-          <a href="https://wa.me/923476051990" target="_blank" class="icon-btn icon-btn-wa" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="card">
+          <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/4482903/pexels-photo-4482903.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="card-main">
+            <h3>Al Makha General Store</h3>
+            <p>Providing standardized, localized merchant markets for premium community consumer staples.</p>
+            <button class="btn btn-secondary" style="font-size:0.85rem; padding:0.6rem;" onclick="navigateToPage('almakha')">Open Division Tab</button>
+          </div>
         </div>
-      </div>
-
-      <!-- Routing Row 2 -->
-      <div class="contact-row">
-        <div class="contact-info-side">
-          <p>Al Makha General Store — Consumer Retail</p>
-          <h5>Zulquarnain Haider</h5>
-        </div>
-        <div class="contact-actions-side">
-          <a href="tel:+923474888906" class="icon-btn icon-btn-phone" title="Call Director"><i class="fa-solid fa-phone"></i></a>
-          <a href="https://wa.me/923474888906" target="_blank" class="icon-btn icon-btn-wa" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <!-- Routing Row 3 -->
-      <div class="contact-row">
-        <div class="contact-info-side">
-          <p>Bukhari Pty Ltd — Onshore Fleet Management</p>
-          <h5>Haseeb Sajjad</h5>
-        </div>
-        <div class="contact-actions-side">
-          <a href="tel:+61474024174" class="icon-btn icon-btn-phone" title="Call Director"><i class="fa-solid fa-phone"></i></a>
-          <a href="https://wa.me/61474024174" target="_blank" class="icon-btn icon-btn-wa" title="WhatsApp Chat"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="card">
+          <div class="card-banner" style="background-image:url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200');"></div>
+          <div class="card-main">
+            <h3>Bukhari Pty Ltd</h3>
+            <p>Fully managed, platform-compliant vehicle supply operations for rideshare and on-demand delivery sectors.</p>
+            <button class="btn btn-secondary" style="font-size:0.85rem; padding:0.6rem;" onclick="navigateToPage('pty')">Open Division Tab</button>
+          </div>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- MASTER ENTERPRISE FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <h4>Bukhari Nexus Pvt Ltd</h4>
-      <p>A coordinated cross-border operational group driving stability and logistical excellence across commodities trading, modern driver mobility platforms, and neighborhood retail assets.</p>
-    </div>
-
-    <div>
-      <h4>International Geographies</h4>
-      <p>Pakistan Administrative Zone 🇵🇰</p>
-      <p style="margin-top: 0.5rem;">Commonwealth of Australia 🇦🇺</p>
-    </div>
-
-    <div class="footer-links">
-      <h4>Pillar Layout Map</h4>
-      <p><i class="fa-solid fa-angles-right"></i> Bulk Trade (Wheat, Paddy, Rice)</p>
-      <p><i class="fa-solid fa-angles-right"></i> Daily Staples Consumer Footprint</p>
-      <p><i class="fa-solid fa-angles-right"></i> Gig Transport Vehicle Fleet Rental</p>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    &copy; 2026 Bukhari Nexus Pvt Ltd. All international rights reserved. Organized for maximum operational clarity.
-  </div>
-</footer>
+  <div id="page-about" class="app-page">
+    <div class="container">
+      <div class="heading-zone">
+        <span class="section-tag">Governance & Framework</span>
+        <h2 class="heading">About Bukhari Nexus Group</h2>
+        <p class="subheading">A detailed layout outlining our corporate genesis, strategic core targets, and structural milestones.</p>
+      </div>
 
-</body>
-</html>
+      <div class="grid-2">
+        <div class="prose-card">
+          <h3><i class="fa-solid fa-timeline"></i> Corporate History</h3>
+          <p>Established as a central unified framework, Bukhari Nexus Pvt Ltd was engineered to consolidate distinct high-performing local commercial models under an international holding system. Recognizing the operational links between primary trade lines, secure brick-and-mortar asset distribution, and transport fleet logistics, the founders scaled operations across boundaries, anchoring high-yield activities seamlessly across Pakistan and Australia.</p>
+        </div>
+
+        <div class="prose-card">
+          <h3><i class="fa-solid fa-bullseye"></i> Corporate Mission</h3>
+          <p>Our mandate is to eliminate operational vulnerabilities within primary supply loops. Whether optimizing macro bulk crop grading systems, securing stable localized pathways for high-turnover consumer necessities, or supplying on-demand fleet vehicles that empower gig-economy professional operators, Bukhari Nexus delivers structural consistency, asset protection, and precise executive governance.</p>
+        </div>
+
+        <div class="prose-card">
+          <h3><i class="fa-solid fa-trophy"></i> Key Achievements</h3>
+          <p>Bukhari Nexus has successfully deployed cross-border trade models resulting in uninterrupted supply lines across complex commodity markets. Notable milestones include the acquisition of major regional crop handling pipelines, securing a recognized retail footprint through the expansion of Al Makha networks, and configuring a high-efficiency transport fleet completely compliant with modern rideshare safety networks.</p>
+        </div>
+
+        <div class="prose-card">
+          <h3><i class="fa-solid fa-map-location-dot"></i> Future Core Plans</h3>
+          <p>The group is scaling up capital allocation models to automate regional processing plants for primary commodities. Concurrently, our Australian fleet framework under Bukhari Pty Ltd is expanding into secondary urban hubs, integrating energy-efficient and hybrid vehicle classes. Additionally, digital system integrations are rolling out to link retail storefront inventory management with centralized distribution points.</p>
