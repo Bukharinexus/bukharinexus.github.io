@@ -3,59 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bukhari NEXUS - International Business Group. Building Trust. Creating Opportunities. Shaping the Future.">
-    <title>Home | Bukhari NEXUS</title>
-    
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <meta name="description" content="Bukhari NEXUS Pvt Ltd - An international business group operating in Pakistan and Australia. Specialized in agricultural trading, retail/wholesale grocery, and vehicle rental services.">
+    <title>Bukhari NEXUS Pvt Ltd | International Business Group</title>
+    <style>
+        :root {
+            --deep-black: #0B0B0B;
+            --premium-gold: #D4AF37;
+            --white: #FFFFFF;
+            --light-grey: #f4f4f4;
+            --charcoal: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--white); color: var(--deep-black); line-height: 1.6; }
+
+        /* Navigation */
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--deep-black); color: var(--white); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--premium-gold); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* Hero */
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--white); text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 3rem; color: var(--premium-gold); margin-bottom: 10px; }
+
+        /* Sections */
+        section { padding: 80px 5%; }
+        h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card:hover { border-color: var(--premium-gold); transform: translateY(-5px); }
+        .card h3 { color: var(--premium-gold); margin-bottom: 10px; }
+        .whatsapp-link { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--deep-black); color: var(--premium-gold); text-decoration: none; border-radius: 5px; font-weight: bold; }
+
+        /* Footer */
+        footer { background: var(--deep-black); color: var(--white); text-align: center; padding: 40px; }
+    </style>
 </head>
 <body>
 
-    <header class="header">
-        <nav class="navbar container">
-            <a href="index.html" class="logo"><strong>BUKHARI NEXUS</strong></a>
-            <ul class="navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav>
+    <div class="logo">BUKHARI NEXUS PVT LTD</div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#businesses">Businesses</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <section class="hero">
-        <div class="container text-center">
-            <h1 id="company-name">Bukhari NEXUS</h1>
-            <p>Building Trust. Creating Opportunities. Shaping the Future.</p>
+<header class="hero">
+    <h1>Global Vision, Local Integrity</h1>
+    <p>A family-owned international business group bridging Australia and Pakistan.</p>
+</header>
+
+<section id="about">
+    <h2>Our Identity</h2>
+    <p style="max-width: 800px; margin: 0 auto; text-align: center;">Bukhari NEXUS Pvt Ltd was established to bring together complementary businesses under one corporate identity. With operations spanning agriculture, retail, and mobility in Australia and Pakistan, we are committed to ethical growth and sustainable partnerships.</p>
+</section>
+
+<section id="businesses" style="background: var(--light-grey);">
+    <h2>Our Subsidiaries</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Bukhari Traders</h3>
+            <p><strong>Focus:</strong> Wheat, Rice, and Paddy Trading.</p>
+            <a href="https://wa.me/923476051990" class="whatsapp-link">WhatsApp: +92 347 6051990</a>
         </div>
-    </section>
-
-    <section class="container" style="padding: 80px 0;">
-        <div class="text-center">
-            <h2>International Business Group</h2>
-            <p style="max-width: 800px; margin: 20px auto;">
-                Established in 2026, Bukhari NEXUS is a family-owned group dedicated to building sustainable, diversified businesses across Australia, Pakistan, and global markets.
-            </p>
+        <div class="card">
+            <h3>Al Makkah General Store</h3>
+            <p><strong>Focus:</strong> Wholesale & Retail Grocery and FMCG.</p>
+            <a href="https://wa.me/923474888906" class="whatsapp-link">WhatsApp: +92 347 4888906</a>
         </div>
-    </section>
-
-    <section class="container">
-        <h2 class="text-center">Our Group Companies</h2>
-        <div class="grid-3-cols" id="company-grid">
-            </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; <span id="current-year">2026</span> Bukhari NEXUS. All Rights Reserved.</p>
+        <div class="card">
+            <h3>Bukhari Pty Ltd</h3>
+            <p><strong>Focus:</strong> Ride-share, Delivery, and Taxi Fleet Services.</p>
+            <a href="https://wa.me/61474024174" class="whatsapp-link">WhatsApp: +61 474 024 174</a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/data-loader.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+<section id="future">
+    <h2>Future Aspirations</h2>
+    <p style="text-align: center;">We are steadily expanding into logistics, milling, manufacturing, and international export. Every expansion is guided by our core values of trust and excellence.</p>
+</section>
+
+<footer id="contact">
+    <p>&copy; 2026 Bukhari NEXUS Pvt Ltd. All Rights Reserved.</p>
+    <p>Connecting Markets, Building Legacies.</p>
+</footer>
+
+<script>
+    // Simple smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
 </body>
 </html>
