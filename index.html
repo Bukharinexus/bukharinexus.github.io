@@ -3,63 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukhari NEXUS Pvt Ltd | Global Business Group</title>
+    <title>Bukhari NEXUS Pvt Ltd | Global Group</title>
     <style>
         :root { --gold: #D4AF37; }
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #000; color: white; }
 
-        /* Slideshow Hero Section */
-        .hero { 
-            height: 60vh; width: 100%; position: relative; overflow: hidden;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+        /* FIXED BACKGROUND PARALLAX */
+        .hero-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
         }
 
-        .slideshow-image {
+        .slide {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background-size: cover; background-position: center;
-            animation: fade 20s infinite; opacity: 0;
+            animation: kenburns 20s infinite; opacity: 0;
         }
 
-        /* Business-specific images */
-        .img1 { background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad4d0200'); animation-delay: 0s; } /* Wheat/Paddy */
-        .img2 { background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e'); animation-delay: 5s; } /* Store */
-        .img3 { background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2'); animation-delay: 10s; } /* Cars */
-        .img4 { background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d'); animation-delay: 15s; } /* Global Logistics */
+        /* Specific Trading & Business Images */
+        .s1 { background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad4d0200'); animation-delay: 0s; } /* Wheat Farm */
+        .s2 { background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449'); animation-delay: 5s; } /* Rice Paddy */
+        .s3 { background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e'); animation-delay: 10s; } /* Store */
+        .s4 { background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2'); animation-delay: 15s; } /* Cars */
 
-        @keyframes fade { 0% { opacity: 0; } 5% { opacity: 1; } 25% { opacity: 1; } 30% { opacity: 0; } 100% { opacity: 0; } }
+        @keyframes kenburns { 0%, 100% { opacity: 0; transform: scale(1); } 5%, 25% { opacity: 1; transform: scale(1.1); } 30% { opacity: 0; } }
 
-        /* Content */
-        .overlay { z-index: 1; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
-        .container { max-width: 800px; margin: 30px auto; padding: 20px; }
-        .info-card { background: #1a1a1a; padding: 30px; border-radius: 10px; border-left: 4px solid var(--gold); }
-        .grid-links { display: grid; gap: 15px; padding: 0 20px; margin-top: 20px; }
-        .business-link { padding: 25px; border: 1px solid var(--gold); border-radius: 8px; text-decoration: none; color: white; text-align: center; }
-        .business-link:hover { background: var(--gold); color: #000; font-weight: bold; }
+        /* SCROLLABLE CONTENT */
+        .content-wrapper { position: relative; z-index: 1; padding-top: 50vh; }
+        .glass-box { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; max-width: 800px; margin: 0 auto 40px; border: 1px solid var(--gold); }
+        .grid-links { display: grid; gap: 20px; max-width: 800px; margin: 0 auto 50px; padding: 20px; }
+        .link-card { padding: 30px; border: 1px solid var(--gold); border-radius: 12px; text-decoration: none; color: white; text-align: center; background: rgba(0,0,0,0.6); }
+        .link-card:hover { background: var(--gold); color: #000; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="slideshow-image img1"></div>
-        <div class="slideshow-image img2"></div>
-        <div class="slideshow-image img3"></div>
-        <div class="slideshow-image img4"></div>
-        <div class="overlay">
-            <h1 style="color: var(--gold); margin: 0;">BUKHARI NEXUS PVT LTD</h1>
-            <p>Global Vision. Local Integrity. Sustainable Growth.</p>
-        </div>
+    <div class="hero-container">
+        <div class="slide s1"></div>
+        <div class="slide s2"></div>
+        <div class="slide s3"></div>
+        <div class="slide s4"></div>
     </div>
 
-    <div class="container">
-        <div class="info-card">
-            <h2>Our Corporate Group</h2>
+    <div class="content-wrapper">
+        <div class="glass-box">
+            <h1 style="color: var(--gold); margin-top:0;">BUKHARI NEXUS PVT LTD</h1>
+            <p><strong>Global Vision. Local Integrity. Sustainable Growth.</strong></p>
             <p>Bukhari NEXUS Pvt Ltd is a family-owned international group established in 2026. We provide strategic governance and long-term direction across our portfolio, connecting Australian, Pakistani, and global markets. Our mission focuses on delivering high-quality services while upholding integrity and professional excellence.</p>
         </div>
 
         <div class="grid-links">
-            <a href="traders.html" class="business-link"><strong>Bukhari Traders</strong><br>Agricultural Commodities</a>
-            <a href="al-makkah.html" class="business-link"><strong>Al Makkah General Store</strong><br>Wholesale & Retail FMCG</a>
-            <a href="bukhari-pty.html" class="business-link"><strong>Bukhari Pty Ltd</strong><br>Mobility & Fleet Solutions</a>
+            <a href="traders.html" class="link-card"><h3>Bukhari Traders</h3><p>Agricultural Commodity Trading: Wheat, Rice, & Paddy</p></a>
+            <a href="al-makkah.html" class="link-card"><h3>Al Makkah General Store</h3><p>Wholesale & Retail FMCG Distribution</p></a>
+            <a href="bukhari-pty.html" class="link-card"><h3>Bukhari Pty Ltd</h3><p>Professional Mobility & Fleet Solutions</p></a>
         </div>
     </div>
 
