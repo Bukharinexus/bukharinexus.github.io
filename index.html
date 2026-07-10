@@ -3,95 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bukhari NEXUS is a premier international business group providing elite corporate solutions. Explore our global services, industries, and commitment to excellence.">
-    <meta name="keywords" content="Bukhari NEXUS, International Business, Corporate Group, Premium Services, Global Investment">
+    <meta name="description" content="Bukhari NEXUS - International Business Group. Building Trust. Creating Opportunities. Shaping the Future.">
+    <title>Home | Bukhari NEXUS</title>
     
-    <!-- Open Graph & Twitter -->
-    <meta property="og:title" content="Bukhari NEXUS | Global Corporate Excellence">
-    <meta property="og:description" content="A premium international business group driving innovation and growth.">
-    <meta property="og:type" content="website">
-    
-    <title>Bukhari NEXUS | Global Business Excellence</title>
-
-    <!-- CSS Links -->
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!-- Favicon Placeholder -->
-    <link rel="icon" href="favicon.ico">
 </head>
 <body>
 
-    <!-- 1. Announcement Bar -->
-    <div class="announcement-bar" style="background: var(--color-primary-gold); color: var(--color-primary-black); text-align: center; padding: 5px; font-size: var(--fs-xs);">
-        Welcome to Bukhari NEXUS – Defining Excellence in Global Enterprise
-    </div>
-
-    <!-- 2 & 3. Header & Navigation -->
     <header class="header">
         <nav class="navbar container">
-            <div class="logo"><strong>BUKHARI NEXUS</strong></div>
+            <a href="index.html" class="logo"><strong>BUKHARI NEXUS</strong></a>
             <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="companies.html">Companies</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 4. Hero Section -->
-    <section class="hero animate-fade-in">
+    <section class="hero">
         <div class="container text-center">
-            <h1 style="font-size: var(--fs-display);">Building Global Legacies</h1>
-            <p style="font-size: var(--fs-lg);">A premium international business group connecting markets and possibilities.</p>
-            <div class="hero-cta">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="about.html" class="btn btn-secondary">Our Vision</a>
-            </div>
+            <h1 id="company-name">Bukhari NEXUS</h1>
+            <p>Building Trust. Creating Opportunities. Shaping the Future.</p>
         </div>
     </section>
 
-    <!-- 5. About Preview -->
-    <section id="about" class="container">
-        <h2 class="text-center">A Legacy of Trust</h2>
-        <p class="text-center">Bukhari NEXUS combines tradition with modern innovation to serve global industries.</p>
+    <section class="container" style="padding: 80px 0;">
+        <div class="text-center">
+            <h2>International Business Group</h2>
+            <p style="max-width: 800px; margin: 20px auto;">
+                Established in 2026, Bukhari NEXUS is a family-owned group dedicated to building sustainable, diversified businesses across Australia, Pakistan, and global markets.
+            </p>
+        </div>
     </section>
 
-    <!-- 8. Services Overview -->
-    <section id="services" class="container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4xl);">
-        <div class="card-service"><h3>Strategic Consulting</h3><p>Guiding international growth.</p></div>
-        <div class="card-service"><h3>Asset Management</h3><p>Securing your wealth.</p></div>
-        <div class="card-service"><h3>Global Logistics</h3><p>Connecting the world.</p></div>
+    <section class="container">
+        <h2 class="text-center">Our Group Companies</h2>
+        <div class="grid-3-cols" id="company-grid">
+            </div>
     </section>
 
-    <!-- 20. Comprehensive Footer -->
     <footer class="footer">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between;">
-                <div>
-                    <h4>Bukhari NEXUS</h4>
-                    <p>Global Headquarters</p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="privacy.html">Privacy</a></li>
-                        <li><a href="terms.html">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top: var(--space-7xl);">
-                &copy; 2026 Bukhari NEXUS. All Rights Reserved.
-            </div>
+        <div class="container text-center">
+            <p>&copy; <span id="current-year">2026</span> Bukhari NEXUS. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript placeholders -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/data-loader.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
