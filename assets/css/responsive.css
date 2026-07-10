@@ -1,0 +1,78 @@
+/* 
+ * Bukhari NEXUS - Responsive Design
+ * File: assets/css/responsive.css
+ * Mobile-First approach: Styles scale up from small to large screens.
+ */
+
+/* --- Mobile (320px–575px) --- */
+@media (min-width: 320px) {
+    :root {
+        --fs-h1: 36px;
+        --fs-h2: 32px;
+        --fs-h3: 28px;
+    }
+    .container { padding: 0 var(--space-lg); }
+    section { padding: var(--space-5xl) 0; }
+    .hide-mobile { display: none; }
+}
+
+/* --- Large Mobile (576px–767px) --- */
+@media (min-width: 576px) {
+    :root { --fs-h1: 42px; }
+}
+
+/* --- Tablet (768px–991px) --- */
+@media (min-width: 768px) {
+    .grid-2-cols { grid-template-columns: repeat(2, 1fr); }
+    .hero { min-height: 70vh; }
+    .navbar-menu { display: flex; gap: var(--space-xl); }
+}
+
+/* --- Laptop (992px–1199px) --- */
+@media (min-width: 992px) {
+    .container { padding: 0 var(--space-4xl); }
+    .grid-3-cols { grid-template-columns: repeat(3, 1fr); }
+    section { padding: var(--space-7xl) 0; }
+}
+
+/* --- Desktop (1200px–1599px) --- */
+@media (min-width: 1200px) {
+    :root { 
+        --fs-h1: 64px; 
+        --fs-h2: 48px;
+    }
+    .grid-4-cols { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* --- Large Desktop (1600px+) --- */
+@media (min-width: 1600px) {
+    .container { max-width: 1500px; }
+    .hero { min-height: 90vh; }
+}
+
+/* --- Common Responsive Utilities --- */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.flex-wrap { flex-wrap: wrap; }
+
+/* Prevent horizontal overflow */
+body { overflow-x: hidden; }
+
+/* Touch-friendly adjustments */
+@media (pointer: coarse) {
+    .btn, .nav-link { min-height: 44px; display: flex; align-items: center; }
+}
+
+/* Hamburger menu base state for mobile */
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .hamburger { display: none; }
+}
