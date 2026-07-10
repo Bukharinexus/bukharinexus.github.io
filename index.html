@@ -7,19 +7,28 @@
         :root { --gold: #D4AF37; }
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #000; color: white; overflow-x: hidden; }
         
+        /* Fixed "Glass" Background Engine */
         #hero-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
             background-size: cover; background-position: center;
-            transition: background-image 1.5s ease-in-out, filter 1.5s;
+            transition: background-image 2s ease-in-out, filter 2s;
             filter: blur(0px);
         }
         .blurry { filter: blur(20px) !important; }
         
-        .content { position: relative; z-index: 1; padding: 20px; max-width: 900px; margin: auto; }
-        .glass-box { background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); padding: 40px; border-radius: 20px; border-left: 5px solid var(--gold); margin-top: 50vh; }
-        .grid-links { display: grid; gap: 20px; margin-top: 30px; }
-        .link-card { padding: 30px; border: 1px solid var(--gold); border-radius: 12px; text-decoration: none; color: white; background: rgba(0,0,0,0.6); text-align: center; }
-        .link-card:hover { background: var(--gold); color: #000; font-weight: bold; }
+        /* Professional Content Layout */
+        .content { position: relative; z-index: 1; padding: 20px; max-width: 800px; margin: auto; }
+        .hero-box { background: rgba(0,0,0,0.85); backdrop-filter: blur(15px); padding: 40px; border-radius: 20px; border-left: 5px solid var(--gold); margin-top: 50vh; }
+        
+        /* Service Cards (Reference: Professional Layout) */
+        .services-grid { display: grid; gap: 20px; margin-top: 30px; }
+        .service-card { 
+            background: rgba(0,0,0,0.8); border: 1px solid var(--gold); 
+            padding: 25px; display: flex; align-items: center; border-radius: 12px; 
+            text-decoration: none; color: white; transition: 0.3s;
+        }
+        .service-card:hover { background: var(--gold); color: #000; }
+        .service-card span { font-size: 2.5rem; margin-right: 25px; }
     </style>
 </head>
 <body>
@@ -27,47 +36,30 @@
     <div id="hero-bg"></div>
 
     <div class="content">
-        <div class="glass-box">
+        <div class="hero-box">
             <h1 style="color: var(--gold); margin:0;">BUKHARI NEXUS PVT LTD</h1>
             <p><strong>Global Vision. Local Integrity. Sustainable Growth.</strong></p>
-            <p>Established in 2026, Bukhari NEXUS Pvt Ltd is a family-owned international group. We provide strategic governance and long-term direction across our portfolio, connecting Australian, Pakistani, and global markets. Our mission focuses on delivering high-quality products and services while upholding integrity, customer service, and professional excellence.</p>
+            <p>Bukhari NEXUS Pvt Ltd provides strategic governance for a diverse international portfolio. We bridge the gap between Australian and Pakistani markets, ensuring professional excellence in every sector.</p>
         </div>
 
-        <div class="grid-links">
-            <a href="traders.html" class="link-card"><h3>Bukhari Traders</h3><p>Agricultural Commodities: Wheat, Rice, & Paddy Milling</p></a>
-            <a href="al-makkah.html" class="link-card"><h3>Al Makkah General Store</h3><p>Wholesale & Retail FMCG Distribution</p></a>
-            <a href="bukhari-pty.html" class="link-card"><h3>Bukhari Pty Ltd</h3><p>Professional Mobility & Taxi Fleet Solutions</p></a>
+        <div class="services-grid">
+            <a href="traders.html" class="service-card"><span>🌾</span> <div><h3>Bukhari Traders</h3><p>Agricultural Commodities: Wheat, Rice, & Paddy Milling</p></div></a>
+            <a href="al-makkah.html" class="service-card"><span>🛒</span> <div><h3>Al Makkah General Store</h3><p>Wholesale & Retail FMCG Distribution</p></div></a>
+            <a href="bukhari-pty.html" class="service-card"><span>🚗</span> <div><h3>Bukhari Pty Ltd</h3><p>Professional Mobility & Taxi Fleet Solutions</p></div></a>
         </div>
     </div>
 
     <script>
-        // Using high-reliability CDN links for consistent image loading
+        // 30 High-Quality Industry Images
         const images = [
-            // Traders (Wheat/Rice/Paddy/Mills) - 15 Photos
-            'https://cdn.pixabay.com/photo/2016/09/16/16/32/wheat-1674488_1280.jpg', 'https://cdn.pixabay.com/photo/2017/08/30/17/46/rice-2698305_1280.jpg',
-            'https://cdn.pixabay.com/photo/2014/05/23/07/28/wheat-351869_1280.jpg', 'https://cdn.pixabay.com/photo/2017/02/09/12/35/rice-2051915_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/07/11/15/51/korea-2494191_1280.jpg', 'https://cdn.pixabay.com/photo/2019/08/29/18/34/wheat-4439601_1280.jpg',
-            'https://cdn.pixabay.com/photo/2016/03/18/15/03/wheat-1264875_1280.jpg', 'https://cdn.pixabay.com/photo/2015/09/14/19/22/rice-939763_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/07/20/12/57/field-2522204_1280.jpg', 'https://cdn.pixabay.com/photo/2016/08/04/14/06/agriculture-1569238_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/09/25/11/38/agriculture-2784841_1280.jpg', 'https://cdn.pixabay.com/photo/2016/04/26/12/33/wheat-1353907_1280.jpg',
-            'https://cdn.pixabay.com/photo/2018/08/24/16/19/rice-3628287_1280.jpg', 'https://cdn.pixabay.com/photo/2014/11/14/17/23/harvest-530990_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/12/12/16/09/grain-3015033_1280.jpg',
-            // Al Makkah (Grocery) - 8 Photos
-            'https://cdn.pixabay.com/photo/2016/11/29/08/42/grocery-store-1868661_1280.jpg', 'https://cdn.pixabay.com/photo/2015/12/09/17/12/supermarket-1085023_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/05/23/22/36/supermarket-2338575_1280.jpg', 'https://cdn.pixabay.com/photo/2016/09/19/18/12/store-1680954_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/02/01/22/02/supermarket-2031149_1280.jpg', 'https://cdn.pixabay.com/photo/2015/04/10/17/03/food-716807_1280.jpg',
-            'https://cdn.pixabay.com/photo/2016/03/05/22/23/food-1239276_1280.jpg', 'https://cdn.pixabay.com/photo/2018/05/01/18/38/grocery-3366367_1280.jpg',
-            // Cars/Fleet - 7 Photos
-            'https://cdn.pixabay.com/photo/2016/09/16/16/27/car-1674438_1280.jpg', 'https://cdn.pixabay.com/photo/2015/09/02/12/25/car-918944_1280.jpg',
-            'https://cdn.pixabay.com/photo/2014/07/31/22/50/standing-car-407153_1280.jpg', 'https://cdn.pixabay.com/photo/2017/09/02/19/47/taxi-2707662_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/04/04/16/59/car-2202353_1280.jpg', 'https://cdn.pixabay.com/photo/2016/03/27/19/31/car-1283918_1280.jpg',
-            'https://cdn.pixabay.com/photo/2017/08/30/01/05/uk-2696568_1280.jpg'
+            'https://cdn.pixabay.com/photo/2016/09/16/16/32/wheat-1674488_1280.jpg', 'https://cdn.pixabay.com/photo/2017/08/30/17/46/rice-2698305_1280.jpg', 'https://cdn.pixabay.com/photo/2014/05/23/07/28/wheat-351869_1280.jpg', 'https://cdn.pixabay.com/photo/2017/02/09/12/35/rice-2051915_1280.jpg', 'https://cdn.pixabay.com/photo/2017/07/11/15/51/korea-2494191_1280.jpg', 'https://cdn.pixabay.com/photo/2019/08/29/18/34/wheat-4439601_1280.jpg', 'https://cdn.pixabay.com/photo/2016/03/18/15/03/wheat-1264875_1280.jpg', 'https://cdn.pixabay.com/photo/2015/09/14/19/22/rice-939763_1280.jpg', 'https://cdn.pixabay.com/photo/2017/07/20/12/57/field-2522204_1280.jpg', 'https://cdn.pixabay.com/photo/2016/08/04/14/06/agriculture-1569238_1280.jpg', 'https://cdn.pixabay.com/photo/2017/09/25/11/38/agriculture-2784841_1280.jpg', 'https://cdn.pixabay.com/photo/2016/04/26/12/33/wheat-1353907_1280.jpg', 'https://cdn.pixabay.com/photo/2018/08/24/16/19/rice-3628287_1280.jpg', 'https://cdn.pixabay.com/photo/2014/11/14/17/23/harvest-530990_1280.jpg', 'https://cdn.pixabay.com/photo/2017/12/12/16/09/grain-3015033_1280.jpg',
+            'https://cdn.pixabay.com/photo/2016/11/29/08/42/grocery-store-1868661_1280.jpg', 'https://cdn.pixabay.com/photo/2015/12/09/17/12/supermarket-1085023_1280.jpg', 'https://cdn.pixabay.com/photo/2017/05/23/22/36/supermarket-2338575_1280.jpg', 'https://cdn.pixabay.com/photo/2016/09/19/18/12/store-1680954_1280.jpg', 'https://cdn.pixabay.com/photo/2017/02/01/22/02/supermarket-2031149_1280.jpg', 'https://cdn.pixabay.com/photo/2015/04/10/17/03/food-716807_1280.jpg', 'https://cdn.pixabay.com/photo/2016/03/05/22/23/food-1239276_1280.jpg', 'https://cdn.pixabay.com/photo/2018/05/01/18/38/grocery-3366367_1280.jpg',
+            'https://cdn.pixabay.com/photo/2016/09/16/16/27/car-1674438_1280.jpg', 'https://cdn.pixabay.com/photo/2015/09/02/12/25/car-918944_1280.jpg', 'https://cdn.pixabay.com/photo/2014/07/31/22/50/standing-car-407153_1280.jpg', 'https://cdn.pixabay.com/photo/2017/09/02/19/47/taxi-2707662_1280.jpg', 'https://cdn.pixabay.com/photo/2017/04/04/16/59/car-2202353_1280.jpg', 'https://cdn.pixabay.com/photo/2016/03/27/19/31/car-1283918_1280.jpg', 'https://cdn.pixabay.com/photo/2017/08/30/01/05/uk-2696568_1280.jpg'
         ];
         
         let i = 0;
         const hero = document.getElementById('hero-bg');
-        
-        function changeImage() {
+        function change() {
             hero.classList.add('blurry');
             setTimeout(() => {
                 hero.style.backgroundImage = `url('${images[i]}')`;
@@ -75,8 +67,8 @@
                 i = (i + 1) % images.length;
             }, 1500);
         }
-        setInterval(changeImage, 5000);
-        changeImage();
+        setInterval(change, 5000);
+        change();
     </script>
 </body>
 </html>
