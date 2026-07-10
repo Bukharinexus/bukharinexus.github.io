@@ -1,0 +1,35 @@
+{
+  "company_info": {
+    "name": "Bukhari NEXUS",
+    "founder": "Haseeb Sajjad",
+    "tagline": "Building Trust. Creating Opportunities. Shaping the Future.",
+    "headquarters": ["Pakistan", "Australia"],
+    "founded": 2026
+  },
+  "group_companies": [
+    {
+      "id": "bn-001",
+      "name": "Bukhari Traders",
+      "md": "Sajjad Hussain",
+      "industry": "Agricultural Commodity Trading",
+      "location": "Phalia, Pakistan",
+      "products": ["Wheat", "Paddy", "Rice"]
+    },
+    {
+      "id": "bn-002",
+      "name": "Al Makkah General Store",
+      "md": "Zulqur Nain Haider",
+      "industry": "Wholesale & Retail Grocery",
+      "location": "Gujrat, Pakistan",
+      "products": ["Groceries", "Beverages", "Daily Essentials"]
+    },
+    {
+      "id": "bn-003",
+      "name": "Bukhari Pty Ltd",
+      "md": "Haseeb Sajjad",
+      "industry": "Vehicle Rental Services",
+      "location": "Hobart, Australia",
+      "products": ["Ride-share Hire", "Food Delivery Hire"]
+    }
+  ]
+}
