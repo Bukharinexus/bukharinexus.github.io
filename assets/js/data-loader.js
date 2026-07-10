@@ -1,20 +1,16 @@
-/**
- * Bukhari NEXUS - Data Loader
- * Fetches data from master-data.json and populates the UI.
- */
-async function loadCompanyData() {
-    try {
-        const response = await fetch('data/master-data.json');
-        const data = await response.json();
-        
-        // Example: Update Hero Headline if elements exist
-        const companyNameEl = document.getElementById('company-name');
-        if (companyNameEl) companyNameEl.textContent = data.company_info.name;
-        
-        console.log('Bukhari NEXUS Data Loaded Successfully');
-    } catch (error) {
-        console.error('Error loading site data:', error);
-    }
+async function renderCompanyCards() {
+    const response = await fetch('data/master-data.json');
+    const data = await response.json();
+    const grid = document.getElementById('company-grid');
+    
+    data.group_companies.forEach(company => {
+        grid.innerHTML += `
+            <div class="card">
+                <h3>${company.name}</h3>
+                <p><strong>Industry:</strong> ${company.industry}</p>
+                <p><strong>MD:</strong> ${company.md}</p>
+            </div>
+        `;
+    });
 }
-
-document.addEventListener('DOMContentLoaded', loadCompanyData);
+document.addEventListener('DOMContentLoaded', renderCompanyCards);
