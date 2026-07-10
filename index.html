@@ -1,5 +1,22 @@
 <!-- Tabbed Business Section -->
-<section id="businesses" style="background: var(--light-grey);">
+<section id="businesses" style=/* Fix mobile navigation wrapping */
+nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
+.nav-links { gap: 10px; }
+
+/* Tabs Styling */
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.tablink { background: var(--deep-black); color: var(--white); border: none; padding: 10px 20px; cursor: pointer; }
+.tablink.active { background: var(--premium-gold); color: var(--deep-black); }
+.tabcontent { display: none; padding: 30px; text-align: center; background: white; border: 1px solid #ddd; }
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .nav-links a { font-size: 0.7rem; }
+    .tabs { flex-direction: column; }
+    section { padding: 40px 5%; }
+}
+"background: var(--light-grey);">
     <h2>Our Group Companies</h2>
     
     <!-- Desktop Tab Buttons -->
