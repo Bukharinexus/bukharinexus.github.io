@@ -5,87 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukhari NEXUS Pvt Ltd | Global Business Group</title>
     <style>
-        :root { --deep-black: #0B0B0B; --premium-gold: #D4AF37; --white: #FFFFFF; --light-grey: #f4f4f4; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root { --gold: #D4AF37; --glass: rgba(255, 255, 255, 0.1); }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #000; color: white; }
         
-        /* Navigation */
-        nav { background: var(--deep-black); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 10px; }
-        .logo { font-size: 1.2rem; font-weight: bold; color: var(--premium-gold); }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
-
-        /* Hero */
-        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-        
-        /* Tabs Section */
-        section { padding: 60px 5%; text-align: center; }
-        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
-        .tablink { background: var(--deep-black); color: var(--white); border: none; padding: 12px 24px; cursor: pointer; transition: 0.3s; }
-        .tablink.active { background: var(--premium-gold); color: var(--deep-black); font-weight: bold; }
-        .tabcontent { display: none; padding: 40px; background: white; border: 1px solid #ddd; max-width: 600px; margin: auto; }
-        .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--deep-black); color: var(--white); text-decoration: none; border-radius: 5px; }
-
-        /* Mobile */
-        @media (max-width: 600px) {
-            .nav-links { gap: 10px; }
-            .nav-links a { font-size: 0.7rem; }
-            .tabs { flex-direction: column; }
+        .hero-bg {
+            height: 100vh; width: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000'); /* Global Trade/Logistics */
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
+        .glass-box { background: var(--glass); backdrop-filter: blur(15px); padding: 40px; border-radius: 20px; max-width: 800px; margin: 40px auto; border: 1px solid rgba(255,255,255,0.2); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px; }
+        .business-link { background: rgba(255,255,255,0.05); padding: 30px; border: 2px solid var(--gold); border-radius: 15px; text-decoration: none; color: white; text-align: center; transition: 0.4s; }
+        .business-link:hover { background: var(--gold); color: black; transform: scale(1.05); }
     </style>
 </head>
 <body>
-
-<nav>
-    <div class="logo">BUKHARI NEXUS PVT LTD</div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+    <div class="hero-bg">
+        <h1 style="font-size: 3.5rem; color: var(--gold);">BUKHARI NEXUS PVT LTD</h1>
+        <p>Global Vision. Local Integrity. Sustainable Growth.</p>
     </div>
-</nav>
-
-<header class="hero">
-    <h1>Global Vision, Local Integrity</h1>
-</header>
-
-<section id="businesses" style="background: var(--light-grey);">
-    <h2>Our Group Companies</h2>
-    <div class="tabs">
-        <button class="tablink" onclick="openBusiness(event, 'Traders')">Bukhari Traders</button>
-        <button class="tablink" onclick="openBusiness(event, 'Makkah')">Al Makkah</button>
-        <button class="tablink" onclick="openBusiness(event, 'Pty')">Bukhari Pty</button>
+    <div class="glass-box">
+        <h2>Strategic Mandate</h2>
+        <p>Bukhari NEXUS Pvt Ltd serves as the parent entity providing strategic governance. We connect global markets through innovation in agriculture, retail, and logistics.</p>
     </div>
-
-    <div id="Traders" class="tabcontent">
-        <h3>Bukhari Traders</h3>
-        <p>Specialists in agricultural commodities.</p>
-        <a href="traders.html" class="btn">View Profile</a>
+    <div class="grid-3">
+        <a href="traders.html" class="business-link"><h3>Bukhari Traders</h3><p>Agricultural Commodities</p></a>
+        <a href="al-makkah.html" class="business-link"><h3>Al Makkah</h3><p>Wholesale & Retail FMCG</p></a>
+        <a href="bukhari-pty.html" class="business-link"><h3>Bukhari Pty Ltd</h3><p>Mobility & Fleet Solutions</p></a>
     </div>
-
-    <div id="Makkah" class="tabcontent">
-        <h3>Al Makkah General Store</h3>
-        <p>Wholesale and retail grocery and FMCG.</p>
-        <a href="al-makkah.html" class="btn">View Profile</a>
-    </div>
-
-    <div id="Pty" class="tabcontent">
-        <h3>Bukhari Pty Ltd</h3>
-        <p>Mobility solutions in Hobart, Tasmania.</p>
-        <a href="bukhari-pty.html" class="btn">View Profile</a>
-    </div>
-</section>
-
-<script>
-function openBusiness(evt, name) {
-    let i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-    document.getElementById(name).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-document.getElementsByClassName("tablink")[0].click();
-</script>
-
 </body>
 </html>
