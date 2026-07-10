@@ -11,31 +11,31 @@
             --premium-gold: #D4AF37;
             --white: #FFFFFF;
             --light-grey: #f4f4f4;
-            --charcoal: #333333;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: var(--white); color: var(--deep-black); line-height: 1.6; }
 
-        /* Navigation */
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: var(--deep-black); color: var(--white); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--premium-gold); }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; }
+        /* Unified Navigation */
+        nav { background: var(--deep-black); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--premium-gold); letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--premium-gold); }
 
-        /* Hero */
+        /* Hero Section */
         .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--white); text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 3rem; color: var(--premium-gold); margin-bottom: 10px; }
+        .hero h1 { font-size: 3rem; color: var(--premium-gold); margin-bottom: 15px; }
 
-        /* Sections */
+        /* Content Sections */
         section { padding: 80px 5%; }
         h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card { border: 1px solid #ddd; padding: 25px; border-radius: 8px; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #fff; }
         .card:hover { border-color: var(--premium-gold); transform: translateY(-5px); }
         .card h3 { color: var(--premium-gold); margin-bottom: 10px; }
-        .whatsapp-link { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--deep-black); color: var(--premium-gold); text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--deep-black); color: var(--white); text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9rem; }
+        .btn:hover { background: var(--premium-gold); color: var(--deep-black); }
 
         /* Footer */
         footer { background: var(--deep-black); color: var(--white); text-align: center; padding: 40px; }
@@ -45,11 +45,13 @@
 
 <nav>
     <div class="logo">BUKHARI NEXUS PVT LTD</div>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#businesses">Businesses</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="traders.html">Traders</a>
+        <a href="al-makkah.html">Al Makkah</a>
+        <a href="bukhari-pty.html">Bukhari Pty</a>
+    </div>
 </nav>
 
 <header class="hero">
@@ -63,45 +65,29 @@
 </section>
 
 <section id="businesses" style="background: var(--light-grey);">
-    <h2>Our Subsidiaries</h2>
+    <h2>Our Group Companies</h2>
     <div class="grid">
         <div class="card">
             <h3>Bukhari Traders</h3>
-            <p><strong>Focus:</strong> Wheat, Rice, and Paddy Trading.</p>
-            <a href="https://wa.me/923476051990" class="whatsapp-link">WhatsApp: +92 347 6051990</a>
+            <p>Specialists in wheat, rice, and paddy trading.</p>
+            <a href="traders.html" class="btn">View Profile</a>
         </div>
         <div class="card">
             <h3>Al Makkah General Store</h3>
-            <p><strong>Focus:</strong> Wholesale & Retail Grocery and FMCG.</p>
-            <a href="https://wa.me/923474888906" class="whatsapp-link">WhatsApp: +92 347 4888906</a>
+            <p>Wholesale and retail grocery and FMCG supply.</p>
+            <a href="al-makkah.html" class="btn">View Profile</a>
         </div>
         <div class="card">
             <h3>Bukhari Pty Ltd</h3>
-            <p><strong>Focus:</strong> Ride-share, Delivery, and Taxi Fleet Services.</p>
-            <a href="https://wa.me/61474024174" class="whatsapp-link">WhatsApp: +61 474 024 174</a>
+            <p>Vehicle rental solutions in Hobart, Tasmania.</p>
+            <a href="bukhari-pty.html" class="btn">View Profile</a>
         </div>
     </div>
 </section>
 
-<section id="future">
-    <h2>Future Aspirations</h2>
-    <p style="text-align: center;">We are steadily expanding into logistics, milling, manufacturing, and international export. Every expansion is guided by our core values of trust and excellence.</p>
-</section>
-
-<footer id="contact">
+<footer>
     <p>&copy; 2026 Bukhari NEXUS Pvt Ltd. All Rights Reserved.</p>
-    <p>Connecting Markets, Building Legacies.</p>
 </footer>
-
-<script>
-    // Simple smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-</script>
 
 </body>
 </html>
