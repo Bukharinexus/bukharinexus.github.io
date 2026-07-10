@@ -1,0 +1,79 @@
+{
+  "group_companies": [
+    {
+      "id": "bn-001",
+      "company_name": "Bukhari Energy",
+      "short_name": "Energy",
+      "business_category": "Energy & Infrastructure",
+      "industry": "Renewable Energy",
+      "description": "Providing sustainable, high-efficiency power solutions for industrial and urban development.",
+      "mission": "To lead the global transition to clean, reliable energy through innovation.",
+      "services": [
+        "Solar Grid Infrastructure",
+        "Energy Auditing",
+        "Grid Optimization"
+      ],
+      "country": "United Arab Emirates",
+      "headquarters": "Dubai",
+      "website": "https://energy.bukharinexus.com",
+      "email": "info@energy.bukharinexus.com",
+      "phone": "+971-4-555-0101",
+      "logo_filename": "assets/img/logos/energy-logo.png",
+      "hero_image_filename": "assets/img/hero/energy-hero.jpg",
+      "status": "Active",
+      "year_established": 2012,
+      "display_order": 1,
+      "featured": true
+    },
+    {
+      "id": "bn-002",
+      "company_name": "Nexus Logistics",
+      "short_name": "Logistics",
+      "business_category": "Supply Chain & Transport",
+      "industry": "Global Freight",
+      "description": "Seamless, real-time logistics solutions connecting major global trade hubs.",
+      "mission": "To simplify complexity in the global supply chain.",
+      "services": [
+        "International Freight",
+        "Warehousing",
+        "Last-Mile Distribution"
+      ],
+      "country": "Singapore",
+      "headquarters": "Singapore",
+      "website": "https://logistics.bukharinexus.com",
+      "email": "contact@logistics.bukharinexus.com",
+      "phone": "+65-6555-0202",
+      "logo_filename": "assets/img/logos/logistics-logo.png",
+      "hero_image_filename": "assets/img/hero/logistics-hero.jpg",
+      "status": "Active",
+      "year_established": 2015,
+      "display_order": 2,
+      "featured": true
+    },
+    {
+      "id": "bn-003",
+      "company_name": "Bukhari Capital",
+      "short_name": "Capital",
+      "business_category": "Financial Services",
+      "industry": "Investment Advisory",
+      "description": "Strategic asset management and venture capital for high-growth corporate entities.",
+      "mission": "To drive long-term financial prosperity for our partners through prudent stewardship.",
+      "services": [
+        "Venture Capital",
+        "Asset Allocation",
+        "Mergers & Acquisitions"
+      ],
+      "country": "United Kingdom",
+      "headquarters": "London",
+      "website": "https://capital.bukharinexus.com",
+      "email": "advisory@capital.bukharinexus.com",
+      "phone": "+44-20-5555-0303",
+      "logo_filename": "assets/img/logos/capital-logo.png",
+      "hero_image_filename": "assets/img/hero/capital-hero.jpg",
+      "status": "Active",
+      "year_established": 2018,
+      "display_order": 3,
+      "featured": false
+    }
+  ]
+}
