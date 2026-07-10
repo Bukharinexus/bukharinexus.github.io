@@ -5,80 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukhari NEXUS Pvt Ltd | Global Business Group</title>
     <style>
-        :root { --gold: #D4AF37; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #000; color: white; overflow-x: hidden; }
+        :root { --gold: #D4AF37; --glass: rgba(0,0,0,0.7); }
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #000; color: #fff; line-height: 1.6; }
         
-        /* Unified Background Engine */
-        #hero-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
-            background-size: cover; background-position: center;
-            transition: background-image 1.5s ease-in-out;
-        }
+        /* Background Layer */
+        #bg { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; background-size:cover; background-position:center; transition: 1s; }
+        
+        /* Main Layout */
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        section { background: var(--glass); backdrop-filter: blur(10px); padding: 40px; border-radius: 15px; border-left: 5px solid var(--gold); margin-bottom: 30px; }
+        
+        h1, h2 { color: var(--gold); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        
+        .btn { display: inline-block; padding: 12px 25px; background: var(--gold); color: #000; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px; cursor: pointer; }
+        .whatsapp-btn { background: #25D366; color: #fff; margin-top: 10px; display: inline-block; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
 
-        /* Unified Scroll Look */
-        .content { 
-            position: relative; z-index: 1; padding: 20px; max-width: 900px; margin: auto;
-            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
-            border-left: 2px solid var(--gold); min-height: 100vh;
-        }
-
-        .service-card { 
-            display: block; padding: 20px; border: 1px solid var(--gold); margin-bottom: 20px;
-            color: white; text-decoration: none; border-radius: 8px;
-        }
-        .whatsapp-btn { 
-            display: inline-block; padding: 10px 20px; background: #25D366; 
-            color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;
-        }
+        /* Responsive adjustments */
+        @media (max-width: 600px) { section { padding: 20px; } }
     </style>
 </head>
 <body>
 
-    <div id="hero-bg"></div>
+    <div id="bg"></div>
 
-    <div class="content">
-        <h1>BUKHARI NEXUS PVT LTD</h1>
-        <p>Global Vision. Local Integrity. Sustainable Growth.</p>
+    <div class="container">
+        <section>
+            <h1>BUKHARI NEXUS PVT LTD</h1>
+            <p>Global Vision. Local Integrity. Sustainable Growth.</p>
+            <p>Bukhari NEXUS Pvt Ltd is a family-owned international group providing strategic governance across our commercial portfolio.</p>
+        </section>
 
-        <!-- Linked Business Divisions -->
-        <div id="portfolio">
-            <a href="traders.html" class="service-card">
-                <h3>Bukhari Traders</h3>
-                <p>Agricultural Commodities: Wheat, Rice, & Paddy Milling</p>
-                <div class="whatsapp-btn" onclick="window.location.href='https://wa.me/923476051990'">Chat with Bukhari Traders</div>
-            </a>
+        <section>
+            <h2>Our Business Divisions</h2>
+            <div class="grid">
+                <div>
+                    <h3>Bukhari Traders</h3>
+                    <p>Agricultural Commodities: Wheat, Rice, & Paddy Milling</p>
+                    <a href="traders.html" class="btn">View Details</a><br>
+                    <a href="https://wa.me/923476051990" class="whatsapp-btn">WhatsApp Traders</a>
+                </div>
+                <div>
+                    <h3>Al Makkah General Store</h3>
+                    <p>Wholesale & Retail FMCG Distribution</p>
+                    <a href="al-makkah.html" class="btn">View Details</a><br>
+                    <a href="https://wa.me/923474888906" class="whatsapp-btn">WhatsApp Al Makkah</a>
+                </div>
+                <div>
+                    <h3>Bukhari Pty Ltd</h3>
+                    <p>Mobility & Taxi Fleet Solutions</p>
+                    <a href="bukhari-pty.html" class="btn">View Details</a><br>
+                    <a href="https://wa.me/61XXXXXXXXXX" class="whatsapp-btn">WhatsApp Bukhari Pty</a>
+                </div>
+            </div>
+        </section>
 
-            <a href="al-makkah.html" class="service-card">
-                <h3>Al Makkah General Store</h3>
-                <p>Wholesale & Retail FMCG Distribution</p>
-                <div class="whatsapp-btn" onclick="window.location.href='https://wa.me/923474888906'">Chat with Al Makkah</div>
-            </a>
+        <!-- Executive Welcome -->
+        <section>
+            <h2>Executive Welcome</h2>
+            <p>Bukhari NEXUS is anchored in structural integrity and transparency. We build long-term value through responsible corporate development.</p>
+        </section>
 
-            <a href="bukhari-pty.html" class="service-card">
-                <h3>Bukhari Pty Ltd</h3>
-                <p>Professional Mobility & Taxi Fleet Solutions</p>
-                <div class="whatsapp-btn" onclick="window.location.href='https://wa.me/61XXXXXXXXXX'">Chat with Bukhari Pty Ltd</div>
-            </a>
-        </div>
+        <!-- Our Approach -->
+        <section>
+            <h2>Our Approach</h2>
+            <ul>
+                <li>Strategic Leadership</li>
+                <li>Operational Excellence</li>
+                <li>Responsible Growth</li>
+                <li>Long-Term Partnerships</li>
+            </ul>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>What is Bukhari NEXUS?</strong> A family-owned international corporate group.</p>
+            <p><strong>What industries do we operate in?</strong> Agriculture, Retail, and Mobility.</p>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="text-align:center;">
+            <h2>Building Long-Term Partnerships</h2>
+            <p>Let's connect for sustainable growth.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </section>
     </div>
 
     <script>
-        // Using diverse high-quality image sources
-        const images = [
-            'https://images.unsplash.com/photo-1574323347477-70e1762b3394?q=80&w=1280',
-            'https://images.unsplash.com/photo-1595777457583-95e059d501c5?q=80&w=1280',
-            'https://images.unsplash.com/photo-1586281380117-5a0f722a466a?q=80&w=1280',
-            'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&w=1280'
-        ];
-        
+        const imgs = ['https://images.unsplash.com/photo-1574323347477-70e1762b3394', 'https://images.unsplash.com/photo-1595777457583-95e059d501c5', 'https://images.unsplash.com/photo-1586281380117-5a0f722a466a'];
         let i = 0;
-        const hero = document.getElementById('hero-bg');
-        function change() {
-            hero.style.backgroundImage = `url('${images[i]}')`;
-            i = (i + 1) % images.length;
-        }
-        setInterval(change, 6000);
-        change();
+        setInterval(() => { document.getElementById('bg').style.backgroundImage = `url(${imgs[i++ % imgs.length]})`; }, 5000);
     </script>
 </body>
 </html>
