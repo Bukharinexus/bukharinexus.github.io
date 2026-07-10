@@ -1,54 +1,82 @@
-<!-- Tabbed Business Section -->
-<section id="businesses" style=/* Fix mobile navigation wrapping */
-nav { flex-wrap: wrap; justify-content: center; gap: 10px; }
-.nav-links { gap: 10px; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukhari NEXUS Pvt Ltd | Global Business Group</title>
+    <style>
+        :root { --deep-black: #0B0B0B; --premium-gold: #D4AF37; --white: #FFFFFF; --light-grey: #f4f4f4; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        /* Navigation */
+        nav { background: var(--deep-black); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 10px; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--premium-gold); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; }
 
-/* Tabs Styling */
-.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
-.tablink { background: var(--deep-black); color: var(--white); border: none; padding: 10px 20px; cursor: pointer; }
-.tablink.active { background: var(--premium-gold); color: var(--deep-black); }
-.tabcontent { display: none; padding: 30px; text-align: center; background: white; border: 1px solid #ddd; }
+        /* Hero */
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        
+        /* Tabs Section */
+        section { padding: 60px 5%; text-align: center; }
+        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .tablink { background: var(--deep-black); color: var(--white); border: none; padding: 12px 24px; cursor: pointer; transition: 0.3s; }
+        .tablink.active { background: var(--premium-gold); color: var(--deep-black); font-weight: bold; }
+        .tabcontent { display: none; padding: 40px; background: white; border: 1px solid #ddd; max-width: 600px; margin: auto; }
+        .btn { display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--deep-black); color: var(--white); text-decoration: none; border-radius: 5px; }
 
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    .hero h1 { font-size: 2rem; }
-    .nav-links a { font-size: 0.7rem; }
-    .tabs { flex-direction: column; }
-    section { padding: 40px 5%; }
-}
-"background: var(--light-grey);">
+        /* Mobile */
+        @media (max-width: 600px) {
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 0.7rem; }
+            .tabs { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">BUKHARI NEXUS PVT LTD</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Global Vision, Local Integrity</h1>
+</header>
+
+<section id="businesses" style="background: var(--light-grey);">
     <h2>Our Group Companies</h2>
-    
-    <!-- Desktop Tab Buttons -->
     <div class="tabs">
         <button class="tablink" onclick="openBusiness(event, 'Traders')">Bukhari Traders</button>
-        <button class="tablink" onclick="openBusiness(event, 'Makkah')">Al Makkah Store</button>
-        <button class="tablink" onclick="openBusiness(event, 'Pty')">Bukhari Pty Ltd</button>
+        <button class="tablink" onclick="openBusiness(event, 'Makkah')">Al Makkah</button>
+        <button class="tablink" onclick="openBusiness(event, 'Pty')">Bukhari Pty</button>
     </div>
 
-    <!-- Tab Content -->
     <div id="Traders" class="tabcontent">
         <h3>Bukhari Traders</h3>
-        <p>Specialists in wheat, rice, and paddy trading.</p>
+        <p>Specialists in agricultural commodities.</p>
         <a href="traders.html" class="btn">View Profile</a>
     </div>
 
     <div id="Makkah" class="tabcontent">
         <h3>Al Makkah General Store</h3>
-        <p>Wholesale and retail grocery and FMCG supply.</p>
+        <p>Wholesale and retail grocery and FMCG.</p>
         <a href="al-makkah.html" class="btn">View Profile</a>
     </div>
 
     <div id="Pty" class="tabcontent">
         <h3>Bukhari Pty Ltd</h3>
-        <p>Vehicle rental solutions in Hobart, Tasmania.</p>
+        <p>Mobility solutions in Hobart, Tasmania.</p>
         <a href="bukhari-pty.html" class="btn">View Profile</a>
     </div>
 </section>
 
 <script>
 function openBusiness(evt, name) {
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
     tablinks = document.getElementsByClassName("tablink");
@@ -56,6 +84,8 @@ function openBusiness(evt, name) {
     document.getElementById(name).style.display = "block";
     evt.currentTarget.className += " active";
 }
-// Set default open
 document.getElementsByClassName("tablink")[0].click();
 </script>
+
+</body>
+</html>
